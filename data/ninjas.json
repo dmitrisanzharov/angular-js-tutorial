@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Yoshi",
+        "belt": "green",
+        "rate": 50,
+        "available": true,
+        "thumb": "https://ih1.redbubble.net/image.1442416307.4191/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+    },
+    {
+        "name": "Crystal",
+        "belt": "Yellow",
+        "rate": 30,
+        "available": true,
+        "thumb": "https://ih1.redbubble.net/image.1442416307.4191/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+    },
+    {
+        "name": "Ryu",
+        "belt": "orange",
+        "rate": 10,
+        "available": false,
+        "thumb": "https://ih1.redbubble.net/image.1442416307.4191/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+    },
+    {
+        "name": "Shaun",
+        "belt": "black",
+        "rate": 1000,
+        "available": true,
+        "thumb": "https://ih1.redbubble.net/image.1442416307.4191/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+    }
+]

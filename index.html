@@ -4,33 +4,13 @@
         <title>My NG App</title>
         <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
         <script src="app/lib/angular.min.js"></script>
+        <script src="app/lib/angular-route.min.js"></script>
+        <script src="app/lib/angular-animate.min.js"></script>
         <script src="app/app.js"></script>
     </head>
     <body>
         <header ng-include="'header.html'"></header>
-        <div class="content">
-            <div ng-controller="NinjaControllerAsName">
-                <button ng-click="varOrder = 'name'">Order by Name</button>
-                <button ng-click="varOrder = 'belt'">Order by Belt</button>
-                <input type="text" ng-model="varStringFromNgModel" placeholder="Search for a ninja"/>
-                <ul>
-                    <li ng-repeat="ninja in ninjas | filter: varStringFromNgModel | orderBy: varOrder" ng-show="ninja.available">
-                      <h3>{{ninja.name}} - {{ninja.rate | currency : '£' : 2}}</h3>
-                      <div class="remove" ng-click="removeNinja(ninja)">x</div>
-                      <span class="belt" style="background: {{ninja.belt}}">{{ninja.belt}} belt</span>
-                    </li>
-                </ul>
-
-                <hr />
-                <form>
-                  <input type="text" placeholder="name" ng-model="newNinja.name" />
-                  <input type="text" placeholder="belt" ng-model="newNinja.belt" />
-                  <input type="text" placeholder="rate" ng-model="newNinja.rate" />
-                  <input type="submit" value="Add new ninja" ng-click="mySubmit()">
-                </form>
-
-                <!-- end of the  NinjaControllerAsName Scope -->
-            </div>
-        </div>
+        <main ng-view></main>
+        <!-- <div>footer</div> -->
     </body>
 </html>
