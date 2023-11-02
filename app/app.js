@@ -2,6 +2,8 @@ const myNinjaAppConst = angular.module('nameOfMyModuleOne', ['ngRoute', 'ngAnima
 
 
 myNinjaAppConst.config(['$routeProvider', function($routeProvider){
+
+
     $routeProvider
         .when('/home', {
             templateUrl: 'view/home.html',
@@ -12,7 +14,12 @@ myNinjaAppConst.config(['$routeProvider', function($routeProvider){
             controller: 'NinjaControllerAsName'
         })
         .when('/contact', {
-            templateUrl: 'view/contact.html'
+            templateUrl: 'view/contact.html',
+            controller: 'ContactController'
+        })
+        .when('/contact-success', {
+            templateUrl: 'view/contact-success.html',
+            controller: 'ContactController'
         })
         .otherwise({
             redirectTo: '/home'
@@ -34,6 +41,14 @@ myNinjaAppConst.directive('randomNinja', [function(){
         }
     }
 }]); 
+
+
+myNinjaAppConst.controller('ContactController', ['$scope', '$location', function($scope, $location){
+    $scope.sendMessage = function (){
+        $location.path('/contact-success');
+        console.log($scope);
+    }
+}]);
 
 
 myNinjaAppConst.controller('NinjaControllerAsName', [
