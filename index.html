@@ -1,9 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="phonecapApp">
     <head>
         <title>My NG App</title>
+        <script src="app/lib/angular.min.js"></script>
+        <script src="app/lib/angular-route.min.js"></script>
+        <script src="app/app.js"></script>
+        <!-- modules -->
+        <script src="app/components/phone-list/phone-list.module.js"></script>
+        <!-- components -->
+        <script src="app/components/greet-user/greet-user.component.js"></script>
+        <script src="app/components/phone-list/phone-list.comp.js"></script>
     </head>
-    <body>
-
+    <body ng-controller="PhoneListController">
+        <phone-list-comp></phone-list-comp>
+        <hr />
+        <p>Total number of phones: 2</p>
+        <hr />
+        <!-- end of body -->
     </body>
 </html>
