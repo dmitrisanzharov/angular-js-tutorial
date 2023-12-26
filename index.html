@@ -2,8 +2,84 @@
 <html lang="en">
     <head>
         <title>My NG App</title>
-    </head>
-    <body>
+        <!-- CSS -->
+        <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
 
+        <!-- ANGULAR CDN -->
+        <script src="app/lib/angular.min.js"></script>
+        <script src="app/lib/angular-route.min.js"></script>
+
+        <!-- APP JS -->
+        <script src="app/app.js"></script>
+
+          <!-- MODULES -->
+          <script src="app/modules/phone-list/phone-list.module.js"></script>
+
+          <!-- COMPONENTS -->
+          <script src="app/components/say-hello/say-hello.component.js"></script>
+          <script src="app/modules/phone-list/phone-list.component.js"></script>
+    </head>
+    <body ng-app="mainAppModule" ng-controller="MainAppController">
+        <h1>New Shaizer</h1>
+        <form ng-submit="finalSubmit()" name="myHtmlForm"> 
+            <input type="text" name="name" ng-model="myForm.name" placeholder="enter your name" ng-required="true" />
+            <div ng-show="myHtmlForm.name.$valid"> is valid</div>
+            <input type="email" ng-model="myForm.email" placeholder="enter your email" ng-required="true" name="email"/>
+            <div ng-show="myHtmlForm.email.$invalid && myHtmlForm.email.$touched"> not valid </div>
+            <button ng-disabled="myHtmlForm.$invalid">submit</button>
+            <hr />
+        </form>
+
+        <hr />
+        <h1>OLD SHAIZER</h1>
+        <h1>{{myVar1}} World</h1>
+        <button ng-click="seeScope()">see</button>
+        <hr />
+        <say-hello></say-hello>
+        <hr />
+        <phone-list-component></phone-list-component>
+        <hr />
+        <input ng-model="myObj.anyInput1" type="text" placeholder="yo yo yo" />
+        <input ng-model="myObj.anyInput2" type="text" placeholder="yo2" />
+        <hr />
+        <div ng-init="myVar1=1; initLa='lal'; ">
+            {{myVar1}}
+            {{initLa}}
+        </div>
+
+
+        <hr />
+
+
+
+        <h1>My numbers: </h1>
+        <input type="text" ng-model="varStringForFilter" placeholder="for filter">
+
+        <ul>
+            <li ng-repeat="myNum in myArr | orderBy: value | filter: varStringForFilter">{{myNum}} and {{$index | currency : 'YAMAKA' : 4}}</li>
+        </ul>
+
+
+
+        <hr />
+        <ng-include src="'app/otherTemplates/myTest.html'" ng-show="!true"></ng-include>
+        <hr />
+        <button ng-click="myButton('123la')">test</button>
+        <hr />
+        <form ng-submit="myButton('yo')">
+            <button>submit</button>
+        </form>
+        <hr />
+        <do-something ya1="'hello'" my-long-name="1">
+            <h1>Hello I am a child</h1>
+        </do-something>
+        <hr />
+        <h1>{{$root.myRoot1}}</h1>
+        <button ng-click="deleteMe()">delete root</button>
+        <hr />
+        <h1>This is my router</h1>
+        <button><a href='#/home'>go to home</a></button>
+        <button><a href='#/test2'>go to test2</a></button>
+        <ng-view></ng-view>
     </body>
 </html>
