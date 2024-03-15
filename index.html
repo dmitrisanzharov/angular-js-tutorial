@@ -12,7 +12,8 @@
         <!-- JS stuff -->
         <script src="app/app.js"></script>
     </head>
-    <body>
-        <h1>Test</h1>
+    <body ng-app="myMainWrapper" ng-controller="myMainWrapperController">
+        <h1>{{message}}</h1>
+        <button ng-click="changeMessage()">click me</button>
     </body>
 </html>
