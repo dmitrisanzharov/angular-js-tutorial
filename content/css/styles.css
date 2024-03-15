@@ -120,7 +120,7 @@ body{
   }
 
 
-  input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
+  /* input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
     border: 2px solid red;
   }
 
@@ -131,4 +131,4 @@ body{
   input[disabled="disabled"]{
     opacity: 0.4;
     cursor: not-allowed !important;
-  }
+  } */
