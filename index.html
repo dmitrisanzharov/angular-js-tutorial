@@ -15,5 +15,32 @@
     <body ng-app="myMainWrapper" ng-controller="myMainWrapperController">
         <h1>{{message}}</h1>
         <button ng-click="changeMessage()">click me</button>
+        <hr />
+        <input ng-model="myInput1.value1" type="text" />
+        <p>{{myInput1}}</p>
+        <hr />
+        <div ng-init="myArr=[1,2,3]">{{myArr}}</div>
+        <button ng-click="changeArray()">change array</button>
+        <hr />
+        <div>
+            <p>{{myFoo}}</p>
+            <div>
+                <div>
+                    <div ng-init="myFoo='yallow'"></div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <ul>
+            <li ng-repeat="item in myArr2" ng-show="$even">{{item}}, {{$index}}</li>
+        </ul>
+        <hr />
+        <div ng-repeat="(key, value) in myObj">{{key}} and {{value}}</div>
+        <hr />
+        <div ng-controller="MyController2">
+            <p>Test</p>
+            <div>{{myVar2}}</div>
+        </div>
+
     </body>
 </html>
