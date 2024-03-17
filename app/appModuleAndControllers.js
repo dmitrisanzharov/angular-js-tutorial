@@ -9,3 +9,6 @@ mainApp.controller('mainAppController', ['$scope', function($scope){
 mainApp.controller('mainAppController2', ['$scope', function($scope){
     $scope.myVar2 = 'myVar2';
 }]);
+
+// WHERE IS THE TEMPLATE?
+// index.html is the template
