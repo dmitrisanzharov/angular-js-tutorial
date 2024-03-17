@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>My NG App</title>
-    </head>
-    <body>
+	<head>
+		<title>My NG App</title>
 
-    </body>
+		<!-- ANGULAR CDN -->
+		<script src="app/lib/angular.min.js"></script>
+		<script src="app/lib/angular-route.min.js"></script>
+
+		<!-- APP JS -->
+		<script src="app/appModuleAndControllers.js"></script>
+	</head>
+	<body ng-app="mainAppModule">
+		<div ng-controller="mainAppController">
+            {{myVar1}}
+        </div>
+        <hr />
+        <div ng-controller="mainAppController2">
+            {{myVar2}}
+        </div>
+        <hr />
+        <div ng-controller="mainAppController">
+            {{myVarFinal}}
+        </div>
+	</body>
 </html>
