@@ -21,6 +21,7 @@
         <hr />
         <div ng-init="myArr=[1,2,3]">{{myArr}}</div>
         <button ng-click="changeArray()">change array</button>
+        <button ng-click="myArr=[]">change arr</button>
         <hr />
         <div>
             <p>{{myFoo}}</p>
@@ -40,7 +41,9 @@
         <div ng-controller="MyController2">
             <p>Test</p>
             <div>{{myVar2}}</div>
+            <hr />
+            <div ng-include="'app/allOther/myTemplate1.html'"></div>
         </div>
-
+        
     </body>
 </html>
