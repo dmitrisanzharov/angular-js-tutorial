@@ -16,6 +16,7 @@
 	</head>
 	<body ng-app="myMainWrapper" ng-controller="MainController">
         <h1>{{myTest}}</h1>
+        <h2>{{count}}</h2>
         <button ng-click="incCount()">inc count from main component</button>
         <hr />
         <count-component count-prop="count" count-inc-fn="incCount()"></count-component>
