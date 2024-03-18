@@ -19,13 +19,10 @@ myModule.controller("myMainWrapperController", [
 		$scope.changeArray = function () {
 			$scope.myArr = [...$scope.myArr, 4];
 		};
+
+		$scope.mySubmit = function () {
+			console.log('mySubmit');
+		}
 	},
 ]);
 
-myModule.controller("MyController2", [
-	"$scope",
-	function ($scope) {
-		$scope.myVar2 = "hello 2";
-        $scope.tempOneVar = 'temp one variable';
-	},
-]);

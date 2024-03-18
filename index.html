@@ -11,6 +11,11 @@
 
         <!-- JS stuff -->
         <script src="app/app.js"></script>
+
+
+        <!-- COMPONENTS -->
+        <script src="app/components/greet-user/greet-user.comp.js"></script>
+
     </head>
     <body ng-app="myMainWrapper" ng-controller="myMainWrapperController">
         <h1>{{message}}</h1>
@@ -38,12 +43,12 @@
         <hr />
         <div ng-repeat="(key, value) in myObj">{{key}} and {{value}}</div>
         <hr />
-        <div ng-controller="MyController2">
-            <p>Test</p>
-            <div>{{myVar2}}</div>
-            <hr />
-            <div ng-include="'app/allOther/myTemplate1.html'"></div>
-        </div>
-        
+        <form ng-submit="mySubmit()">
+            <button type="submit" ng-disabled="{{true}}">submit</button>
+        </form>
+        <hr />
+        <greet-user-component></greet-user-component>
+        <hr />
+        <count-component></count-component>
     </body>
 </html>
