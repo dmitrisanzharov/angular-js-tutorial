@@ -10,6 +10,14 @@
 
 		<!-- APP JS -->
 		<script src="app/app.js"></script>
+
+        <!-- COMPONENTS -->
+        <script src="app/components/count/count.component.js"></script>
 	</head>
-	<body></body>
+	<body ng-app="myMainWrapper" ng-controller="MainController">
+        <h1>{{myTest}}</h1>
+        <button ng-click="incCount()">inc count from main component</button>
+        <hr />
+        <count-component count-prop="count" count-inc-fn="incCount()"></count-component>
+    </body>
 </html>
