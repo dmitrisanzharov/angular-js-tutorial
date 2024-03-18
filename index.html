@@ -2,14 +2,37 @@
 <html lang="en">
 	<head>
 		<title>My NG App</title>
-        <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
-        
+		<link href="content/css/styles.css" rel="stylesheet" type="text/css" />
+
 		<!-- ANGULAR CDN -->
 		<script src="app/lib/angular.min.js"></script>
 		<script src="app/lib/angular-route.min.js"></script>
 
 		<!-- APP JS -->
-		<script src="app/app.js"></script>
+		<script src="app/app.js" type="module"></script>
+        <!-- NOTE: The imported file, where my controllers live -->
+		<script src="app/testingImports/myController.js" type="module"></script> 
+
+        <!-- modules -->
+        <!-- NOTE: Module Import -->
+        <script src="app/testingImports/longWayImport/longWayImport.module.js"></script> 
 	</head>
-	<body></body>
+	<body>
+		<div ng-app="myMainWrapper" ng-controller="mainAppControllerOne">
+			<div>working?</div>
+            <h1>{{varOne}}</h1>
+            <hr />
+            <div ng-controller="mainAppControllerTwo">
+                {{varTwo}}
+            </div>
+            <hr />
+            <div ng-controller="mainAppControllerThree">
+                {{varThree}}
+            </div>
+            <hr />
+            <div ng-controller="longWayToDoController">
+                {{longWayVar}}
+            </div>
+		</div>
+	</body>
 </html>
