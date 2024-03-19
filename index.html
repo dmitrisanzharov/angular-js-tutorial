@@ -11,5 +11,13 @@
 		<!-- APP JS -->
 		<script src="app/app.js"></script>
 	</head>
-	<body></body>
+	<body ng-app="myMainWrapper">
+        <div ng-controller="MainControllerOne">
+            {{var1}}
+        </div>
+        <hr />
+        <div ng-controller="MainControllerTwo">
+            {{var2}}
+        </div>
+    </body>
 </html>
