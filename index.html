@@ -9,7 +9,14 @@
 		<script src="app/lib/angular-route.min.js"></script>
 
 		<!-- APP JS -->
-		<script src="app/app.js"></script>
+		<script src="app/app.js" type="module"></script>
+
+        <!-- components scripts -->
+        <script src="app/components/blah/blah.component.js" type="module"></script>
 	</head>
-	<body></body>
+	<body ng-app="myMainWrapper" ng-controller="myMainWrapperController">
+        <hr />
+        <!-- COMPONENTS HTML -->
+        <blah-component from-main-var1="fromMainApp_Var1"></blah-component>
+    </body>
 </html>
