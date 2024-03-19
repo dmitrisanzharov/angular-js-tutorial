@@ -1,6 +1,6 @@
-const myModule = angular.module("myMainWrapper", []);
+export const myMainWrapperConst = angular.module("myMainWrapper", []); 
 
-myModule.controller("myMainWrapperController", [
+myMainWrapperConst.controller("myMainWrapperController", [
 	"$scope",
 	function ($scope) {
 		$scope.message = "Hello World";
