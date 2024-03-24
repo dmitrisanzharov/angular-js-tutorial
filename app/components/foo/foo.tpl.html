@@ -2,4 +2,11 @@
     <h1>{{title}}</h1>
     <ng-transclude></ng-transclude>
     <h2>{{$parent.myFoo}}</h2>
+    <p>Below this line, should be rootScope variable</p>
+    <h1>{{$root.testRootScope}}</h1>
+    <hr />
+    <ul>
+        <input ng-model="myString" />
+        <li ng-repeat="item in allNames | orderBy: '-name' | filter: myString">{{item.name}}</li>
+    </ul>
 </div>

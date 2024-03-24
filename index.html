@@ -1,61 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>My NG App</title>
-        <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
+	<head>
+		<title>My NG App</title>
+		<link href="content/css/styles.css" rel="stylesheet" type="text/css" />
 
+		<!-- ANGULAR STUFF -->
+		<script src="app/lib/angular.min.js"></script>
+		<script src="app/lib/angular-route.min.js"></script>
 
-        <!-- ANGULAR STUFF -->
-        <script src="app/lib/angular.min.js"></script>
+		<!-- JS stuff -->
+		<script src="app/app.js" type="module"></script>
 
+		<!-- COMPONENTS -->
+		<script src="app/components/count/count.comp.js" type="module"></script>
 
-        <!-- JS stuff -->
-        <script src="app/app.js" type="module"></script>
-
-        <!-- COMPONENTS -->
-        <script src="app/components/count/count.comp.js" type="module"></script>
-
-        <!-- TROLL COMPONENTS / DIRECTIVES -->
-        <script src="app/components/foo/foo.comp.js" type="module"></script>
-
-    </head>
-    <body ng-app="myMainWrapper" ng-controller="myMainWrapperController">
-        <h1>{{message}}</h1>
-        <button ng-click="changeMessage()">click me</button>
-        <hr />
-        <input ng-model="myInput1.value1" type="text" />
-        <p>{{myInput1}}</p>
-        <hr />
-        <div ng-init="myArr=[1,2,3]">{{myArr}}</div>
-        <button ng-click="changeArray()">change array</button>
-        <button ng-click="myArr=[]">change arr</button>
-        <hr />
-        <div>
-            <p>{{myFoo}}</p>
-            <div>
-                <div>
-                    <div ng-init="myFoo='yallow'"></div>
-                </div>
-            </div>
-        </div>
-        <hr />
-        <ul>
-            <li ng-repeat="item in myArr2" ng-show="$even">{{item}}, {{$index}}</li>
-        </ul>
-        <hr />
-        <div ng-repeat="(key, value) in myObj">{{key}} and {{value}}</div>
-        <hr />
-        <form ng-submit="mySubmit()">
-            <button type="submit" ng-disabled="{{true}}">submit</button>
-        </form>
-        <hr />
-        <count-component title="'Testing Count Component'">
-            <h2>Children in COUNT component</h2>
-        </count-component>
-        <hr />
-        <foo-troll-component title="'This is foo, title!'">
-            <div>omg omg </div>
-            <p>p p p p</p>
-        </foo-troll-component>
-    </body>
+		<!-- TROLL COMPONENTS / DIRECTIVES -->
+		<script src="app/components/foo/foo.comp.js" type="module"></script>
+	</head>
+	<body ng-app="myMainWrapper" ng-controller="myMainWrapperController">
+		<ul>
+			<li><a href="#/bar">Bar</a></li>
+			<li><a href="#/omg">Omg</a></li>
+		</ul>
+		<hr />
+		<ng-view></ng-view>
+		<hr />
+		<h1>{{message}}</h1>
+		<button ng-click="changeMessage()">click me</button>
+		<hr />
+		<input ng-model="myInput1.value1" type="text" />
+		<p>{{myInput1}}</p>
+		<hr />
+		<div ng-init="myArr=[1,2,3]">{{myArr}}</div>
+		<button ng-click="changeArray()">change array</button>
+		<button ng-click="myArr=[]">change arr</button>
+		<hr />
+		<div>
+			<p>{{myFoo}}</p>
+			<div>
+				<div>
+					<div ng-init="myFoo='yallow'"></div>
+				</div>
+			</div>
+		</div>
+		<hr />
+		<ul>
+			<li ng-repeat="item in myArr2" ng-show="$even">
+				{{item}}, {{$index}}
+			</li>
+		</ul>
+		<hr />
+		<div ng-repeat="(key, value) in myObj">{{key}} and {{value}}</div>
+		<hr />
+		<form ng-submit="mySubmit()">
+			<button type="submit" ng-disabled="{{true}}">submit</button>
+		</form>
+		<hr />
+		<count-component title="'Testing Count Component'">
+			<h2>Children in COUNT component</h2>
+		</count-component>
+		<hr />
+		<foo-troll-component title="'This is foo, title!'">
+			<div>omg omg</div>
+			<p>p p p p</p>
+		</foo-troll-component>
+	</body>
 </html>
