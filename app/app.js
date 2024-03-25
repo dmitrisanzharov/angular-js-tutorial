@@ -54,12 +54,15 @@ myMainWrapperConst.controller("myMainWrapperController", [
 myMainWrapperConst.controller("BarController", [
 	"$scope",
 	"$http",
-	function ($scope, $http) {
+	"$location",
+	function ($scope, $http, $location) {
 		$scope.barVar1 = "barVar1";
 		console.log('scope', $scope);
 
 		$scope.submitTheForm = function(){
-			console.log('you submitted the form');
+			console.log('you submitted the form', $scope.myForm);
 		}
+
+
 	},
 ]);

@@ -1,11 +1,12 @@
 <div ng-controller="BarController">
 	<h1 style="color: green;">Form will go here!</h1>
 
-	<form name="myForm" onSubmit="submitTheForm()">
+	<form name="myForm" ng-submit="submitTheForm()">
 
 		<div>
 			<label for="name">Name</label>
 			<input type="text" name="name" placeholder="enter name" ng-model="name" required/>
+			<div ng-show="myForm.name.$dirty">omg it worked</div>
 		</div>
 
 		<div>
@@ -13,7 +14,7 @@
 			<input type="email" name="email" placeholder="enter email" ng-model="email" required/>
 		</div>
 
-		<button type="submit">submit</button>
+		<button type="submit" ng-disabled="!myForm.$valid">submit</button>
 
 	</form>
 
@@ -21,6 +22,4 @@
 	<hr />
 	<h1>This is the BAR page!</h1>
 	<h2>{{barVar1}}</h2>
-
-	
 </div>
