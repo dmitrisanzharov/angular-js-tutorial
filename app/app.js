@@ -1,29 +1,36 @@
-export const myMainWrapperConst = angular.module("myMainWrapper", ['ngRoute']); 
+export const myMainWrapperConst = angular.module("myMainWrapper", ["ngRoute"]);
 
-myMainWrapperConst.config(['$routeProvider', function($routeProvider) {
-	$routeProvider
-		.when('/bar', {
-			templateUrl: 'app/views/bar.tpl.html',
-			controller: 'BarController'
-		})
-		.when('/omg', {
-			templateUrl: 'app/views/omg.tpl.html'
-		})
-		.when('/home', {
-            templateUrl: 'app/views/home.tpl.html'
-        })
-		.otherwise({
-			redirectTo: '/home'
-		})
-	}])
+myMainWrapperConst.config([
+	"$routeProvider",
+	function ($routeProvider) {
+		$routeProvider
+			.when("/bar", {
+				templateUrl: "app/views/bar.tpl.html",
+				controller: "BarController",
+			})
+			.when("/omg", {
+				templateUrl: "app/views/omg.tpl.html",
+			})
+			.when("/home", {
+				templateUrl: "app/views/home.tpl.html",
+			})
+			.when("/foo", {
+				templateUrl: "app/views/baz.tpl.html",
+			})
+			.otherwise({
+				redirectTo: "/home",
+			});
+	},
+]);
 
 myMainWrapperConst.controller("myMainWrapperController", [
-	"$scope", '$rootScope',
+	"$scope",
+	"$rootScope",
 	function ($scope, $rootScope) {
 		$scope.message = "Hello World";
 		$scope.myArr2 = ["a", "b", "c", "d", "e", "f"];
 		$scope.myObj = { name: "dmitri", age: "immortal" };
-		$rootScope.testRootScope = 'root scope message';
+		$rootScope.testRootScope = "root scope message";
 
 		$scope.changeMessage = function () {
 			console.log("has been clicked");
@@ -39,12 +46,20 @@ myMainWrapperConst.controller("myMainWrapperController", [
 		};
 
 		$scope.mySubmit = function () {
-			console.log('mySubmit');
-		}
+			// console.log("mySubmit");
+		};
 	},
 ]);
 
-myMainWrapperConst.controller('BarController', ['$scope', function ($scope) {
-	$scope.barVar1 = 'barVar1';
-}])
+myMainWrapperConst.controller("BarController", [
+	"$scope",
+	"$http",
+	function ($scope, $http) {
+		$scope.barVar1 = "barVar1";
+		console.log('scope', $scope);
 
+		$scope.submitTheForm = function(){
+			console.log('you submitted the form');
+		}
+	},
+]);
