@@ -1,3 +1,4 @@
+import {myConsole} from '/app/helpers/helper1.js';
 export const myMainWrapperConst = angular.module("myMainWrapper", ["ngRoute"]);
 
 myMainWrapperConst.config([
@@ -56,6 +57,7 @@ myMainWrapperConst.controller("BarController", [
 	"$http",
 	"$location",
 	function ($scope, $http, $location) {
+		$scope.myConsoleInScope = myConsole;
 		$scope.barVar1 = "barVar1";
 		console.log('scope', $scope);
 
@@ -63,6 +65,6 @@ myMainWrapperConst.controller("BarController", [
 			console.log('you submitted the form', $scope.myForm);
 		}
 
-
+		
 	},
 ]);
