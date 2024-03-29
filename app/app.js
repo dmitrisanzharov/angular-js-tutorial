@@ -1,1 +1,3 @@
-console.log('app.js is blank');
+const myMainWrapperConst = angular.module('myMainWrapper', []); 
+
+export default myMainWrapperConst;

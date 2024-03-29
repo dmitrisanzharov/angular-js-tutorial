@@ -132,3 +132,14 @@ body{
     opacity: 0.4;
     cursor: not-allowed !important;
   } */
+
+
+  /* leafLetMainComponent */
+  .leafLetMainComponent {
+  }
+
+  .leafLetMainComponent #map{
+    height: 80vh;
+    width: 80vw;
+    border: 1px solid red;
+  }
