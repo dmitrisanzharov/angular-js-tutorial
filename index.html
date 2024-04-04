@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myMainWrapper" ng-controller="MyMainWrapperController">
 	<head>
 		<title>My NG App</title>
         <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
@@ -9,7 +9,20 @@
 		<script src="app/lib/angular-route.min.js"></script>
 
 		<!-- APP JS -->
-		<script src="app/app.js"></script>
+		<script src="app/app.js" type="module"></script>
 	</head>
-	<body></body>
+	<body>
+		<div ng-init="myVarOne=1; myName='Dmitri'">{{ myVarOne }} and {{ myName }}</div>
+		<input ng-model="myInput" type="text" ng-change="handleChange()"/>
+		{{ myInput }} 
+		<hr />
+		<ul>
+			<li ng-repeat="item in myArrMain" ng-show="$even">{{item}}, and the index: {{$index}} and {{$even}}</li>
+		</ul>
+		<hr />
+		<ul>
+			<li ng-repeat="(key, value) in myObjMain">key: {{key}}, value: {{value}}</li>
+		</ul>
+
+	</body>
 </html>
