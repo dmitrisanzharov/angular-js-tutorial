@@ -13,11 +13,15 @@
 
 		<!-- components -->
 		<script src="app/components/foo/foo.comp.js" type="module"></script>
+		<script src="app/components/bar/bar.comp.js" type="module"></script>
 	</head>
 	<body>
 		<h1>Main Wrapper Stuff</h1>
 		<h2>{{mainVarOne}}</h2>
 		<hr />
 		<foo-component foo-name-prop="'foo name prop, Dmitri'"></foo-component>
+		<div ng-controller="MainWrapperController2"></div>
+		<hr />
+		<bar-component></bar-component>
 	</body>
 </html>
