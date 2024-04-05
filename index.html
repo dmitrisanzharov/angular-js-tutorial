@@ -2,27 +2,72 @@
 <html lang="en" ng-app="myMainWrapper" ng-controller="MyMainWrapperController">
 	<head>
 		<title>My NG App</title>
-        <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
-        
+		<link href="content/css/styles.css" rel="stylesheet" type="text/css" />
+
 		<!-- ANGULAR CDN -->
 		<script src="app/lib/angular.min.js"></script>
 		<script src="app/lib/angular-route.min.js"></script>
 
 		<!-- APP JS -->
 		<script src="app/app.js" type="module"></script>
+
+		<!-- components -->
+		<script src="app/components/foo/foo.comp.js" type="module"></script>
+		<script src="app/components/bar/bar.module.js"></script>
+		<script src="app/components/baz/baz.module.js"></script>
+		<script src="app/components/foor/foor.comp.js"></script>
+		<script src="app/components/blah/blah.comp.js" type="module"></script>
 	</head>
 	<body>
-		<div ng-init="myVarOne=1; myName='Dmitri'">{{ myVarOne }} and {{ myName }}</div>
-		<input ng-model="myInput" type="text" ng-change="handleChange()"/>
-		{{ myInput }} 
-		<hr />
-		<ul>
-			<li ng-repeat="item in myArrMain" ng-show="$even">{{item}}, and the index: {{$index}} and {{$even}}</li>
-		</ul>
-		<hr />
-		<ul>
-			<li ng-repeat="(key, value) in myObjMain">key: {{key}}, value: {{value}}</li>
-		</ul>
 
+		<foo-component gold-mine="'its a gold mine'">
+			<h1>this is babies of foo</h1>
+		</foo-component>
+		<bar-component></bar-component>
+		<baz-component></baz-component>
+		<foor-component omg-one="yo" omg-two="yo yo"></foor-component>
+		<blah-component></blah-component>
+
+
+		<!-- no display -->
+		<div ng-show="false">
+			<form name="myForm" ng-submit="handleSubmit()">
+				<input
+					name="myNameInForm"
+					ng-model="myNameInForm"
+					placeholder="enter name"
+					ng-change="handleChange('input change')"
+				/>
+				<button type="submit" ng-disabled="!myNameInForm">
+					submit
+				</button>
+			</form>
+
+			<hr />
+			<div ng-init="myVarOne=1; myName='Dmitri'">
+				{{ myVarOne }} and {{ myName }}
+			</div>
+			<input ng-model="myInput" type="text" ng-change="handleChange()" />
+			{{ myInput }}
+			<hr />
+			<ul>
+				<li ng-repeat="item in myArrMain" ng-show="$even">
+					{{item}}, and the index: {{$index}} and {{$even}}
+				</li>
+			</ul>
+			<hr />
+			<ul>
+				<li ng-repeat="(key, value) in myObjMain">
+					key: {{key}}, value: {{value}}
+				</li>
+			</ul>
+			<div ng-controller="MyMainWrapperController2">{{test2}}</div>
+			<div
+				ng-include
+				src="'app/otherHtmlFiles/foo.html'"
+				ng-if="!!handleChange"
+			></div>
+			<button ng-click="handleChange('mahMan')">click me</button>
+		</div>
 	</body>
 </html>
