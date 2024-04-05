@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myMainWrapper" ng-controller="MainWrapperController">
 	<head>
 		<title>My NG App</title>
         <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
@@ -9,7 +9,15 @@
 		<script src="app/lib/angular-route.min.js"></script>
 
 		<!-- APP JS -->
-		<script src="app/app.js"></script>
+		<script src="app/app.js" type="module"></script>
+
+		<!-- components -->
+		<script src="app/components/foo/foo.comp.js" type="module"></script>
 	</head>
-	<body></body>
+	<body>
+		<h1>Main Wrapper Stuff</h1>
+		<h2>{{mainVarOne}}</h2>
+		<hr />
+		<foo-component foo-name-prop="'foo name prop, Dmitri'"></foo-component>
+	</body>
 </html>
