@@ -20,17 +20,20 @@
 	</head>
 	<body>
 
-		<foo-component gold-mine="'its a gold mine'">
-			<h1>this is babies of foo</h1>
-		</foo-component>
-		<bar-component></bar-component>
-		<baz-component></baz-component>
-		<foor-component omg-one="yo" omg-two="yo yo"></foor-component>
-		<blah-component></blah-component>
 
+		
+		<div ng-init="myColor='red';" style="color: {{myColor}}">{{myColor}}</div>
 
-		<!-- no display -->
+		<hr />
+		<!-- no display -->		
 		<div ng-show="false">
+			<foo-component gold-mine="'its a gold mine'">
+				<h1>this is babies of foo</h1>
+			</foo-component>
+			<bar-component></bar-component>
+			<baz-component></baz-component>
+			<foor-component omg-one="yo" omg-two="yo yo"></foor-component>
+			<blah-component></blah-component>
 			<form name="myForm" ng-submit="handleSubmit()">
 				<input
 					name="myNameInForm"

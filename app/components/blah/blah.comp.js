@@ -12,4 +12,4 @@ myMainWrapperConst.directive('blahComponent', [function(){
             $scope.blahVar1 = 'var in blah'
         }
     }
-}])
+}]);

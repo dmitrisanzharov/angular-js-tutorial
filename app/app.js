@@ -1,5 +1,10 @@
 const myMainWrapperConst = angular.module("myMainWrapper", ['barModule', 'bazModule', 'foorModule']);
 
+
+myMainWrapperConst.config(function(){
+	console.log('app has started');
+})
+
 myMainWrapperConst.controller("MyMainWrapperController", [
 	"$scope",
 	function ($scope) {
