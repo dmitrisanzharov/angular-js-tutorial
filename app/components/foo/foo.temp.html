@@ -1,1 +1,7 @@
 <h1>foo</h1>
+<h3>{{$root.rootVarOne}}</h3>
+<hr />
+<input ng-model="myFilterVar" name="myFilter" />
+<ul>
+    <li ng-repeat="item in myArr | orderBy: '-value' | filter: myFilterVar">{{item.name}}, and value is: {{item.value | currency : 'DIM ' : 2}}</li>
+</ul>
