@@ -15,14 +15,22 @@ myMainWrapperConst.config(['$routeProvider', function($routeProvider) {
 		})
 }])
 
-myMainWrapperConst.controller('MyMainWrapperController', ['$scope', '$rootScope',function($scope, $rootScope){
+myMainWrapperConst.controller('MyMainWrapperController', ['$scope', '$rootScope', '$http',function($scope, $rootScope, $http){
 	$rootScope.rootVarOne = 'rootVarOne';
-	console.log('root scope in main controller', $rootScope);
-	console.log('scope in main', $scope);
+	// console.log('root scope in main controller', $rootScope);
+	
+	$http.get('https://jsonplaceholder.typicode.com/posts').then(el => {
+		// console.log('data', el.data);
+		$scope.dataAxios = el.data;
+		// console.log('async $scope in main', $scope);
+	})
+
+
+	// console.log('scope in main', $scope);
 }]);
 
 myMainWrapperConst.controller('ErrorController', ['$scope', '$rootScope',function($scope, $rootScope){
-	console.log('error controller kicked in');
+	// console.log('error controller kicked in');
 }]);
 
 export default myMainWrapperConst;

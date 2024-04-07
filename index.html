@@ -15,14 +15,27 @@
 
 		<!-- CUSTOM DIRECTIVE -->
 		<script src="app/components/foo/foo.comp.js" type="module"></script>
+		<script type="module" src="app/components/form-component/form-component.comp.js"></script>
 
 		<!-- COMPONENT -->
 		<script src="app/components/bar/bar.comp.js" type="module"></script>
 
 	</head>
 	<body>
+
+		<form-component></form-component>
+
+
+		<div ng-show="false">
+			<hr />
+			<ng-view></ng-view>
+			<ul>
+				<li ng-repeat="post in dataAxios">
+					{{post.title}}
+				</li>
+			</ul>
+		</div>
 		<bar-component></bar-component>
-		<hr />
-		<ng-view></ng-view>
+
 	</body>
 </html>

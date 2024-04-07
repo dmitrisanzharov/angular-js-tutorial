@@ -6,8 +6,8 @@ myMainWrapperConst.directive("fooComponent", [
 			templateUrl: "app/components/foo/foo.temp.html",
 			scope: {},
 			controller: function ($scope, $rootScope) {
-				console.log("$scope in foo", $scope);
-				console.log("$rootScope in foo", $rootScope);
+				// console.log("$scope in foo", $scope);
+				// console.log("$rootScope in foo", $rootScope);
 
 				// console.log('foo started');
 				$scope.fooVarOne = "foo var one";
