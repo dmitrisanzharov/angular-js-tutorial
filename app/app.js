@@ -1,1 +1,7 @@
-console.log('app.js is blank');
+const myMainWrapperConst = angular.module('myMainWrapper', []);
+
+myMainWrapperConst.controller('MyMainWrapperController', ['$scope', function($scope){
+	// console.log('controller, started: 1')
+}]);
+
+export default myMainWrapperConst;
