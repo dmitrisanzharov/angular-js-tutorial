@@ -1,6 +1,8 @@
 <div style="background-color: antiquewhite;">
-    <form name="myForm">
-        <input name="fName" type="text" id="fName" placeholder="enter your name" ng-required="true" ng-model="handleInputInForm()" />
-        <div>{{myForm.fName}}</div>
+    <form name="myForm" ng-submit="handleSubmit()">
+        <input name="fName" type="text" placeholder="enter your name" ng-required="true" ng-model="fName" ng-change="handleInputInForm()"/>
+        <div ng-show="myForm.fName.$dirty">the form is now dirty</div>
+        <button type="submit" ng-disabled="!myForm.$valid">submit</button>
     </form>
+    <div>{{true ? 'omg true' : 'false'}}</div>
 </div>
