@@ -11,5 +11,8 @@
 		<!-- APP JS -->
 		<script src="app/app.js"></script>
 	</head>
-	<body></body>
+	<body ng-app="myMainWrapper" ng-controller="MyMainWrapperController">
+		<h1>My count: {{myCount1 ? 'true' : 'false'}}</h1>
+		<button ng-click="changeCount()">add</button>
+	</body>
 </html>
