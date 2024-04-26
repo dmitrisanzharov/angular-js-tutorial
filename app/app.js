@@ -17,7 +17,7 @@ myMainWrapperConst.controller('MyMainWrapperController', ['$scope', '$http', '$r
         console.log('data', data);
     })
 
-    works
+    // works
     $http.get(apiUrl).then(el => {
         $scope.count = $scope.count + 1; 
         console.log('http', el.data)
