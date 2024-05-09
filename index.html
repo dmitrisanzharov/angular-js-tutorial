@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="mainModuleWrapper" ng-controller="MainModuleWrapperController">
 	<head>
 		<title>My NG App</title>
         <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
@@ -9,7 +9,15 @@
 		<script src="app/lib/angular-route.min.js"></script>
 
 		<!-- APP JS -->
-		<script src="app/app.js"></script>
+		<script src="app/app.js" type="module"></script>
 	</head>
-	<body></body>
+	<body ng-init="blahVar='blahString'">
+		<h1>{{mainTitle}}</h1>
+		<hr />
+		<input ng-model="myInput.first" type="text" placeholder="mah man" />
+		<p>{{myInput.first}}</p>
+		<input ng-model="myInput.second" type="text" placeholder="mah man" />
+		<p>{{myInput.second}}</p>
+		<p>{{::blahVar}}</p>
+	</body>
 </html>
