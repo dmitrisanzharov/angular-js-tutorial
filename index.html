@@ -19,5 +19,18 @@
 		<input ng-model="myInput.second" type="text" placeholder="mah man" />
 		<p>{{myInput.second}}</p>
 		<p>{{::blahVar}}</p>
+		<hr />
+		<ul>
+			<li ng-repeat="anyLetter in myArr" style="color: {{$index === 0 ? 'red' : 'blue'}}" ng-show="{{$index % 2 === 0}}">{{anyLetter}}, the index is: {{$index}}</li>
+		</ul>
+		<hr />
+		<ul>
+			<li ng-repeat="(key, value) in myObj">this is key: {{key}}, value is: {{value}}</li>
+		</ul>
+		<hr />
+		<div ng-controller="MyRandomController">
+			<h1>{{title2}}</h1>
+		</div>
+		<div ng-include="'views/foo.html'"
 	</body>
 </html>
