@@ -1,4 +1,4 @@
-const mainModuleWrapperConst = angular.module('mainModuleWrapper', []); 
+const mainModuleWrapperConst = angular.module('mainModuleWrapper', ['blahModule']); 
 
 mainModuleWrapperConst.controller('MainModuleWrapperController', ['$scope', function($scope){
     $scope.mainTitle = 'Mah Man Is The Main Title!';
