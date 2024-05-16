@@ -11,5 +11,5 @@ angular.module('blahModule', []).component('blahComponent', {
 function BlahModuleController(){
     const omg = this;
     this.blahVar1 = 'blah var1';
-    console.log(omg);
+    // console.log(omg);
 };
