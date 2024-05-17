@@ -25,47 +25,56 @@
 		<script src="app/components/foo/foo.js" type="module"></script>
 	</head>
 	<body ng-init="blahVar='blahString'">
-		<input ng-model="searchTerm" type="text" />
-		<ul>
-			<li ng-repeat="item in myObj2 | filter: searchTerm">
-				name: {{item.name}}, value: {{item.value1 | currency : 'DIM ' : 2}}
-			</li>
-		</ul>
-		<hr />
-		<ul>
-			<li ng-repeat="(key, value) in myObj">
-				this is key: {{key}}, value is: {{value}}
-			</li>
-		</ul>
-		<hr />
-		<ul>
-			<li
-				ng-repeat="anyLetter in myArr"
-				style="color: {{$index === 0 ? 'red' : 'blue'}}"
-			>
-				{{anyLetter}}, the index is: {{$index}}
-			</li>
-		</ul>
-		<hr />
-		<foo-component></foo-component>
-		<hr />
-		<bar-component omg-one="'omg one'" omg-two="2"></bar-component>
-		<hr />
-		<h1>{{mainTitle}}</h1>
-		<hr />
-		<input ng-model="myInput.first" type="text" placeholder="mah man" />
-		<p>{{myInput.first}}</p>
-		<input ng-model="myInput.second" type="text" placeholder="mah man" />
-		<p>{{myInput.second}}</p>
-		<p>{{::blahVar}}</p>
-		<hr />
-		<div ng-controller="MyRandomController">
-			<h1>{{title2}}</h1>
+		<h1>This is index</h1>
+		<ng-view></ng-view>
+		<div ng-show="false">
+			<input ng-model="searchTerm" type="text" />
+			<ul>
+				<li ng-repeat="item in myObj2 | filter: searchTerm">
+					name: {{item.name}}, value: {{item.value1 | currency : 'DIM
+					' : 2}}
+				</li>
+			</ul>
+			<hr />
+			<ul>
+				<li ng-repeat="(key, value) in myObj">
+					this is key: {{key}}, value is: {{value}}
+				</li>
+			</ul>
+			<hr />
+			<ul>
+				<li
+					ng-repeat="anyLetter in myArr"
+					style="color: {{$index === 0 ? 'red' : 'blue'}}"
+				>
+					{{anyLetter}}, the index is: {{$index}}
+				</li>
+			</ul>
+			<hr />
+			<foo-component></foo-component>
+			<hr />
+			<bar-component omg-one="'omg one'" omg-two="2"></bar-component>
+			<hr />
+			<h1>{{mainTitle}}</h1>
+			<hr />
+			<input ng-model="myInput.first" type="text" placeholder="mah man" />
+			<p>{{myInput.first}}</p>
+			<input
+				ng-model="myInput.second"
+				type="text"
+				placeholder="mah man"
+			/>
+			<p>{{myInput.second}}</p>
+			<p>{{::blahVar}}</p>
+			<hr />
+			<div ng-controller="MyRandomController">
+				<h1>{{title2}}</h1>
+			</div>
+			<hr />
+			<greet-user></greet-user>
+			<blah-component name="'Dmitri'" num-prop="1"> </blah-component>
+			<hr />
+			<h1>{{$root.rootVar1}}</h1>
 		</div>
-		<hr />
-		<greet-user></greet-user>
-		<blah-component name="'Dmitri'" num-prop="1"> </blah-component>
-		<hr />
-		<h1>{{$root.rootVar1}}</h1>
 	</body>
 </html>
