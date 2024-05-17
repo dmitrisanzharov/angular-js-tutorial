@@ -22,8 +22,10 @@ mainModuleWrapperConst.config(['$routeProvider', function ($routeProvider) {
 }]);
 
 mainModuleWrapperConst.controller("MainModuleWrapperController", [
-	"$scope",
-	function ($scope) {
+	"$scope", '$http', "$location",
+	function ($scope, $http, $location) {
+		$scope.count = 0;
+        $scope.data;
 		$scope.mainTitle = "Mah Man Is The Main Title!";
 		$scope.myArr = ["a", "b", "c", "d", "e", "f"];
 		$scope.myObj = { name: "yo", age: "omg", blah: "foo" };
@@ -39,6 +41,25 @@ mainModuleWrapperConst.controller("MainModuleWrapperController", [
 		$scope.$watchCollection("myInput", function (oldVal, newVal, scope) {
 			// console.log(scope);
 		});
+
+        $http.get("https://jsonplaceholder.typicode.com/users").success((data) => {
+            // console.log(data);
+            $scope.data = data;
+        });
+
+        $scope.handleFormSubmit = function(){
+            console.log('scope in form', $scope);
+        }
+
+
+
+		$scope.increaseCount = function(){
+			$scope.count = $scope.count + 1;
+		}
+
+		$scope.$watch('count', function(newVal, oldVal, scope){
+			console.log('count', $scope.count)
+		})
 	},
 ]);
 
@@ -55,6 +76,7 @@ mainModuleWrapperConst.controller('FooController', ['$scope', function($scope){
 
 mainModuleWrapperConst.controller('HomeController', ['$scope', function($scope){
     $scope.fooHomeVar1 = 'HOME view var 1 from controller';
+
 }])
 
 

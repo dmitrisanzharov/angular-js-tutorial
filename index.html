@@ -25,9 +25,26 @@
 		<script src="app/components/foo/foo.js" type="module"></script>
 	</head>
 	<body ng-init="blahVar='blahString'">
-		<h1>This is index</h1>
-		<ng-view></ng-view>
+		{{count}}
+		<button ng-click="increaseCount()">inc</button>
+
+
+
 		<div ng-show="false">
+			<form name="myForm1" ng-submit="handleFormSubmit()" style="border: 1px solid red;">
+				<label>first name</label>
+				<input name="fName" type="text" ng-model="fName" ng-required="true"/>
+				<br />
+				<label>email</label>
+				<input name="email" type="email" ng-model="email" ng-required="true"/>
+				<br />
+				<div ng-show="myForm1.fName.$dirty">valid</div>
+				<button type="submit" ng-disabled="!myForm1.$valid">submit</button>
+			</form>
+			<ng-view></ng-view>
+			<h1>This is index</h1>
+			<h2>{{data}}</h2>
+			
 			<input ng-model="searchTerm" type="text" />
 			<ul>
 				<li ng-repeat="item in myObj2 | filter: searchTerm">

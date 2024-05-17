@@ -10,7 +10,7 @@ mainModuleWrapperConst.directive('barComponent', [function(){
         controller: function ($scope){
             $scope.barVar1 = 'this is BAR var1';
             $scope.color1 = 'green';
-            console.log($scope)
+            // console.log($scope)
         }
     }
 }]);

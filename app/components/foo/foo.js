@@ -5,6 +5,6 @@ mainModuleWrapperConst.component('fooComponent', {
     controllerAs: 'foo',
     controller: function FooController($rootScope){
         this.blah = 'blah';
-        console.log('rootScope', $rootScope);
+        // console.log('rootScope', $rootScope);
     }
 })
