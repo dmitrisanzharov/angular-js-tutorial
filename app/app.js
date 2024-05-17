@@ -57,6 +57,21 @@ mainModuleWrapperConst.controller("MainModuleWrapperController", [
 			$scope.count = $scope.count + 1;
 		}
 
+
+
+		const apiUrl = 'https://jsonplaceholder.typicode.com/users';
+
+		fetch(apiUrl)
+		.then(el=> {
+			$scope.count = $scope.count + 1;
+			$scope.count = $scope.count + 1;
+			$scope.$applyAsync();
+			return el.json()
+		}).then(data => {
+			console.log('data', data);
+		})
+	 
+
 		$scope.$watch('count', function(newVal, oldVal, scope){
 			console.log('count', $scope.count)
 		})
