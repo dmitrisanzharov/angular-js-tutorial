@@ -1,9 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myMainWrapperModule" ng-controller="myMainWrapperController">
 	<head>
 		<title>My NG App</title>
-        <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
-        
+		<!-- leaflet stuff -->
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+			integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+			crossorigin=""
+		/>
+		<script
+			src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+			integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+			crossorigin=""
+		></script>
+		<!-- CSS -->
+		<link href="content/css/styles.css" rel="stylesheet" type="text/css" />
+
 		<!-- ANGULAR CDN -->
 		<script src="app/lib/angular.min.js"></script>
 		<script src="app/lib/angular-route.min.js"></script>
@@ -11,5 +24,11 @@
 		<!-- APP JS -->
 		<script src="app/app.js"></script>
 	</head>
-	<body></body>
+	<body>
+		<h1>{{title1}}</h1>
+		<hr />
+		<div class="leafLetMainComponent">
+			<div id="map"></div>
+		</div>
+	</body>
 </html>
