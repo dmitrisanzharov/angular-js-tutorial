@@ -120,15 +120,12 @@ body{
   }
 
 
-  /* input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
-    border: 2px solid red;
-  }
+/* map stuff */
+.leafLetMainComponent{
+}
 
-  input.ng-valid, textarea.ng-valid{
-    border: 2px solid green;
-  }
-
-  input[disabled="disabled"]{
-    opacity: 0.4;
-    cursor: not-allowed !important;
-  } */
+.leafLetMainComponent #map{
+  height: 80vh;
+  width: 80vw;
+  border: 1px solid red;
+}
