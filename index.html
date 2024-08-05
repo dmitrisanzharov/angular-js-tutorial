@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>My NG App</title>
+<html lang="en" ng-app="myMainWrapper" ng-controller="MainWrapperController">
+    <head>
+        <title>My NG App</title>
         <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
-        
-		<!-- ANGULAR CDN -->
-		<script src="app/lib/angular.min.js"></script>
-		<script src="app/lib/angular-route.min.js"></script>
 
-		<!-- APP JS -->
-		<script src="app/app.js"></script>
-	</head>
-	<body></body>
+        <!-- ANGULAR CDN -->
+        <script src="app/lib/angular.min.js"></script>
+        <script src="app/lib/angular-route.min.js"></script>
+
+        <!-- APP JS -->
+        <script src="app/app.js" type="module"></script>
+    </head>
+    <body>
+        <h1>{{mainTitle}}</h1>
+        <ul>
+            <li><a href="#/home">home</a></li>
+            <li><a href="#/about">about</a></li>
+        </ul>
+        <hr />
+        <div ng-view></div>
+
+        <!-- scripts -->
+
+    </body>
 </html>
