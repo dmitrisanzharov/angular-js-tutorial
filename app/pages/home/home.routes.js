@@ -1,5 +1,5 @@
-// import {myMainWrapperConst} from '../../app';
-
-// myMainWrapperConst.config(['$routeProvider', function($routeProvider) {
-//     templateUrl: './home.tpl.html'
-// }])
+export default /*@ngInject*/ function($routeProvider){
+    $routeProvider.when('/home', {
+        templateUrl: 'app/pages/home/home.tpl.html'
+    })
+}
