@@ -1,14 +1,12 @@
 // imports
 import { test, boom } from './helper.js';
-import homeRoutes from './pages/home/home.routes.js';
-import aboutRoutes from './pages/about/about.routes.js';
+import pages from './pages/pagesIndex.js';
 
 export const myMainWrapperConst = angular.module('myMainWrapper', ['ngRoute']);
 
-// config stuff
-myMainWrapperConst
-    .config(['$routeProvider', homeRoutes])
-    .config(['$routeProvider', aboutRoutes])
+// router pages config
+pages(myMainWrapperConst); // this is the main function that works
+
 
 myMainWrapperConst.controller('MainWrapperController', [
     '$scope',
