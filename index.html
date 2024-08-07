@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="appMainWrapperModule" ng-controller="AppMainController">
 	<head>
 		<title>My NG App</title>
         <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
@@ -9,7 +9,14 @@
 		<script src="app/lib/angular-route.min.js"></script>
 
 		<!-- APP JS -->
-		<script src="app/app.js"></script>
+		<script src="app/app.js" type="module"></script>
 	</head>
-	<body></body>
+	<body>
+		<h1>{{navBarName}}</h1>
+		<ul>
+			<li ng-repeat="routeItem in pagesArrayScope"><a href="#/{{routeItem.href}}">{{routeItem.name}}</a></li>
+		</ul>
+		<hr />
+		<div ng-view></div>
+	</body>
 </html>
