@@ -14,17 +14,11 @@
     <body>
         <h1>{{myAppTitle}}</h1>
 
-        <section layout="row" layout-sm="row" layout-align="start start" layout-wrap>
-            <md-button class="md-raised">Button</md-button>
-            <md-button class="md-raised md-primary">Primary</md-button>
-            <md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
-            <md-button class="md-raised md-warn">Warn</md-button>
-        </section>
+        <div style="border: 1px solid; width: fit-content; border-radius: 5px;">
+            <md-button class="md-raised" ng-disabled="true">Journeys</md-button>
+            <md-button class="md-raised" style="margin-left: 0px;" ng-disabled="false">Journey Replay</md-button>
+        </div>
 
-		<md-button class="md-fab md-primary" aria-label="The shield">
-			<!-- The SVG needs to be imported -->
-            <md-icon md-svg-src="img/icons/shield.svg"></md-icon> 
-        </md-button>
 
 
 		<!--  -->
