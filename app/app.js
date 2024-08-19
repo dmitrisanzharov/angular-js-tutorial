@@ -8,7 +8,7 @@ const myAngularAppConst = angular.module('MyAngularAppMainModule', ['ngRoute']);
 allPagesFn(myAngularAppConst);
 
 
-myAngularAppConst.controller('MyAngularAppController', function ($scope) {
+myAngularAppConst.controller('MyAngularAppController', /*@ngInject*/ function ($scope) {
     console.log('MyAngularAppController started');
     $scope.appTitle = 'My Angular App Navbar';
 });
