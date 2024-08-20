@@ -1,21 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="MyAngularAppMainModule" ng-controller="MyAngularAppController">
-	<head>
-		<title>My NG App</title>
-        
-		<!-- ANGULAR CDN -->
-		<script src="app/lib/angular.min.js"></script>
-		<script src="app/lib/angular-route.min.js"></script>
+<html lang="en" ng-app="MyAngularAppMainModule" ng-controller="MyAngularAppController" ng-cloak>
+    <head>
+        <title>My NG App</title>
 
-		<!-- APP JS -->
-		<script src="app/app.js" type="module"></script>
-	</head>
-	<body>
-		<h1>{{appTitle}}</h1>
-		<ul>
-			<li ng-repeat="item in pagesArray"><a ng-href="{{item.url}}">{{item.name}}</a></li>
-		</ul>
-		<hr />
-		<div ng-view></div>
-	</body>
+        <!-- Angular Material style sheet -->
+        <link rel="stylesheet" href="/app/lib/material/angular-material.min.css" />
+
+        <!-- general CSS -->
+        <link href="/app/styles/generalCss.css" rel="stylesheet" type="text/css" />
+
+        <!-- ANGULAR CDN -->
+        <script src="app/lib/angular.min.js"></script>
+        <script src="app/lib/angular-route.min.js"></script>
+
+		<!-- NOT sure if needed -->
+		<script src="app/lib/angular-animate.min.js"></script>
+		<script src="app/lib/angular-aria.min.js"></script>
+		<script src="app/lib/angular-messages.min.js"></script>
+		<script src="app/lib/material/angular-material.min.js"></script>
+
+        <!-- APP JS -->
+        <script src="app/app.js" type="module"></script>
+    </head>
+    <body>
+        <h1>{{appTitle}}</h1>
+        <ul>
+            <li ng-repeat="item in pagesArray"><a ng-href="{{item.url}}">{{item.name}}</a></li>
+        </ul>
+        <hr />
+        <div ng-view></div>
+
+
+
+		<section layout="row" layout-sm="row" layout-align="start start" layout-wrap>
+			<md-button class="md-raised">Button</md-button>
+			<md-button class="md-raised md-primary">Primary</md-button>
+			<md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
+			<md-button class="md-raised md-warn">Warn</md-button>
+		</section>
+
+
+    </body>
 </html>
