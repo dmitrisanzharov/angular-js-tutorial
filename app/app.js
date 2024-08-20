@@ -7,7 +7,7 @@ import allDirectives from './directives/directivesIndex.js';
 
 const myAngularAppConst = angular.module('MyAngularAppMainModule', ['ngRoute', 'ngMaterial', 'ngMessages']);
 
-allPagesFn(myAngularAppConst);
+allPagesFn(myAngularAppConst); // router basically
 allControllersStandAlone(myAngularAppConst);
 allServices(myAngularAppConst);
 allComponents(myAngularAppConst);

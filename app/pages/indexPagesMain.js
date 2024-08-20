@@ -12,7 +12,7 @@ function allPagesFn(myAngularAppConstArg) {
 }
 
 export const pagesArrayForLinks = [
-    { url: '#/home', name: 'home' },
+    { url: '#/home', name: 'home, has DIRECTIVE / COMPONENT in it' },
     { url: '#/about', name: 'about' },
     { url: '#/users/1/dmitri', name: 'users, with params' },
     { url: '#/items/5/smart-phones/southKorea/test_me', name: 'items, with params' },
