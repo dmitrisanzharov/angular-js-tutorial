@@ -9,5 +9,5 @@ export default function fooComponent(){
 }
 
 function FooController(){
-    console.log('foo component ran', this)
+    console.log('foo component ran', this);
 }
