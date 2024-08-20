@@ -13,11 +13,7 @@
 	<body>
 		<h1>{{appTitle}}</h1>
 		<ul>
-			<li><a href='#/home'>home</a></li>
-			<li><a href='#/about'>about</a></li>
-			<li><a href='#/company'>company</a></li>
-            <li><a href='#/users/1/dmitri'>users</a></li>
-            <li><a href='#/items/5/smart-phones/southKorea/test_me'>items</a></li>
+			<li ng-repeat="item in pagesArray"><a ng-href="{{item.url}}">{{item.name}}</a></li>
 		</ul>
 		<hr />
 		<div ng-view></div>
