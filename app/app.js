@@ -4,6 +4,7 @@ import allControllersStandAlone from './controllers/controllersIndex.js';
 import allServices from './services/servicesIndex.js';
 import allComponents from './components/componentsIndex.js';
 import allDirectives from './directives/directivesIndex.js';
+import allFilters from './filters/filtersIndex.js';
 
 const myAngularAppConst = angular.module('MyAngularAppMainModule', ['ngRoute', 'ngMaterial', 'ngMessages']);
 
@@ -12,3 +13,12 @@ allControllersStandAlone(myAngularAppConst);
 allServices(myAngularAppConst);
 allComponents(myAngularAppConst);
 allDirectives(myAngularAppConst);
+allFilters(myAngularAppConst);
+
+myAngularAppConst.filter('multiplyByTwo', function(){
+    return function(arg1, arg2, arg3){
+        console.log('arguments: ', arg1, arg2, arg3)
+        let final = arg1 * 2;
+        return final;
+    }
+})
