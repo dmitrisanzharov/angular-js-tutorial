@@ -10,6 +10,5 @@ export default /*@ngInject*/ function barDirective() {
 
 
 function barDirectiveController($scope) {
-    console.log('bar controller ran', $scope);
     $scope.barVar = 'FROM CONTROLLER';
 }

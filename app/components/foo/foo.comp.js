@@ -7,7 +7,7 @@ const fooComponentObject = {
 };
 
 function FooController() {
-    console.log('foo component ran', this);
+    this.myFooVar = 'foo var';
 }
 
 export default fooComponentObject;
