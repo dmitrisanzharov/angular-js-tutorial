@@ -14,11 +14,3 @@ allServices(myAngularAppConst);
 allComponents(myAngularAppConst);
 allDirectives(myAngularAppConst);
 allFilters(myAngularAppConst);
-
-myAngularAppConst.filter('multiplyByTwo', function(){
-    return function(arg1, arg2, arg3){
-        console.log('arguments: ', arg1, arg2, arg3)
-        let final = arg1 * 2;
-        return final;
-    }
-})
