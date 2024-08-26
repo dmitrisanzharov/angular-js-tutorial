@@ -13,40 +13,50 @@
         <script src="app/lib/angular.min.js"></script>
         <script src="app/lib/angular-route.min.js"></script>
 
-		<!-- NOT sure if needed -->
-		<script src="app/lib/angular-animate.min.js"></script>
-		<script src="app/lib/angular-aria.min.js"></script>
-		<script src="app/lib/angular-messages.min.js"></script>
+        <!-- NOT sure if needed -->
+        <script src="app/lib/angular-animate.min.js"></script>
+        <script src="app/lib/angular-aria.min.js"></script>
+        <script src="app/lib/angular-messages.min.js"></script>
 
-		<!-- Angular Material CDN -->
-		<script src="app/lib/material/angular-material.min.js"></script>
+        <!-- Angular Material CDN -->
+        <script src="app/lib/material/angular-material.min.js"></script>
 
         <!-- APP JS -->
         <script src="app/app.js" type="module"></script>
     </head>
-    <body>
-        <h1>{{appTitle}}</h1>
-        <ul>
-            <li ng-repeat="item in pagesArray"><a ng-href="{{item.url}}">{{item.name}}</a></li>
-        </ul>
-		<div ng-view></div>
-		<hr />
-		<h3>Material is working</h3>
-		<section layout="row" layout-sm="row" layout-align="start start" layout-wrap>
-			<md-button class="md-raised">Button</md-button>
-			<md-button class="md-raised md-primary">Primary</md-button>
-			<md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
-			<md-button class="md-raised md-warn">Warn</md-button>
-		</section>
-		<hr />
-		<h3>Components are working</h3>
-		<!-- care in below line, when passing a STRING, needs to be in: '', otherwise will NOT work -->
-		<foo-component title-prop="'THIS COMES FROM PROPS'"></foo-component>
-		<hr />
-		<h3>Directives are working</h3>
-		<bar-directive bar-prop-one="12"></bar-directive>
-		<hr />
-		<h3>Filters are working</h3>
-		<p>Kl to miles filter: {{15 | klToml}}</p>
+    <body layout="column">
+        <md-toolbar>
+            <h1>Angular Material Starter</h1>
+        </md-toolbar>
+
+		<md-button class="md-raised md-primary" md-no-ink>Primary</md-button>
+
+        <div layout="row" flex>
+            <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-whiteframe="6">
+                <md-list class="drr" layout-align="start start">
+                    <md-list-item>
+                        <md-button> <md-icon md-svg-src="app/icons/everest_head_canine_patrol_paw_patrol_icon_263865.svg"></md-icon>Show Flake</md-button>
+                    </md-list-item>
+					<md-list-item>
+                        <md-button> <md-icon md-svg-src="rubble"></md-icon>Rubble</md-button>
+                    </md-list-item>
+                </md-list>
+            </md-sidenav>
+
+            <md-content id="content" style='padding: 20px' flex>
+				<md-icon md-svg-src="app/icons/everest_head_canine_patrol_paw_patrol_icon_263865.svg"></md-icon>
+				<h1>Show Flake</h1>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptatibus libero debitis voluptas tenetur cum provident, excepturi ex quaerat molestiae!</p>
+				<md-button>show bottom stuff</md-button>
+			</md-content>
+
+			<md-bottom-sheet>
+				<md-header>Hello</md-header>
+				<md-divider></md-divider>
+				<md-subheader>
+					Contact: <span>123 123 123</span>
+				</md-subheader>
+			</md-bottom-sheet>
+        </div>
     </body>
 </html>
