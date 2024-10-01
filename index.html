@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="MyAngularAppMainModule" ng-controller="MyAngularAppController" ng-cloak>
+<html lang="en" ng-app="MyAngularAppMainModule" ng-controller="MyAngularAppMainController" ng-cloak>
     <head>
         <title>My NG App</title>
 
@@ -13,7 +13,7 @@
         <script src="app/lib/angular.min.js"></script>
         <script src="app/lib/angular-route.min.js"></script>
 
-		<!-- NOT sure if needed -->
+		<!-- YES, NEEDED-->
 		<script src="app/lib/angular-animate.min.js"></script>
 		<script src="app/lib/angular-aria.min.js"></script>
 		<script src="app/lib/angular-messages.min.js"></script>
@@ -25,28 +25,11 @@
         <script src="app/app.js" type="module"></script>
     </head>
     <body>
-        <h1>{{appTitle}}</h1>
-        <ul>
-            <li ng-repeat="item in pagesArray"><a ng-href="{{item.url}}">{{item.name}}</a></li>
-        </ul>
-		<div ng-view></div>
-		<hr />
-		<h3>Material is working</h3>
 		<section layout="row" layout-sm="row" layout-align="start start" layout-wrap>
 			<md-button class="md-raised">Button</md-button>
 			<md-button class="md-raised md-primary">Primary</md-button>
 			<md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
 			<md-button class="md-raised md-warn">Warn</md-button>
 		</section>
-		<hr />
-		<h3>Components are working</h3>
-		<!-- care in below line, when passing a STRING, needs to be in: '', otherwise will NOT work -->
-		<foo-component title-prop="'THIS COMES FROM PROPS'"></foo-component>
-		<hr />
-		<h3>Directives are working</h3>
-		<bar-directive bar-prop-one="12"></bar-directive>
-		<hr />
-		<h3>Filters are working</h3>
-		<p>Kl to miles filter: {{15 | klToml}}</p>
     </body>
 </html>
