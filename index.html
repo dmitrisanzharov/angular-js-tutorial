@@ -13,23 +13,28 @@
         <script src="app/lib/angular.min.js"></script>
         <script src="app/lib/angular-route.min.js"></script>
 
-		<!-- YES, NEEDED-->
-		<script src="app/lib/angular-animate.min.js"></script>
-		<script src="app/lib/angular-aria.min.js"></script>
-		<script src="app/lib/angular-messages.min.js"></script>
+        <!-- YES, NEEDED-->
+        <script src="app/lib/angular-animate.min.js"></script>
+        <script src="app/lib/angular-aria.min.js"></script>
+        <script src="app/lib/angular-messages.min.js"></script>
 
-		<!-- Angular Material CDN -->
-		<script src="app/lib/material/angular-material.min.js"></script>
+        <!-- Angular Material CDN -->
+        <script src="app/lib/material/angular-material.min.js"></script>
 
         <!-- APP JS -->
         <script src="app/app.js" type="module"></script>
     </head>
     <body>
-		<section layout="row" layout-sm="row" layout-align="start start" layout-wrap>
-			<md-button class="md-raised">Button</md-button>
-			<md-button class="md-raised md-primary">Primary</md-button>
-			<md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
-			<md-button class="md-raised md-warn">Warn</md-button>
-		</section>
+        <div layout-padding>
+            <h1>{{myTitle}}</h1>
+
+            <md-autocomplete md-items="item in myArr">
+                <md-item-template> {{item.id}} </md-item-template>
+            </md-autocomplete>
+
+            <div></div>
+            <md-divider></md-divider>
+            <button ng-click="seeScope()">see scope</button>
+        </div>
     </body>
 </html>
