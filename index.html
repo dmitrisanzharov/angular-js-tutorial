@@ -13,40 +13,67 @@
         <script src="app/lib/angular.min.js"></script>
         <script src="app/lib/angular-route.min.js"></script>
 
-		<!-- NOT sure if needed -->
-		<script src="app/lib/angular-animate.min.js"></script>
-		<script src="app/lib/angular-aria.min.js"></script>
-		<script src="app/lib/angular-messages.min.js"></script>
+        <!-- NOT sure if needed -->
+        <script src="app/lib/angular-animate.min.js"></script>
+        <script src="app/lib/angular-aria.min.js"></script>
+        <script src="app/lib/angular-messages.min.js"></script>
 
-		<!-- Angular Material CDN -->
-		<script src="app/lib/material/angular-material.min.js"></script>
+        <!-- Angular Material CDN -->
+        <script src="app/lib/material/angular-material.min.js"></script>
 
         <!-- APP JS -->
         <script src="app/app.js" type="module"></script>
+        <script src="app/controllers/MyAngularAppController.ctrl.js" type="module"></script>
     </head>
-    <body>
-        <h1>{{appTitle}}</h1>
-        <ul>
-            <li ng-repeat="item in pagesArray"><a ng-href="{{item.url}}">{{item.name}}</a></li>
-        </ul>
-		<div ng-view></div>
-		<hr />
-		<h3>Material is working</h3>
-		<section layout="row" layout-sm="row" layout-align="start start" layout-wrap>
-			<md-button class="md-raised">Button</md-button>
-			<md-button class="md-raised md-primary">Primary</md-button>
-			<md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
-			<md-button class="md-raised md-warn">Warn</md-button>
-		</section>
-		<hr />
-		<h3>Components are working</h3>
-		<!-- care in below line, when passing a STRING, needs to be in: '', otherwise will NOT work -->
-		<foo-component title-prop="'THIS COMES FROM PROPS'"></foo-component>
-		<hr />
-		<h3>Directives are working</h3>
-		<bar-directive bar-prop-one="12"></bar-directive>
-		<hr />
-		<h3>Filters are working</h3>
-		<p>Kl to miles filter: {{15 | klToml}}</p>
+    <body style="background-color: antiquewhite" layout="column">
+        <md-toolbar layout="row" layout-align="center">
+            <h1>This is material that is working</h1>
+        </md-toolbar>
+
+        <div layout="row" flex layout-padding>
+            <md-sidenav md-is-locked-open="isGreaterThanSmall" style="" flex>
+                <p>this is side menu</p>
+            </md-sidenav>
+
+            <md-content id="content" style="" flex layout-padding md-whiteframe="6">
+                <h1 aria-label="{{forLabel}}">This is main content</h1>
+
+                <md-subheader>
+                    Contact: <span>123 123 123</span>
+                </md-subheader>
+
+                <md-list layout="row">
+                    <md-list-item>one</md-list-item>
+                    <md-list-item>one</md-list-item>
+                </md-list>
+
+                <md-button class="md-raised md-primary">
+                    show bottom stuff (trueFalse: {{trueFalse}})
+                  </md-button>
+
+      
+                  <p ng-class="{'red-text': trueFalse}">blah blah</p>
+                  <button ng-click="myFn()">Toggle, value of trueFalse is: {{trueFalse}}</button>
+
+
+                  <md-divider></md-divider>
+
+                  <md-icon md-svg-src="puppy"></md-icon>
+                  <md-icon md-svg-src="shield"></md-icon>
+
+
+
+                  <div class="dgg" layout="column" style="gap: 10px;">
+                    <div class="drr box" flex></div>
+                    <div class="dbb box" flex></div>
+                    <div class="drr box" flex></div>
+                  </div>
+                <!-- end of main container -->
+            </md-content>
+        </div>
+
+        <md-bottom-sheet layout="row" layout-align="center">
+            <h2>this is footer</h2>
+        </md-bottom-sheet>
     </body>
 </html>

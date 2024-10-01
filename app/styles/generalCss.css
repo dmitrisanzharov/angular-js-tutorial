@@ -1,0 +1,41 @@
+.drr {
+    border: 2px solid red;
+  }
+  
+  
+  .dbb {
+    border: 2px solid blue;
+  }
+  
+  
+  .dgg {
+    border: 2px solid green;
+  }
+  
+  
+  .dyy {
+    border: 2px solid yellow;
+  }
+  
+  
+  .dpp {
+    border: 2px solid pink;
+  }
+  
+  
+  .dgray {
+    border: 2px solid lightgray;
+  }
+
+  .test-class {
+    border: 2px solid red;
+  }
+
+  .red-text {
+    color: red;
+  }
+
+  .box{
+    height: 200px;
+    width: 200px;
+  }
