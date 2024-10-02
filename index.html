@@ -33,10 +33,21 @@
 
 				<br />
 				<br />
-
-				<md-autocomplete md-items="item in myArr" md-min-length="0" md-item-text="item.other" md-selected-item="myItem" required>
-					<md-item-template>{{item.id}}</md-item-template>
-				</md-autocomplete>
+				<md-input-container>
+                    <label for="dropdown">see stuff</label>
+					<md-autocomplete
+						md-items="item in myArr"
+						md-min-length="5"
+						md-item-text="item.other"
+						md-selected-item="myItem"
+						md-search-text="mySearchTextScope"
+                        id="dropdown"
+						required
+					>
+						<md-item-template>{{item.name}}</md-item-template>
+					</md-autocomplete>
+					<md-not-found ng-if="mySearchTextScope === 'aa'">OMG OMG NOT FOUND</md-not-found>
+				</md-input-container>
 
 				<br />
 				<br />
