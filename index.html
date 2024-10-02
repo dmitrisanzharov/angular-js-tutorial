@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="MyAngularAppMainModule" ng-controller="MyAngularAppMainController" ng-cloak>
-    <head>
-        <title>My NG App</title>
+	<head>
+		<title>My NG App</title>
 
-        <!-- Angular Material style sheet -->
-        <link rel="stylesheet" href="/app/lib/material/angular-material.min.css" />
+		<!-- Angular Material style sheet -->
+		<link rel="stylesheet" href="/app/lib/material/angular-material.min.css" />
 
-        <!-- general CSS -->
-        <link href="/app/styles/generalCss.css" rel="stylesheet" type="text/css" />
+		<!-- general CSS -->
+		<link href="/app/styles/generalCss.css" rel="stylesheet" type="text/css" />
 
-        <!-- ANGULAR CDN -->
-        <script src="app/lib/angular.min.js"></script>
-        <script src="app/lib/angular-route.min.js"></script>
+		<!-- ANGULAR CDN -->
+		<script src="app/lib/angular.min.js"></script>
+		<script src="app/lib/angular-route.min.js"></script>
 
-        <!-- YES, NEEDED-->
-        <script src="app/lib/angular-animate.min.js"></script>
-        <script src="app/lib/angular-aria.min.js"></script>
-        <script src="app/lib/angular-messages.min.js"></script>
+		<!-- YES, NEEDED-->
+		<script src="app/lib/angular-animate.min.js"></script>
+		<script src="app/lib/angular-aria.min.js"></script>
+		<script src="app/lib/angular-messages.min.js"></script>
 
-        <!-- Angular Material CDN -->
-        <script src="app/lib/material/angular-material.min.js"></script>
+		<!-- Angular Material CDN -->
+		<script src="app/lib/material/angular-material.min.js"></script>
 
-        <!-- APP JS -->
-        <script src="app/app.js" type="module"></script>
-    </head>
-    <body>
-        <div layout-padding>
-            <h1>{{myTitle}}</h1>
+		<!-- APP JS -->
+		<script src="app/app.js" type="module"></script>
+	</head>
+	<body>
+		<div layout-padding>
+			<h1>{{myTitle}}</h1>
 
-            <md-autocomplete md-items="item in myArr">
-                <md-item-template> {{item.id}} </md-item-template>
-            </md-autocomplete>
+			<form name="myForm" ng-submit="mySubmit()">
+				<input type="text" ng-model="fooInputScope" name="fooInputForm" required />
 
-            <div></div>
-            <md-divider></md-divider>
-            <button ng-click="seeScope()">see scope</button>
-        </div>
-    </body>
+				<br />
+				<br />
+
+				<md-autocomplete md-items="item in myArr" md-min-length="0" md-item-text="item.other" md-selected-item="myItem" required>
+					<md-item-template>{{item.id}}</md-item-template>
+				</md-autocomplete>
+
+				<br />
+				<br />
+
+				<button type="submit">submit</button>
+			</form>
+
+			<div></div>
+			<md-divider></md-divider>
+			<button ng-click="seeScope()">see scope</button>
+			<p>{{myItem.name}}</p>
+		</div>
+	</body>
 </html>
