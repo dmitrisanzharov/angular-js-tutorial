@@ -132,3 +132,10 @@ body{
     opacity: 0.4;
     cursor: not-allowed !important;
   } */
+
+  #map{
+    height: 75vh;
+    width: 75vw;
+    border: 1px solid red;
+    margin: 10px;
+  }
