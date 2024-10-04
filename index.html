@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myAppWrapperModule" ng-controller="MyAppMainController">
+<html lang="en" ng-app="myAppWrapperModule" ng-controller="MyAppMainController" ng-cloak>
 	<head>
 		<title>My NG App</title>
         <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
@@ -13,5 +13,17 @@
 	</head>
 	<body>
 		<h1>{{myAppTitle}}</h1>
+		<div ng-init="myVar='red'; myVar2=1">{{myVar}} and {{myVar2}}</div>
+
+		<input type="text" ng-model="myString" />
+		{{myString}}
+
+		
+
+		<ul>
+			<li ng-repeat="item in myArr | filter: myString">{{item}}</li>
+		</ul>
+
+		<h1>{{(myArr | filter: myString).length}}</h1>
 	</body>
 </html>
