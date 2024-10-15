@@ -25,5 +25,21 @@
 		</ul>
 
 		<h1>{{(myArr | filter: myString).length}}</h1>
+
+        <hr />
+        <div ng-controller="MyCont1">
+
+            <p>{{foo1}}</p>
+
+            <div ng-controller="MyCont2">
+                <p>{{bar1}}</p>
+
+
+                <div ng-controller="MyCont1">
+                    <p>{{foo2}}</p>
+                </div>
+            </div>
+
+        </div>
 	</body>
 </html>
