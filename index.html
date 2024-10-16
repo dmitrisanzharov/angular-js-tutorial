@@ -1,45 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myAppWrapperModule" ng-controller="MyAppMainController" ng-cloak>
-	<head>
-		<title>My NG App</title>
+    <head>
+        <title>My NG App</title>
         <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
-        
-		<!-- ANGULAR CDN -->
-		<script src="app/lib/angular.min.js"></script>
-		<script src="app/lib/angular-route.min.js"></script>
 
-		<!-- APP JS -->
-		<script src="app/app.js" type="module"></script>
-	</head>
-	<body>
-		<h1>{{myAppTitle}}</h1>
-		<div ng-init="myVar='red'; myVar2=1">{{myVar}} and {{myVar2}}</div>
+        <!-- ANGULAR CDN -->
+        <script src="app/lib/angular.min.js"></script>
+        <script src="app/lib/angular-route.min.js"></script>
 
-		<input type="text" ng-model="myString" />
-		{{myString}}
+        <!-- APP JS -->
+        <script src="app/app.js" type="module"></script>
+    </head>
+    <body>
+        <h1>{{myAppTitle}}</h1>
+        <div ng-init="myVar='red'; myVar2=1">{{myVar}} and {{myVar2}}</div>
 
-		
+        <input type="text" ng-model="myString" />
+        {{myString}}
 
-		<ul>
-			<li ng-repeat="item in myArr | filter: myString">{{item}}</li>
-		</ul>
+        <ul>
+            <li ng-repeat="item in myArr | filter: myString">{{item}}</li>
+        </ul>
 
-		<h1>{{(myArr | filter: myString).length}}</h1>
+        <h1>{{(myArr | filter: myString).length}}</h1>
 
         <hr />
         <div ng-controller="MyCont1">
+            <input type="text" ng-model="myInput1.myKey1" />
 
-            <p>{{foo1}}</p>
+            {{myInput1.myKey1}}
 
-            <div ng-controller="MyCont2">
-                <p>{{bar1}}</p>
+            <button ng-click="showScope()">show scope</button>
 
+            <hr />
 
-                <div ng-controller="MyCont1">
-                    <p>{{foo2}}</p>
-                </div>
-            </div>
+            <div ng-init="myVar1=[1,2,3]; myStr='yayayay'">{{myVar1}} and {{myStr}}</div>
 
+            <button ng-click="changeArr(4)">change arr</button>
+
+            <ul>
+                <li ng-repeat="(key, value) in myObj1">{{key}}, {{value}} and {{$index}}</li>
+            </ul>
+
+            <hr />
+
+            <p ng-include="'/app/html-files/foo.file.html'" ng-show="showScope"></p>
+
+			<div ng-click="myVarYo='omg'">hahaha</div>
         </div>
-	</body>
+
+
+		<div ng-controller="MyCont2">
+			<hr />
+			<p>test</p>
+			<p ng-include="'/app/html-files/foo.file.html'"></p>
+		</div>
+    </body>
 </html>
