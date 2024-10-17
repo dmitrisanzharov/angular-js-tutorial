@@ -1,17 +1,19 @@
 const myModuleOneConst = angular.module('myModuleOne', []);
 
 myModuleOneConst.component('myModuleOneComponent', {
-    template: '<h1>My module one component {{$ctrl.yoYo}}, this is num: {{$ctrl.myNum}}</h1>',
+    template: '<h1>My module one component {{$ctrl.yoYo}}, this is num: {{$ctrl.myNum}}</h1><ng-transclude></ng-transclude>',
     bindings: {
-        myNum: '=',
-        myStr: '='
+        myNum: '=myNum',
     },
-    controller: [MyModuleOneComponentController]
+    transclude: true,
+    controller: [MyModuleOneComponentController],
+    replace: true,
 });
 
 
 function MyModuleOneComponentController(){
     this.yoYo = 'yolo';
 
-    console.log(this)
+
+    console.log('component scope', this)
 }

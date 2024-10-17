@@ -14,7 +14,20 @@
     </head>
     <body>
 
-		<my-module-one-component my-num="1" my-str="'lalala, omg'"></my-module-one-component>
+
+
+        <div>
+            <hr />
+            <h2>Here I should see</h2>
+    
+            <test-directive omg-omg="'this is it'"></test-directive>
+    
+            <hr />
+        </div>
+   
+
+
+		<my-module-one-component my-num="1"><h2>test for transclude</h2></my-module-one-component>
 
 		<hr />
 
@@ -78,5 +91,10 @@
 			<p>test</p>
 			<p ng-include="'/app/html-files/foo.file.html'"></p>
 		</div>
+
+
+
+
+    
     </body>
 </html>
