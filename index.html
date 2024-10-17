@@ -10,8 +10,31 @@
 
         <!-- APP JS -->
         <script src="app/app.js" type="module"></script>
+		<script src="app/modules/myModuleOne.module.js" type="module"></script>
     </head>
     <body>
+
+		<my-module-one-component my-num="1" my-str="'lalala, omg'"></my-module-one-component>
+
+		<hr />
+
+
+		<foo-component></foo-component>
+
+		<hr />
+
+		<div ng-controller="MyCont1">
+			<form name="myForm" ng-submit="showScope()">
+				<img ng-src="{{myImgVar}}" alt="blah" />
+				<input type="text" ng-model="myInput1.myKey1" ng-change="showScope()"/>
+				<button ng-disabled="false">submit</button>
+				<a ng-href="{{ myLinkOmg }}">to google</a>
+			</form>
+		</div>
+
+
+
+		<hr />
         <h1>{{myAppTitle}}</h1>
         <div ng-init="myVar='red'; myVar2=1">{{myVar}} and {{myVar2}}</div>
 
