@@ -16,12 +16,10 @@ allControllers(myAppWrapperConst);
 allComponentsFn(myAppWrapperConst);
 
 // all are demos
-
 myAppWrapperConst.controller('MyCont1', ['$scope', function($scope) {
 
     $scope.myImgVar = "https://cdn2.iconfinder.com/data/icons/leto-blue-big-data/64/big_data-04-64.png"
     $scope.myLinkOmg = "https://www.google.com"
-
 
     $scope.foo1 = 'foo1 string';
     $scope.foo2 = 'foo2 string';
@@ -60,7 +58,16 @@ myAppWrapperConst.directive('testDirective', [function(){
             $scope.myColor1 = 'red'
         }
     }
-}])
+}]);
+
+
+myAppWrapperConst.filter('multiplyByTwo', function(){
+    return function(arg1, arg2){
+        console.log('arg1', arg1);
+        console.log('arg2', arg2);
+        return arg1 * 2;
+    }
+})
 
 
 

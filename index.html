@@ -14,7 +14,11 @@
     </head>
     <body>
 
+        <ul>
+            <li ng-repeat="item in myArrOfNum">{{item | multiplyByTwo}}</li>
+        </ul>
 
+        <hr />
 
         <div>
             <hr />
@@ -55,7 +59,7 @@
         {{myString}}
 
         <ul>
-            <li ng-repeat="item in myArr | filter: myString">{{item}}</li>
+            <li ng-repeat="item in myArr | orderBy: -item">{{item}}</li>
         </ul>
 
         <h1>{{(myArr | filter: myString).length}}</h1>

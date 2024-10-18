@@ -6,14 +6,14 @@ myModuleOneConst.component('myModuleOneComponent', {
         myNum: '=myNum',
     },
     transclude: true,
-    controller: [MyModuleOneComponentController],
+    controller: MyModuleOneComponentController,
     replace: true,
 });
 
 
-function MyModuleOneComponentController(){
+function MyModuleOneComponentController($rootScope){
     this.yoYo = 'yolo';
 
-
-    console.log('component scope', this)
+    console.log('component scope', this);
+    console.log('rootScope', $rootScope);
 }
