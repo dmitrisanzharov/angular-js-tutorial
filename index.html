@@ -15,7 +15,7 @@
     <body>
 
         <ul>
-            <li ng-repeat="item in myArrOfNum">{{item | multiplyByTwo}}</li>
+            <li ng-repeat="item in myArrOfNum | multiplyByArg2: 4">{{ item }}</li>
         </ul>
 
         <hr />

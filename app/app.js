@@ -62,12 +62,25 @@ myAppWrapperConst.directive('testDirective', [function(){
 
 
 myAppWrapperConst.filter('multiplyByTwo', function(){
-    return function(arg1, arg2){
-        console.log('arg1', arg1);
-        console.log('arg2', arg2);
-        return arg1 * 2;
+    return function(...args){
+        let argArr = [...args];
+        // console.log("argArr: ", argArr);
+
+        return argArr[0] * argArr[1] + (argArr[2] || 1);
     }
 })
 
 
+myAppWrapperConst.filter('multiplyByArg2', function(){
+    return function(arg, arg2){
 
+        console.log('test 1', arg);
+        console.log('test 2', arg2)
+
+        if(!Array.isArray(arg)){
+            return arg;
+        }
+
+        return arg.map(item=> item * arg2)
+    }
+})
