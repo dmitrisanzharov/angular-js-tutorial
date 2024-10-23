@@ -14,6 +14,12 @@
     </head>
     <body>
 
+        <h2>All routes and pages are below</h2>
+
+        <hr/>
+            <ng-view></ng-view>
+        <hr />
+
         <ul>
             <li ng-repeat="item in myArrOfNum | multiplyByArg2: 4">{{ item }}</li>
         </ul>
