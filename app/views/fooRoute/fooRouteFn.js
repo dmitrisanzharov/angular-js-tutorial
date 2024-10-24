@@ -6,5 +6,6 @@ export default /*@ngInject*/ function($routeProvider){
 }
 
 function FooController($scope){
+    document.title = 'foo page';
     $scope.foo2 = 'did the foo route work?';
 }
