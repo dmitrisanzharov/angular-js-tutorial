@@ -1,35 +1,12 @@
 import allControllers from './controllers/index.js';
 import allComponentsFn from './components/componentsIndex.js';
+import allRoutesFn from './views/allRoutesFn.js';
 
 const myAppWrapperConst = angular.module('myAppWrapperModule', ['ngRoute', 'myModuleOne']);
 
-myAppWrapperConst.config(/*@ngInject*/ function ($routeProvider) {
-    $routeProvider
-        .when('/bar', {
-            templateUrl: 'app/views/bar.route.tpl.html',
-        })
-        .when('/foo', {
-            templateUrl: 'app/views/foo.route.tpl.html',
-            controller: 'MyCont1'
-        })
-        .when('/fallback', {
-            templateUrl: 'app/views/fallback.route.tpl.html',
-        })
-        .otherwise({
-            redirectTo: '/fallback'
-        })
-});
-
-myAppWrapperConst.config(function () {
-    console.log('app has started');
-});
-
-myAppWrapperConst.run(function () {
-    console.log('this is app RUN');
-});
-
 allControllers(myAppWrapperConst);
 allComponentsFn(myAppWrapperConst);
+allRoutesFn(myAppWrapperConst);
 
 // all are demos
 myAppWrapperConst.controller('MyCont1', [
