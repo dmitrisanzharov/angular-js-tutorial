@@ -9,3 +9,9 @@ export default /*@ngInject*/ function(myAppWrapperConst){
         .config(['$routeProvider', fooRoute])
         .config(['$routeProvider', fallbackRoute])
 }
+
+export const allPagesArray = [
+    {name: 'foo', href: 'foo'},
+    {name: 'bar', href: 'bar'},
+    {name: 'fallback', href: 'fallback'}
+]

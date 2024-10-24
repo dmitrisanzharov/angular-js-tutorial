@@ -16,6 +16,10 @@
 
         <h2>All routes and pages are below</h2>
 
+        <ul>
+            <li ng-repeat="item in allPagesArray"><a href="#/{{item.href}}">{{item.name}}</a></li>
+        </ul>
+
         <hr/>
             <ng-view></ng-view>
         <hr />
