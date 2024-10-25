@@ -51,7 +51,7 @@ myAppWrapperConst.directive('testDirective', [
             restrict: 'AE',
             controller: function ($scope) {
                 $scope.testDirectiveVar1 = 'testDirective var 1 as a string';
-                console.log($scope);
+                // console.log($scope);
                 $scope.fromParent = $scope.$parent.myAppTitle;
                 $scope.myColor1 = 'red';
             },
@@ -70,8 +70,8 @@ myAppWrapperConst.filter('multiplyByTwo', function () {
 
 myAppWrapperConst.filter('multiplyByArg2', function () {
     return function (arg, arg2) {
-        console.log('test 1', arg);
-        console.log('test 2', arg2);
+        // console.log('test 1', arg);
+        // console.log('test 2', arg2);
 
         if (!Array.isArray(arg)) {
             return arg;

@@ -14,6 +14,6 @@ myModuleOneConst.component('myModuleOneComponent', {
 function MyModuleOneComponentController($rootScope){
     this.yoYo = 'yolo';
 
-    console.log('component scope', this);
-    console.log('rootScope', $rootScope);
+    // console.log('component scope', this);
+    // console.log('rootScope', $rootScope);
 }

@@ -11,7 +11,7 @@ export default /*@ngInject*/ function(myAppWrapperConst){
 }
 
 export const allPagesArray = [
-    {name: 'foo', href: 'foo'},
+    {name: 'foo', href: 'foo/1/anyName/hello'},
     {name: 'bar', href: 'bar'},
     {name: 'fallback', href: 'fallback'}
 ]
