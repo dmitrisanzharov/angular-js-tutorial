@@ -12,5 +12,5 @@ function FooController($scope, $routeParams, $http){
     console.log('foo route params', $routeParams);
 
 
-    $http.get('https://jsonplaceholder.typicode.com/users').success(data => console.log('data', data)).catch(err => console.log('error', err));
+    $http.get('https://jsonplaceholder.typicode.com/users').then(data => console.log('data', data)).catch(err => console.log('error', err));
 }
