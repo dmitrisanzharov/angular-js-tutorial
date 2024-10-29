@@ -13,4 +13,9 @@ export default /*@ngInject*/ function($scope, $filter){
     let blah = $filter('multiplyByTwo')(5,2,3);
     // console.log("blah: ", blah);
 
+
+    $scope.mySubmit = function(){
+        console.log('submit, scope: ', $scope)
+    }
+
 }
