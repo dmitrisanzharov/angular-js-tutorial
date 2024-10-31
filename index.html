@@ -17,7 +17,7 @@
         <form name="myForm" ng-submit="mySubmit()" >
             <input type="text" name="forName" ng-model="myForm.forNameScope" id="forNameId"/>
             <input type="password" name="forPass" ng-model="forPassScope" ng-required="true" />
-            <input type="number" name="forNumber" ng-model="myForm.forNumber" />
+            <input type="number" name="forNumber" ng-model="forNumberScope" />
             <button type="submit" ng-disabled="myForm.$invalid">Submit</button>
             <div ng-show="myForm.$valid">lalalal</div>
         </form>
