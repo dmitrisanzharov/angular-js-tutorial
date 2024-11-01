@@ -14,6 +14,9 @@
     </head>
     <body>
 
+        <button ng-click="sayHello()">serv var is: {{servVar}}</button>
+        <hr />
+
         <form name="myForm" ng-submit="mySubmit()" >
             <input type="text" name="forName" ng-model="myForm.forNameScope" id="forNameId"/>
             <input type="password" name="forPass" ng-model="forPassScope" ng-required="true" />

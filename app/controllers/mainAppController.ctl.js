@@ -1,6 +1,6 @@
 import { allPagesArray } from '../views/allRoutesFn.js';
 
-export default /*@ngInject*/ function($scope, $filter){
+export default /*@ngInject*/ function($scope, $filter, myServiceOne){
     $scope.allPagesArray = allPagesArray;
     $scope.myAppTitle = 'This Is Victors App';
     $scope.myArr = ['one', 'two', 'three', 'four', 'five', 'six', 'seven'];
@@ -17,5 +17,9 @@ export default /*@ngInject*/ function($scope, $filter){
     $scope.mySubmit = function(){
         console.log('submit, scope: ', $scope)
     }
+
+
+    $scope.sayHello = myServiceOne.sayHello;
+    $scope.servVar = myServiceOne.myServiceVar;
 
 }

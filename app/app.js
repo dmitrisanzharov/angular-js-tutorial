@@ -1,12 +1,15 @@
 import allControllers from './controllers/index.js';
 import allComponentsFn from './components/componentsIndex.js';
 import allRoutesFn from './views/allRoutesFn.js';
+import allServicesFn from './services/servicesIndex.js';
 
 const myAppWrapperConst = angular.module('myAppWrapperModule', ['ngRoute', 'myModuleOne']);
 
 allControllers(myAppWrapperConst);
 allComponentsFn(myAppWrapperConst);
 allRoutesFn(myAppWrapperConst);
+allServicesFn(myAppWrapperConst);
+
 
 // all are demos
 myAppWrapperConst.controller('MyCont1', [
@@ -80,3 +83,4 @@ myAppWrapperConst.filter('multiplyByArg2', function () {
         return arg.map((item) => item * arg2);
     };
 });
+
