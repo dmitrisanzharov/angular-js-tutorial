@@ -31,4 +31,10 @@ export default /*@ngInject*/ function ($scope, $filter, myServiceOne, $location)
 
     $scope.sayHello = myServiceOne.sayHello;
     $scope.servVar = myServiceOne.myServiceVar;
+
+    $scope.$watchCollection('myForm', function(newValue, oldValue, scope) {
+        console.log('============================');
+        console.log('scope', scope);
+        console.log('newValue', newValue);
+      }, true);
 }
