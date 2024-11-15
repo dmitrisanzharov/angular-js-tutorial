@@ -14,6 +14,18 @@
     </head>
     <body>
 
+        <button ng-click="pushIt()" ng-disabled="theeInput ? false : true">push</button>
+
+        <hr />
+
+        <h1 style="color: {{colorTest}}">{{::myAppTitle}}</h1>
+        <hr />
+
+        <input type="text" ng-model="theeInput" />
+        <input type="text" ng-model="theeInput2" />
+
+        <hr />
+
         <button ng-click="redirect()">redirect</button>
 
         <hr />

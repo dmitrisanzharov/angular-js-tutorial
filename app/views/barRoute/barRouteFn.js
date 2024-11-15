@@ -15,5 +15,8 @@ export default /*@ngInject*/ function ($routeProvider) {
 
 /*@ngInject*/
 function BarController($scope){
-    console.log('bar controller ran')
+    console.log('bar controller ran');
+    $scope.$on('$destroy', function() {
+        console.log('destroyed');
+    });
 }

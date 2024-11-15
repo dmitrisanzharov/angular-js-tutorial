@@ -6,6 +6,14 @@ export default /*@ngInject*/ function ($scope, $filter, myServiceOne, $location)
     $scope.myArr = ['one', 'two', 'three', 'four', 'five', 'six', 'seven'];
     $scope.myArr2 = [{ name: 'a' }, { name: 'b' }, { name: 'c' }];
     $scope.myArr3 = ['a', 'b', 'c', 'e', 'f', 'd'];
+    $scope.colorTest = 'red';
+    
+
+    $scope.myModel = {};
+
+    $scope.pushIt = function(){
+        $scope.myModel.blah = 'omg' + String(Math.random());
+    }
 
     $scope.myObj2 = [
         { name: 'a', value1: 1, foo: 'b' },
@@ -23,7 +31,7 @@ export default /*@ngInject*/ function ($scope, $filter, myServiceOne, $location)
     };
 
     $scope.redirect = function(){
-        console.log('clicked')
+        console.log('clicked');
         $location.path('/bar');
     }
 
@@ -35,4 +43,23 @@ export default /*@ngInject*/ function ($scope, $filter, myServiceOne, $location)
         console.log('scope', scope);
         console.log('newValue', newValue);
       }, true);
+
+
+    $scope.$watchGroup(['theeInput', 'theeInput2'], function(newValue, oldValue, scope) {
+        console.log('newValue', newValue);
+        console.log('oldValue', oldValue);
+        console.log('scope', scope);
+        if($scope.theeInput){
+            $scope.colorTest = 'green';
+        }
+    })
+
+    $scope.$watchCollection('myModel', function(newValue, oldValue){
+        console.log('myModelChanged', newValue)
+        console.log('angular', angular);
+    })
+
+
+    
+
 }
