@@ -20,8 +20,6 @@ export default /*@ngInject*/ function ($scope, $filter, myServiceOne, $location)
 
     $scope.mySubmit = function () {
         console.log('submit, scope: ', $scope);
-
-        
     };
 
     $scope.redirect = function(){
