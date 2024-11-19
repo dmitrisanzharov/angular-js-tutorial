@@ -10,4 +10,6 @@ export default /*@ngInject*/ function MyAngularAppController ($scope, addTwoNumb
 
     let myFilterInsideController = $filter('klToml')(5);
 
+    $scope.paperVar = 6;
+
 }
