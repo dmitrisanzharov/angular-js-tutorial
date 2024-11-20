@@ -8,6 +8,10 @@ import allFilters from './filters/filtersIndex.js';
 
 const myAngularAppConst = angular.module('MyAngularAppMainModule', ['ngRoute', 'ngMaterial', 'ngMessages']);
 
+myAngularAppConst.config(function($mdIconProvider){
+    $mdIconProvider.icon('mahManIcon', 'app/icons/pen-svgrepo-com.svg')
+})
+
 allPagesFn(myAngularAppConst); // router basically
 allControllersStandAlone(myAngularAppConst);
 allServices(myAngularAppConst);
