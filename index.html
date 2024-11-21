@@ -13,22 +13,29 @@
         <script src="app/lib/angular.min.js"></script>
         <script src="app/lib/angular-route.min.js"></script>
 
-		<!-- NOT sure if needed -->
-		<script src="app/lib/angular-animate.min.js"></script>
-		<script src="app/lib/angular-aria.min.js"></script>
-		<script src="app/lib/angular-messages.min.js"></script>
+        <!-- NOT sure if needed -->
+        <script src="app/lib/angular-animate.min.js"></script>
+        <script src="app/lib/angular-aria.min.js"></script>
+        <script src="app/lib/angular-messages.min.js"></script>
 
-		<!-- Angular Material CDN -->
-		<script src="app/lib/material/angular-material.min.js"></script>
+        <!-- Angular Material CDN -->
+        <script src="app/lib/material/angular-material.min.js"></script>
 
         <!-- APP JS -->
         <script src="app/app.js" type="module"></script>
     </head>
-	<body>
-		<div layout="column" style="gap: 20px; border: 1px solid red; height: 200px;" layout-padding layout-align="space-between">
-			<div class="dbb" flex>Hello</div>
-			<div class="dbb" flex>Hello</div>
-			<div class="dbb" flex>Hello</div>
+	<body style="background-color: antiquewhite" layout="column">
+		<md-toolbar layout-align="center center">
+			<h1>hello</h1>
+		</md-toolbar>
+
+		<div class="drr" layout="column" flex>
+			<md-sidenav md-is-locked-open="true" style="background-color: lightgray;" flex>
+				side
+			</md-sidenav>
 		</div>
-	</body>
+
+		<md-bottom-sheet>
+			<h1>bottom</h1>
+		</md-bottom-sheet>
 </html>
