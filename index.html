@@ -29,13 +29,20 @@
 			<h1>hello</h1>
 		</md-toolbar>
 
-		<div class="drr" layout="column" flex>
-			<md-sidenav md-is-locked-open="true" style="background-color: lightgray;" flex>
+		<div class="drr" layout="row" flex>
+			<md-sidenav md-is-locked-open="$mdMedia('sm')" style="background-color: lightgray;" flex>
 				side
 			</md-sidenav>
+            <md-content flex style="background-color: lightblue;">
+                content, {{isSmall}} {{appTitle}}
+            </md-content>
 		</div>
 
 		<md-bottom-sheet>
 			<h1>bottom</h1>
+            <button type="button" ng-click="seeScope()" ng-show="$mdMedia('sm')">scope</button>
 		</md-bottom-sheet>
+
+        
+        </body>
 </html>

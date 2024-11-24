@@ -1,6 +1,6 @@
 import { pagesArrayForLinks } from '../pages/indexPagesMain.js';
 
-export default /*@ngInject*/ function MyAngularAppController ($scope, addTwoNumbersService, $filter){
+export default /*@ngInject*/ function MyAngularAppController ($scope, addTwoNumbersService, $filter, $mdMedia){
     $scope.appTitle = 'My Angular App Navbar';
     $scope.pagesArray = pagesArrayForLinks;
     
@@ -12,4 +12,10 @@ export default /*@ngInject*/ function MyAngularAppController ($scope, addTwoNumb
 
     $scope.paperVar = 6;
 
+    $scope.isSmall = $mdMedia('sm')
+
+
+    $scope.seeScope = function(){
+        console.log('scope is', $scope);
+    }
 }
