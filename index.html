@@ -24,25 +24,5 @@
         <!-- APP JS -->
         <script src="app/app.js" type="module"></script>
     </head>
-	<body style="background-color: antiquewhite" layout="column">
-		<md-toolbar layout-align="center center">
-			<h1>hello</h1>
-		</md-toolbar>
-
-		<div class="drr" layout="row" flex>
-			<md-sidenav md-is-locked-open="$mdMedia('sm')" style="background-color: lightgray;" flex>
-				side
-			</md-sidenav>
-            <md-content flex style="background-color: lightblue;">
-                content, {{isSmall}} {{appTitle}}
-            </md-content>
-		</div>
-
-		<md-bottom-sheet>
-			<h1>bottom</h1>
-            <button type="button" ng-click="seeScope()" ng-show="$mdMedia('sm')">scope</button>
-		</md-bottom-sheet>
-
-        
-        </body>
+    <body></body>
 </html>
