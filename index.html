@@ -24,5 +24,20 @@
         <!-- APP JS -->
         <script src="app/app.js" type="module"></script>
     </head>
-    <body></body>
+    <body layout="column">
+
+        <md-toolbar>
+            <h1>angular Material Starter</h1>
+        </md-toolbar>
+
+        <div layout="row" class="drr" flex style="gap: 20px; padding: 20px">
+            <md-sidebar md-is-locked-open="true" flex class="dbb">
+                side
+            </md-sidebar>
+            <md-content flex class="dgg">
+                content
+            </md-content>
+        </div>
+
+    </body>
 </html>
