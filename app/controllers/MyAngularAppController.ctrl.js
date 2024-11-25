@@ -6,7 +6,7 @@ export default /*@ngInject*/ function MyAngularAppController ($scope, addTwoNumb
     
     let a = addTwoNumbersService.addThem(1,2);
 
-    $scope.myArr = [1,2,3];
+    $scope.myArr = [{name: 'one', id: 1, other: 'omg'}, {name: 'two', id: 2, other: 'omg2'}, {name: 'three', id: 3, other: 'omg3'}];
 
     let myFilterInsideController = $filter('klToml')(5);
 
