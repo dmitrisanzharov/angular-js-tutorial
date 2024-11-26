@@ -25,6 +25,18 @@
         <script src="app/app.js" type="module"></script>
     </head>
     <body>
-        <md-autocomplete md-items="item in myArr"> {{item}} </md-autocomplete>
+        <button ng-click="showScope()">click</button>
+        <hr />
+        <div style="border: 1px solid red; width: 50vw; margin: 10px">
+
+        <md-autocomplete md-items="item in myArr" md-min-length="0" md-item-text="item.id" md-selected-item="mySelectedItem"> 
+
+            <md-item-template>
+                {{item}} 
+            </md-item-template>
+
+        </md-autocomplete>
+        
+    </div>
     </body>
 </html>
