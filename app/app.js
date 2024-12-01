@@ -9,9 +9,11 @@ myAngularAppConst.controller(
         // map creation
         var map = L.map('map').setView([53.39224146577022, -6.245791730975309], 15);
 
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 22,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner/{z}/{x}/{y}{r}.{ext}', {
+            minZoom: 0,
+            maxZoom: 20,
+            attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://www.stamen.com/" target="_blank">Stamen Design</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            ext: 'png'
         }).addTo(map);
 
         // all other map stuff
@@ -53,6 +55,17 @@ myAngularAppConst.controller(
         // popups
         marker1.bindPopup("The Force is strong").openPopup();
         marker2.bindPopup("<b style='color: orange;'>This is a green marker</b>");
+
+
+        let popupOne = L.popup();
+
+        // events
+        map.on('click', function(e){
+            popupOne.setLatLng(e.latlng).setContent('yayayay').openOn(map)
+        });
+
+
+
         
 
         // end of the controller
