@@ -18,4 +18,4 @@ export const colorBlue = 'blue';
 
 const colorGreen = 'green';
 
-export { colorGreen}; 
+export { colorGreen }; 
