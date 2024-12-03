@@ -1,0 +1,36 @@
+.drr {
+    border: 2px solid red;
+  }
+  
+  
+  .dbb {
+    border: 2px solid blue;
+  }
+  
+  
+  .dgg {
+    border: 2px solid green;
+  }
+  
+  
+  .dyy {
+    border: 2px solid yellow;
+  }
+  
+  
+  .dpp {
+    border: 2px solid pink;
+  }
+  
+  
+  .dgray {
+    border: 2px solid lightgray;
+  }
+
+  .grayBack{
+    background-color: lightgray;
+  }
+
+  .pinkBack{
+    background-color: lightpink;
+  }
