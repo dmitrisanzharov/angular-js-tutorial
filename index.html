@@ -26,16 +26,20 @@
     </head>
     <body class="dyy" layout="column">
 
-		<md-toolbar layout-align="center center">
-			<h1>Toolbar</h1>
-		</md-toolbar>
+      <md-toolbar layout-align="center center">
+        <h1>Toolbar</h1>
+      </md-toolbar>
 
-		<div class="drr" flex layout="row">
-			<md-sidenav class="grayBack" md-is-locked-open="true" flex>
-				<h2>sidenav</h2>
-			</md-sidenav>
-		</div>
+      <div flex class="drr" layout="row" style="gap: 20px" layout-xs="column">
+        <div style="height: 100px" class="dbb" flex>content</div>
+        <div style="height: 100px" class="dbb" flex>content</div>
+        <div style="height: 100px" class="dbb" flex>content</div>
+      </div>
+
+      <h1>{{myTest}}</h1>
 
 
+      <button ng-click="incCount()" hide-gt-sm aria-label="increase count">inc count</button>
+      <h2>{{count}}</h2>
     </body>
 </html>
