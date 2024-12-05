@@ -25,45 +25,23 @@
 		<script src="app/app.js" type="module"></script>
 	</head>
 	<body>
-		<div layout-padding>
-			<h1>{{myTitle}}</h1>
+		<h1>{{myTitle}}</h1>
+		<button ng-click="seeScope()">see</button>
+		<hr />
 
-			<form name="myForm" ng-submit="mySubmit()">
-				<input type="text" ng-model="fooInputScope" name="fooInputForm" required />
+		<md-input-container>
+		<md-autocomplete
+			md-items="item in myArr | filter: mySearchInput"
+			style="width: 50%"
+			md-min-length="0"
+			md-item-text="item.name.toString()"
+			md-selected-item="mySelectedItem"
+			md-search-text="mySearchInput"
+		>
+			<md-item-template> {{item}} </md-item-template>
+			<md-not-found>not found</md-not-found>
+		</md-autocomplete>
+	</md-input-container>
 
-				<br />
-				<br />
-
-				<h2>{{(myArr | filter: mySearchTextScope).length}}</h2>
-
-				<md-input-container>
-                    <label for="dropdown">see stuff</label>
-					<md-autocomplete
-						md-items="item in myArr | filter: mySearchTextScope"
-						md-min-length="0"
-						md-item-text="item.other"
-						md-selected-item="myItem" 
-						md-search-text="mySearchTextScope"
-                        id="dropdown"
-						required
-					>
-						<md-item-template>{{item.name}}</md-item-template>
-					</md-autocomplete>
-					<md-not-found ng-if="(myArr | filter: mySearchTextScope).length === 0">OMG OMG NOT FOUND</md-not-found>
-				</md-input-container>
-
-				
-
-				<br />
-				<br />
-
-				<button type="submit">submit</button>
-			</form>
-
-			<div></div>
-			<md-divider></md-divider>
-			<button ng-click="seeScope()">see scope</button>
-			<p>{{myItem.name}}</p>
-		</div>
 	</body>
 </html>

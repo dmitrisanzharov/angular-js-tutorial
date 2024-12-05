@@ -3,21 +3,15 @@ const myAngularAppConst = angular.module("MyAngularAppMainModule", ["ngMaterial"
 myAngularAppConst.controller("MyAngularAppMainController", [
 	"$scope",
 	function ($scope) {
-		console.log("scope", $scope);
 		$scope.myTitle = "hello";
 
-		$scope.myArr = [
-			{ name: "one", id: 1, other: "omg" },
-			{ name: "two", id: 2, other: "omg2" },
-			{ name: "three", id: 3, other: "omg3" },
-		];
+		$scope.myArr = [{name: 'one', id: 1, other: 'omg'}, {name: 'two', id: 2, other: 'omg2'}, {name: 'three', id: 3, other: 'omg3'}];
 
-		$scope.seeScope = function () {
-			console.log("scope in Fn", $scope);
-		};
+		$scope.seeScope = function(){
+			console.log('scope', $scope);
+		}
 
-		$scope.mySubmit = function () {
-			console.log("submitted");
-		};
+		$scope.mySelectedItem = $scope.myArr[0]
+		
 	},
 ]);
