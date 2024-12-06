@@ -6,7 +6,7 @@ import allComponents from './components/componentsIndex.js';
 import allDirectives from './directives/directivesIndex.js';
 import allFilters from './filters/filtersIndex.js';
 
-const myAngularAppConst = angular.module('MyAngularAppMainModule', ['ngRoute', 'ngMaterial', 'ngMessages']);
+const myAngularAppConst = angular.module('MyAngularAppMainModule', ['ngRoute', 'ngMaterial', 'ngMessages', 'dataGrid', 'pagination']);
 
 allPagesFn(myAngularAppConst); // router basically
 allControllersStandAlone(myAngularAppConst);
