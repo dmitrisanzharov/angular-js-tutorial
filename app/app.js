@@ -14,4 +14,7 @@ myAngularAppConst.controller("MyAngularAppMainController", [
 		$scope.mySelectedItem = $scope.myArr[0]
 		
 	},
+
 ]);
+
+

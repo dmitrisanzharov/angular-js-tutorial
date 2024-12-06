@@ -30,18 +30,20 @@
 		<hr />
 
 		<md-input-container>
-		<md-autocomplete
-			md-items="item in myArr | filter: mySearchInput"
-			style="width: 50%"
-			md-min-length="0"
-			md-item-text="item.name.toString()"
-			md-selected-item="mySelectedItem"
-			md-search-text="mySearchInput"
-		>
-			<md-item-template> {{item}} </md-item-template>
-			<md-not-found>not found</md-not-found>
-		</md-autocomplete>
-	</md-input-container>
-
+			<label for="lala">lalala</label>
+			<md-autocomplete
+				id="lala"
+				md-items="item in myArr | filter: mySearchInput"
+				style="width: 50%"
+				md-min-length="0"
+				md-item-text="item.name.toString()"
+				md-selected-item="mySelectedItem"
+				md-search-text="mySearchInput"
+			>
+				<md-item-template> {{item}} </md-item-template>
+				<md-not-found>not found</md-not-found>
+			</md-autocomplete>
+		</md-input-container>
+		<div style="margin-top: 200px" ng-if="(myArr | filter: mySearchInput).length === 0">holy smokes</div>
 	</body>
 </html>
