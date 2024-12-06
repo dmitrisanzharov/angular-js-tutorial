@@ -11,15 +11,21 @@ export default /*@ngInject*/ function MyAngularAppController ($scope, addTwoNumb
 
     let myFilterInsideController = $filter('klToml')(5);
 
-    const dataDummy = [{name: 'Dimi', id: 1, title: 'CEO'}, {name: 'Bob', id: 2, title: 'CTO'}, {name: 'John', id: 3, title: 'CFO'}];
+    $scope.seeScope = function(){
+        console.log($scope);
+    }
+
+    const dataDummy = [{first_name: 'Dimi', id: 1, last_name: 'CEO'}, {first_name: 'Bob', id: 2, last_name: 'CTO'}, {first_name: 'John', id: 3, last_name: 'CFO'}];
 
     $scope.gridOptions = {
-        data: dataOne, //required parameter - array with data
-        //optional parameter - start sort options
+        data: dataDummy,
         sort: {
-            predicate: 'name',
-            direction: 'desc'
+            predicate: 'first_name', // name of the column DATA key
+            direction: 'desc' // 'asc'
         }
         };
+
+
+
  
 }
