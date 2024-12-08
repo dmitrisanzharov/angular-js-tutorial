@@ -30,10 +30,10 @@
 	</head>
 	<body>
 		<h1>{{appTitle}}</h1>
-        <button ng-click="seeScope()">see scope</button>
+		<button ng-click="seeScope()">see scope</button>
 		<hr />
 		<div grid-data grid-options="gridOptions" grid-actions="gridActions">
-            <h1>Header</h1>
+			<h1>Header</h1>
 			<table class="table">
 				<thead>
 					<tr>
@@ -50,8 +50,16 @@
 					</tr>
 				</tbody>
 			</table>
-            <hr />
-            {{filtered.length}}
+			<pagination
+				max-size="5"
+				boundary-links="true"
+				ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
+				total-items="paginationOptions.totalItems"
+				ng-model="paginationOptions.currentPage"
+				ng-change="reloadGrid()"
+				items-per-page="paginationOptions.itemsPerPage"
+			>
+			</pagination>
 		</div>
 	</body>
 </html>

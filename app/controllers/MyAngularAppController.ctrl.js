@@ -18,14 +18,10 @@ export default /*@ngInject*/ function MyAngularAppController ($scope, addTwoNumb
     const dataDummy = [{first_name: 'Dimi', id: 1, last_name: 'CEO'}, {first_name: 'Bob', id: 2, last_name: 'CTO'}, {first_name: 'John', id: 3, last_name: 'CFO'}];
 
     $scope.gridOptions = {
-        data: dataDummy,
+        data: dataOne,
         sort: {
             predicate: 'first_name', // name of the column DATA key
             direction: 'desc' // 'asc'
         }
         };
-
-
-
- 
 }
