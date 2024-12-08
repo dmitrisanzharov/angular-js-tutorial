@@ -1,65 +1,62 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="MyAngularAppMainModule" ng-controller="MyAngularAppController" ng-cloak>
-	<head>
-		<title>My NG App</title>
+    <head>
+        <title>My NG App</title>
 
-		<!-- Angular Material style sheet -->
-		<link rel="stylesheet" href="/app/lib/material/angular-material.min.css" />
+        <!-- Angular Material style sheet -->
+        <link rel="stylesheet" href="/app/lib/material/angular-material.min.css" />
 
-		<!-- general CSS -->
-		<link href="/app/styles/generalCss.css" rel="stylesheet" type="text/css" />
+        <!-- general CSS -->
+        <link href="/app/styles/generalCss.css" rel="stylesheet" type="text/css" />
 
-		<!-- ANGULAR CDN -->
-		<script src="app/lib/angular.min.js"></script>
-		<script src="app/lib/angular-route.min.js"></script>
+        <!-- ANGULAR CDN -->
+        <script src="app/lib/angular.min.js"></script>
+        <script src="app/lib/angular-route.min.js"></script>
 
-		<!-- NOT sure if needed -->
-		<script src="app/lib/angular-animate.min.js"></script>
-		<script src="app/lib/angular-aria.min.js"></script>
-		<script src="app/lib/angular-messages.min.js"></script>
+        <!-- NOT sure if needed -->
+        <script src="app/lib/angular-animate.min.js"></script>
+        <script src="app/lib/angular-aria.min.js"></script>
+        <script src="app/lib/angular-messages.min.js"></script>
 
-		<!-- Angular Material CDN -->
-		<script src="app/lib/material/angular-material.min.js"></script>
+        <!-- Angular Material CDN -->
+        <script src="app/lib/material/angular-material.min.js"></script>
 
-		<!-- data grid -->
-		<script src="app/lib/data-grid/pagination.min.js"></script>
-		<script src="app/lib/data-grid/dataGrid.min.js"></script>
+        <!-- data grid -->
+        <script src="app/lib/data-grid/pagination.min.js"></script>
+        <script src="app/lib/data-grid/dataGrid.min.js"></script>
 
-		<!-- APP JS -->
-		<script src="app/app.js" type="module"></script>
-	</head>
-	<body>
-		<h1>{{appTitle}}</h1>
-		<button ng-click="seeScope()">see scope</button>
-		<hr />
-		<div grid-data grid-options="gridOptions" grid-actions="gridActions">
-			<h1>Header</h1>
-			<table class="table">
-				<thead>
-					<tr>
-						<th sortable="code" class="sortable">id</th>
-						<th sortable="code" class="sortable">Name</th>
-						<th>Last Name</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr grid-item>
-						<td ng-bind="item.id"></td>
-						<td ng-bind="item.first_name"></td>
-						<td ng-bind="item.last_name"></td>
-					</tr>
-				</tbody>
-			</table>
-			<pagination
+        <!-- APP JS -->
+        <script src="app/app.js" type="module"></script>
+    </head>
+    <body>
+        <button ng-click="showScope()">see scope</button>
+        <hr />
+        <div grid-data grid-options="gridOptions" grid-actions="gridActions">
+            <h1>Header</h1>
+			<grid-pagination
 				max-size="5"
 				boundary-links="true"
-				ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
 				total-items="paginationOptions.totalItems"
 				ng-model="paginationOptions.currentPage"
-				ng-change="reloadGrid()"
+				ng-change="paginate()"
 				items-per-page="paginationOptions.itemsPerPage"
 			>
-			</pagination>
-		</div>
-	</body>
+			</grid-pagination>
+            </grid-pagination>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th sortable="code" class="sortable">id</th>
+                        <th sortable="code" class="sortable">Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr grid-item>
+                        <td ng-bind="item.id"></td>
+                        <td ng-bind="item.name"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
 </html>

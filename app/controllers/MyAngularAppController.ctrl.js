@@ -1,27 +1,41 @@
 import { pagesArrayForLinks } from '../pages/indexPagesMain.js';
 import dataOne from '../data/dataOne.js';
 
-export default /*@ngInject*/ function MyAngularAppController ($scope, addTwoNumbersService, $filter){
-    $scope.appTitle = 'My Angular App Navbar';
-    $scope.pagesArray = pagesArrayForLinks;
-    
-    let a = addTwoNumbersService.addThem(1,2);
-
-    $scope.myArr = [1,2,3];
-
-    let myFilterInsideController = $filter('klToml')(5);
-
-    $scope.seeScope = function(){
+export default /*@ngInject*/ function MyAngularAppController($scope, addTwoNumbersService, $filter) {
+    $scope.showScope = function(){
         console.log($scope);
     }
 
-    const dataDummy = [{first_name: 'Dimi', id: 1, last_name: 'CEO'}, {first_name: 'Bob', id: 2, last_name: 'CTO'}, {first_name: 'John', id: 3, last_name: 'CFO'}];
+    $scope.data = [
+        { id: 1, name: 'Alice' },
+        { id: 2, name: 'Bob' },
+        { id: 3, name: 'Charlie' },
+        { id: 4, name: 'Diana' },
+        { id: 5, name: 'Edward' },
+        { id: 6, name: 'Fiona' },
+        { id: 7, name: 'George' },
+        { id: 8, name: 'Hannah' },
+        { id: 9, name: 'Ian' },
+        { id: 10, name: 'Julia' },
+    ];
+
+    $scope.paginationOptions = {
+        totalItems: $scope.data.length,
+        itemsPerPage: 3,
+        currentPage: 1,
+    };
 
     $scope.gridOptions = {
-        data: dataOne,
-        sort: {
-            predicate: 'first_name', // name of the column DATA key
-            direction: 'desc' // 'asc'
-        }
-        };
+        data: [],
+    };
+
+    $scope.paginate = function () {
+        const start = ($scope.paginationOptions.currentPage - 1) * $scope.paginationOptions.itemsPerPage;
+        const end = start + $scope.paginationOptions.itemsPerPage;
+        $scope.gridOptions.data = $scope.data.slice(start, end);
+
+        console.log('Page:', $scope.paginationOptions.currentPage, 'Data:', $scope.gridOptions.data);
+    };
+
+    $scope.paginate();
 }
