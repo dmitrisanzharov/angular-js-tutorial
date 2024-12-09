@@ -33,6 +33,15 @@
         <hr />
         <div grid-data grid-options="gridOptions" grid-actions="gridActions">
             <h1>Header</h1>
+            <input
+                type="text"
+                placeholder="Search By Order #"
+                ng-change="gridActions.filter()"
+                ng-model="findName"
+                filter-by="findName"
+                filter-type="text"
+            />
+            <hr />
             <table class="table">
                 <thead>
                     <tr>
@@ -43,7 +52,7 @@
                 <tbody>
                     <tr grid-item>
                         <td ng-bind="item.id"></td>
-                        <td ng-bind="item.name"></td>
+                        <td ng-bind="item.first_name"></td>
                     </tr>
                 </tbody>
             </table>

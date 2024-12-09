@@ -7,19 +7,18 @@ export default /*@ngInject*/ function MyAngularAppController($scope, addTwoNumbe
     }
 
     $scope.gridOptions = {
-        data: [],
+        data: dataOne,
+        customFilters: {
+            findName: function (items, value, filterName) {
+                console.log(items, value, filterName);
+                if(!value){
+                    return items;
+                }
+                return items.filter(function (item) {
+                    return item.first_name.includes(value);
+                });
+            }
+        }
     };
-
-    function getServerData(params, callback) {
-        $http.get('https://jsonplaceholder.typicode.com/users').then(function(response) {
-            console.log(response);
-            $scope.gridOptions.data = response.data;
-            $scope.gridOptions.grid.paginationOptions.totalItems = response.data.length;
-            // $scope.gridActions.refresh();
-        })
-    }
-
-    getServerData();
-
 
 }
