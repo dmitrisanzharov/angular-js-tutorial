@@ -21,4 +21,10 @@ export default /*@ngInject*/ function MyAngularAppController($scope, addTwoNumbe
         }
     };
 
+    console.log('gridOptions', $scope.gridOptions);
+
+    $timeout(()=> {
+        console.log('gridActions', $scope.gridActions); 
+    }, 0)
+
 }
