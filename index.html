@@ -15,11 +15,33 @@
 
 		<div ng-init="fooVarInit=1; myString1='yayaya'">{{fooVarInit}}</div>
 
-		<button ng-click="seeScope()">see scope, {{myString1}}</button>
+		<button ng-click="seeScope(2)">see scope, {{myString1}}</button>
 		<br />
 
 		<hr />
 		<!-- all other goes here -->
+
+		<yak-component></yak-component>
+		<hr />
+
+		<img ng-src="https://media.4-paws.org/d/2/5/f/d25ff020556e4b5eae747c55576f3b50886c0b90/cut%20cat%20serhio%2002-1813x1811-720x719.jpg" width="80"/>
+
+		<form name="myForm" ng-submit="submitForm()" >
+			<button type="submit" ng-disabled="true">submit</button>
+		</form>
+
+		<a ng-href="https://www.google.com" target="_blank">google</a>
+
+
+		<hr />
+
+		<button ng-click="varYo=1">click</button>
+
+		<hr />
+
+		<ng-include src="'app/html-templates/random-one.html'" ng-hide="changeArr"></ng-include>
+
+		<hr />
 
 		<ul>
 			<li ng-repeat="item in myArr" ng-show="$even">{{item}} and index is: {{$index}} and is first: {{$first}} and last is: {{$last}}</li>
