@@ -28,13 +28,17 @@ myAngularModuleConst.controller('MySecondController', ['$scope', function($scope
 myAngularModuleConst.component('yakComponent', {
     templateUrl: 'app/html-templates/yak.tpl.html',
     controllerAs: 'yakCtrl',
+    transclude: true,
+    replace: true,
     bindings: {
-        myNum: '=',
+        myNumRenamed: '=myNum',
         myNameStr: '='
     },
-    controller: function YakComponentController(){
-        console.log('yak scope', this);
-        this.yakTitle = 'Yak Title';
-        this.myArrOne = [1, 2, 3, 4]; 
-    }
-})
+    controller: YakComponentController
+});
+
+function YakComponentController(){
+    console.log('yak scope', this);
+    this.yakTitle = 'Yak Title';
+    this.myArrOne = [1, 2, 3, 4]; 
+}
