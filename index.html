@@ -10,6 +10,9 @@
 
 		<!-- APP JS -->
 		<script src="app/app.js"></script>
+
+		<!-- module -->
+		 <script src="app/appModule2.js"></script>
 	</head>
 	<body >
 
@@ -21,7 +24,15 @@
 		<hr />
 		<!-- all other goes here -->
 
-		<yak-component></yak-component>
+
+		<div ng-controller="ModuleTwoController">
+			{{ModuleTwoControllerTitle}}
+		</div>
+
+		<hr />
+
+
+		<yak-component my-num="1" my-name-str="'Victor'"></yak-component>
 		<hr />
 
 		<img ng-src="https://media.4-paws.org/d/2/5/f/d25ff020556e4b5eae747c55576f3b50886c0b90/cut%20cat%20serhio%2002-1813x1811-720x719.jpg" width="80"/>

@@ -1,1 +1,5 @@
-<h1>Yak Component, with title: {{$ctrl.yakTitle}}</h1>
+<h1>Yak Component, with title: {{yakCtrl.yakTitle}}</h1>
+<ul>
+    <li ng-repeat="item in yakCtrl.myArrOne">{{item}} in yak</li>
+</ul>
+<p>{{yakCtrl.myNum}} and {{yakCtrl.myNameStr}}</p>

@@ -1,4 +1,4 @@
-const myAngularModuleConst = angular.module('myAngularMainModule', []);
+const myAngularModuleConst = angular.module('myAngularMainModule', ['moduleTwo']);
 
 myAngularModuleConst.controller('MyMainController', ['$scope', function($scope) {
     $scope.parentTitle = 'Parent Title String';
@@ -27,8 +27,14 @@ myAngularModuleConst.controller('MySecondController', ['$scope', function($scope
 
 myAngularModuleConst.component('yakComponent', {
     templateUrl: 'app/html-templates/yak.tpl.html',
+    controllerAs: 'yakCtrl',
+    bindings: {
+        myNum: '=',
+        myNameStr: '='
+    },
     controller: function YakComponentController(){
         console.log('yak scope', this);
         this.yakTitle = 'Yak Title';
+        this.myArrOne = [1, 2, 3, 4]; 
     }
 })
