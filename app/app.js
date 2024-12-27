@@ -19,6 +19,28 @@ myAngularModuleConst.controller('MyMainController', ['$scope', function($scope) 
 }]);
 
 
+myAngularModuleConst.directive('myDirectiveOne', function(){
+    return {
+        restrict: 'AE',
+        template: '<div><div style="border: {{myNum}}px solid red">My Directive</div> <button ng-click="seeScope()">see scope</button><ng-transclude></ng-transclude>{{3+2}}</div>',
+        scope: {
+            myNum: '='
+        },
+        transclude: true,
+        replace: true,
+        controller: function MyDirectiveOneController($scope){
+            $scope.seeScope = function(){
+                console.log('============================');
+                console.log('myDirectiveOne', $scope);
+                console.log('parent', $scope.$parent.fooVarInit)
+            }
+            $scope.myDirectiveOneTitle = 'My Directive One Title';
+        }
+    }
+})
+
+
+
 myAngularModuleConst.controller('MySecondController', ['$scope', function($scope) {
     $scope.childTitle = 'Child Title String';
     console.log('scope2', $scope);
@@ -42,3 +64,4 @@ function YakComponentController(){
     this.yakTitle = 'Yak Title';
     this.myArrOne = [1, 2, 3, 4]; 
 }
+
