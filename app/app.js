@@ -1,8 +1,16 @@
 const myAngularModuleConst = angular.module('myAngularMainModule', ['moduleTwo']);
 
-myAngularModuleConst.controller('MyMainController', ['$scope', function($scope) {
+myAngularModuleConst.config([function(){
+    console.log('config ran');
+}])
+
+myAngularModuleConst.run([function(){
+    console.log('run ran');
+}])
+
+myAngularModuleConst.controller('MyMainController', ['$scope', '$rootScope',function($scope, $rootScope) {
     $scope.parentTitle = 'Parent Title String';
-    console.log('scope', $scope);
+    console.log('scope myMainController', $scope);
     $scope.seeScope = function(myArg){
         // console.log('myArg', myArg);
         console.log($scope);
@@ -11,11 +19,18 @@ myAngularModuleConst.controller('MyMainController', ['$scope', function($scope) 
         $scope.myArr = ['a', 'b', 'c'];
     }
 
+    $scope.myArr2 = ['a', 'b', 'c', 'd'];
+
     $scope.myObj2 = [{name: 'a', value1: 1, foo: 'b'}, {name: 'b', value1: 2}, {name: 'c', value1: 3}, {name: 'd', value1: 4}];
 
     $scope.submitForm = function(){
         console.log('form submitted');
     }
+
+    console.log('============================');
+    console.log('rootScope in myMainController', $rootScope);
+    $rootScope.mahMan = 'omg it worked'
+    delete $rootScope.mahMan;
 }]);
 
 
@@ -33,6 +48,7 @@ myAngularModuleConst.directive('myDirectiveOne', function(){
                 console.log('============================');
                 console.log('myDirectiveOne', $scope);
                 console.log('parent', $scope.$parent.fooVarInit)
+                console.log('root in directive', $scope.$root)
             }
             $scope.myDirectiveOneTitle = 'My Directive One Title';
         }
@@ -59,9 +75,10 @@ myAngularModuleConst.component('yakComponent', {
     controller: YakComponentController
 });
 
-function YakComponentController(){
+function YakComponentController($rootScope){
     console.log('yak scope', this);
     this.yakTitle = 'Yak Title';
     this.myArrOne = [1, 2, 3, 4]; 
+    console.log('rootScope', $rootScope)
 }
 

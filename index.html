@@ -24,6 +24,16 @@
 		<hr />
 		<!-- all other goes here -->
 
+		<input type="text" ng-model="myInputForFilter" />
+		
+
+		<ul>
+			<li ng-repeat="item in myObj2 | orderBy: '-' | filter: myInputForFilter">{{item}}</li>
+		</ul>
+
+		<h1>------------------------------------------</h1>
+		<hr />
+
 		<my-directive-one my-num="5"><h3>league is mundo</h3></my-directive-one>
 
 		<hr />
