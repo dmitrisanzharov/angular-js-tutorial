@@ -9,7 +9,7 @@
 		<script src="app/lib/angular-route.min.js"></script>
 
 		<!-- APP JS -->
-		<script src="app/app.js"></script>
+		<script src="app/app.js" type="module"></script>
 
 		<!-- module -->
 		 <script src="app/appModule2.js"></script>
@@ -23,6 +23,13 @@
 
 		<hr />
 		<!-- all other goes here -->
+		<ul>
+			<li ng-repeat="item in pagesArr">
+			  <a ng-href="{{item}}">{{item}}</a>
+			</li>
+		  </ul>
+
+		<hr />
 
 		<ng-view></ng-view>
 

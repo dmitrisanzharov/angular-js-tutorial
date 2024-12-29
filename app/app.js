@@ -1,29 +1,17 @@
+import allRoutes from './routes/indexRoutes.js';
+
+
+
+
 const myAngularModuleConst = angular.module("myAngularMainModule", ["moduleTwo", "ngRoute"]);
 
-myAngularModuleConst.config([
-	"$routeProvider",
-	function ($routeProvider) {
-		$routeProvider
-			.when("/one", {
-				templateUrl: "app/html-templates/one.html",
-				controller: function OneController($scope) {
-					$scope.oneTitle = "One Title";
-				},
-			})
-			.when("/home", {
-				templateUrl: "app/html-templates/home.html",
-			})
-
-			.otherwise({
-				redirectTo: "/home",
-			});
-	},
-]);
+allRoutes(myAngularModuleConst);
 
 myAngularModuleConst.controller("MyMainController", [
 	"$scope",
 	"$rootScope",
-	function ($scope, $rootScope) {
+    "$http",
+	function ($scope, $rootScope, $http) {
 		$scope.parentTitle = "Parent Title String";
 		console.log("scope myMainController", $scope);
 		$scope.seeScope = function (myArg) {
@@ -53,6 +41,12 @@ myAngularModuleConst.controller("MyMainController", [
 		console.log("rootScope in myMainController", $rootScope);
 		$rootScope.mahMan = "omg it worked";
 		delete $rootScope.mahMan;
+
+        $scope.pagesArr = ['#/home/ye/ya', '#/one', '#/error'];
+
+        $http.get('https://jsonplaceholder.typicode.com/users').then((response) => {
+            console.log('MAIN RESPONSE',response);
+        })
 	},
 ]);
 
