@@ -24,11 +24,17 @@
 		<hr />
 		<!-- all other goes here -->
 
+		<ng-view></ng-view>
+
+
+
+		<div ng-show="false">
+
 		<input type="text" ng-model="myInputForFilter" />
 		
 
 		<ul>
-			<li ng-repeat="item in myObj2 | orderBy: '-' | filter: myInputForFilter">{{item}}</li>
+			<li ng-repeat="item in arrWithNumbers | multiplyByAnything: 6">{{item}}</li>
 		</ul>
 
 		<h1>------------------------------------------</h1>
@@ -100,7 +106,7 @@
 			</div>
 		</div>
 
-
+	</div>
 	
 	</body>
 </html>
