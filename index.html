@@ -24,26 +24,32 @@
 		<hr />
 		<!-- all other goes here -->
 
-		<form name="myFormAngular" ng-submit="submitFormAngular()">
-			<div>
-				<label for="name">Name:</label>
-				<input type="text" id="name" name="name" ng-model="nameInputInForm" ng-required />
-				<span ng-show="myFormAngular.name.$dirty">omg omg</span>
-			</div>
 
-			<div>
-				<label for="email">email</label>
-				<input type="email" id="email" name="email" ng-model="emailInputInForm" />
-			</div>
-			<div>
-				<button type="submit" ng-disabled="myFormAngular.$invalid">submit</button>
-			</div>
-		</form>
+		{{count}}
+		<button ng-click="incCount()">inc</button>
+		<p>{{countArr}}</p>
+		<div>{{lala}}</div>
 
 
 
 
 		<div ng-show="false">
+
+			<form name="myFormAngular" ng-submit="submitFormAngular()">
+				<div>
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" ng-model="nameInputInForm" ng-required />
+					<span ng-show="myFormAngular.name.$dirty">omg omg</span>
+				</div>
+	
+				<div>
+					<label for="email">email</label>
+					<input type="email" id="email" name="email" ng-model="emailInputInForm" />
+				</div>
+				<div>
+					<button type="submit" ng-disabled="myFormAngular.$invalid">submit</button>
+				</div>
+			</form>
 
 			<ul>
 				<li ng-repeat="item in pagesArr">

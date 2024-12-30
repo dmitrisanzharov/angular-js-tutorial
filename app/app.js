@@ -1,4 +1,5 @@
 import allRoutes from './routes/indexRoutes.js';
+import allServices from './services/indexOfService.js';
 
 
 
@@ -6,12 +7,26 @@ import allRoutes from './routes/indexRoutes.js';
 const myAngularModuleConst = angular.module("myAngularMainModule", ["moduleTwo", "ngRoute"]);
 
 allRoutes(myAngularModuleConst);
+allServices(myAngularModuleConst);
 
 myAngularModuleConst.controller("MyMainController", [
 	"$scope",
 	"$rootScope",
     "$http",
-	function ($scope, $rootScope, $http) {
+	"myService",
+	"$location",
+	function ($scope, $rootScope, $http, myService, $location) {
+
+
+		$scope.changeUrl = function(){
+			$location.path('/home/ye/ya');
+			let a = $location.path();
+			console.log('a', a);
+			$location.search({page: 3})
+		}
+
+
+
 		$scope.parentTitle = "Parent Title String";
 		// console.log("scope myMainController", $scope);
 		$scope.seeScope = function (myArg) {
@@ -53,6 +68,33 @@ myAngularModuleConst.controller("MyMainController", [
 		}
 
 
+		$scope.myServiceVar = myService.myServiceVar;
+		$scope.sayHello = myService.sayHello;
+
+		$scope.count = 0;
+		$scope.countArr = [];
+		$scope.incCount = function(){
+			$scope.count = $scope.count+1
+			$scope.countArr.push($scope.count);
+		}
+
+		$scope.$watch('count', function(newVal, oldVal, watchScope){
+			console.log('count has triggered', watchScope.count);
+		})
+	 
+		$scope.$watchCollection('countArr', function(oldVal, newVal, scope){
+			console.log(scope);
+		}, true)
+
+		$scope.lala = 'oyayaya'; 
+
+		$scope.$watchGroup(['count', 'countArr'], function(newValue, oldValue, scope) {
+			console.log('newValue', newValue);
+			console.log('oldValue', oldValue);
+			console.log('scope', scope);
+		})
+	 
+	
 	},
 ]);
 
@@ -117,5 +159,5 @@ function YakComponentController($rootScope) {
 	// console.log("rootScope", $rootScope);
 }
 
-myAngularModuleConst.service()
+
 
