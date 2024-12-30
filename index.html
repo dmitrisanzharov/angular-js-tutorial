@@ -23,19 +23,37 @@
 
 		<hr />
 		<!-- all other goes here -->
-		<ul>
-			<li ng-repeat="item in pagesArr">
-			  <a ng-href="{{item}}">{{item}}</a>
-			</li>
-		  </ul>
 
-		<hr />
+		<form name="myFormAngular" ng-submit="submitFormAngular()">
+			<div>
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" ng-model="nameInputInForm" ng-required />
+				<span ng-show="myFormAngular.name.$dirty">omg omg</span>
+			</div>
 
-		<ng-view></ng-view>
+			<div>
+				<label for="email">email</label>
+				<input type="email" id="email" name="email" ng-model="emailInputInForm" />
+			</div>
+			<div>
+				<button type="submit" ng-disabled="myFormAngular.$invalid">submit</button>
+			</div>
+		</form>
+
 
 
 
 		<div ng-show="false">
+
+			<ul>
+				<li ng-repeat="item in pagesArr">
+				  <a ng-href="{{item}}">{{item}}</a>
+				</li>
+			  </ul>
+	
+			<hr />
+	
+			<ng-view></ng-view>
 
 		<input type="text" ng-model="myInputForFilter" />
 		

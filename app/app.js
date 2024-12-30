@@ -13,7 +13,7 @@ myAngularModuleConst.controller("MyMainController", [
     "$http",
 	function ($scope, $rootScope, $http) {
 		$scope.parentTitle = "Parent Title String";
-		console.log("scope myMainController", $scope);
+		// console.log("scope myMainController", $scope);
 		$scope.seeScope = function (myArg) {
 			// console.log('myArg', myArg);
 			console.log($scope);
@@ -34,19 +34,25 @@ myAngularModuleConst.controller("MyMainController", [
 		];
 
 		$scope.submitForm = function () {
-			console.log("form submitted");
+			// console.log("form submitted");
 		};
 
-		console.log("============================");
-		console.log("rootScope in myMainController", $rootScope);
+		// console.log("============================");
+		// console.log("rootScope in myMainController", $rootScope);
 		$rootScope.mahMan = "omg it worked";
 		delete $rootScope.mahMan;
 
         $scope.pagesArr = ['#/home/ye/ya', '#/one', '#/error'];
 
         $http.get('https://jsonplaceholder.typicode.com/users').then((response) => {
-            console.log('MAIN RESPONSE',response);
+            // console.log('MAIN RESPONSE',response);
         })
+
+		$scope.submitFormAngular = function(){
+			console.log('form submitted angular');
+		}
+
+
 	},
 ]);
 
@@ -62,10 +68,10 @@ myAngularModuleConst.directive("myDirectiveOne", function () {
 		replace: true,
 		controller: function MyDirectiveOneController($scope) {
 			$scope.seeScope = function () {
-				console.log("============================");
-				console.log("myDirectiveOne", $scope);
-				console.log("parent", $scope.$parent.fooVarInit);
-				console.log("root in directive", $scope.$root);
+				// console.log("============================");
+				// console.log("myDirectiveOne", $scope);
+				// console.log("parent", $scope.$parent.fooVarInit);
+				// console.log("root in directive", $scope.$root);
 			};
 			$scope.myDirectiveOneTitle = "My Directive One Title";
 		},
@@ -74,7 +80,7 @@ myAngularModuleConst.directive("myDirectiveOne", function () {
 
 myAngularModuleConst.filter("multiplyByAnything", function () {
 	return function (...args) {
-		console.log("YOUTUBE DEMO", args);
+		// console.log("YOUTUBE DEMO", args);
 		let final = args[0].map((item) => item * args[1]);
 		return final;
 	};
@@ -85,10 +91,10 @@ myAngularModuleConst.controller("MySecondController", [
 	"multiplyByAnythingFilter",
 	function ($scope, multiplyByAnything) {
 		$scope.childTitle = "Child Title String";
-		console.log("scope2", $scope);
+		// console.log("scope2", $scope);
 
 		$scope.testMyFilter = multiplyByAnything([2, 3, 4], 2);
-		console.log("testMyFilter", $scope.testMyFilter);
+		// console.log("testMyFilter", $scope.testMyFilter);
 	},
 ]);
 
@@ -105,8 +111,11 @@ myAngularModuleConst.component("yakComponent", {
 });
 
 function YakComponentController($rootScope) {
-	console.log("yak scope", this);
+	// console.log("yak scope", this);
 	this.yakTitle = "Yak Title";
 	this.myArrOne = [1, 2, 3, 4];
-	console.log("rootScope", $rootScope);
+	// console.log("rootScope", $rootScope);
 }
+
+myAngularModuleConst.service()
+
