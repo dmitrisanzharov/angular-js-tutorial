@@ -1,5 +1,6 @@
 import allRoutes from './routes/indexRoutes.js';
 import allServices from './services/indexOfService.js';
+import consoleMe from './helper/consoleMe.js';
 
 
 
@@ -93,6 +94,8 @@ myAngularModuleConst.controller("MyMainController", [
 			console.log('oldValue', oldValue);
 			console.log('scope', scope);
 		})
+
+		$scope.consoleMeFn = consoleMe;
 	 
 	
 	},
