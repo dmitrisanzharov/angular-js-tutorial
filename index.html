@@ -24,29 +24,29 @@
         <!-- APP JS -->
         <script src="app/app.js" type="module"></script>
     </head>
-    <body>
-        <h1>{{appTitle}}</h1>
-        <ul>
-            <li ng-repeat="item in pagesArray"><a ng-href="{{item.url}}">{{item.name}}</a></li>
-        </ul>
-		<div ng-view></div>
-		<hr />
-		<h3>Material is working</h3>
-		<section layout="row" layout-sm="row" layout-align="start start" layout-wrap>
-			<md-button class="md-raised">Button</md-button>
-			<md-button class="md-raised md-primary">Primary</md-button>
-			<md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
-			<md-button class="md-raised md-warn">Warn</md-button>
-		</section>
-		<hr />
-		<h3>Components are working</h3>
-		<!-- care in below line, when passing a STRING, needs to be in: '', otherwise will NOT work -->
-		<foo-component title-prop="'THIS COMES FROM PROPS'"></foo-component>
-		<hr />
-		<h3>Directives are working</h3>
-		<bar-directive bar-prop-one="12"></bar-directive>
-		<hr />
-		<h3>Filters are working</h3>
-		<p>Kl to miles filter: {{15 | klToml}}</p>
+    <body layout="column">
+        <md-toolbar layout-align="center center">
+            <h1>My heading</h1>
+        </md-toolbar>
+        <div layout="row" flex>
+            <md-sidenav md-is-locked-open="true" style="background-color: yellowgreen" flex layout-padding>
+                <h2>My Side Nav Content</h2>
+            </md-sidenav>
+            <md-content style="background-color: lightblue" flex layout-padding>
+                <h2>My content stuff</h2>
+                <md-divider></md-divider>
+                <div style="background-color: white" md-whiteframe="{{myVarOne}}">omg omg</div>
+                <md-list layout="row">
+                    <md-list-item ng-repeat="item in myArr" style="border: 1px solid red">{{item}}</md-list-item>
+                </md-list>
+                <md-button class="md-raised md-primary">this is my button</md-button>
+                <md-divider></md-divider>
+                <md-subheader>my subheader</md-subheader>
+                <md-icon></md-icon>
+            </md-content>
+        </div>
+        <md-bottom-sheet style="background-color: pink">
+            <h3>my bottom sheet</h3>
+        </md-bottom-sheet>
     </body>
 </html>
