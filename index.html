@@ -33,13 +33,11 @@
         <hr />
         <div grid-data grid-options="gridOptions" grid-actions="gridActions">
             <h1>Header</h1>
-            <input
+            <input 
                 type="text"
-                placeholder="Search By Order #"
+                ng-model="myNewFilter"
+                filter-by="myNewFilter"
                 ng-change="gridActions.filter()"
-                ng-model="findName"
-                filter-by="findName"
-                filter-type="text"
             />
             <hr />
             <table class="table">

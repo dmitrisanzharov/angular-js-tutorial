@@ -9,14 +9,17 @@ export default /*@ngInject*/ function MyAngularAppController($scope, addTwoNumbe
     $scope.gridOptions = {
         data: dataOne,
         customFilters: {
-            findName: function (items, value, filterName) {
-                console.log(items, value, filterName);
-                if(!value){
-                    return items;
+            myNewFilter: function(itemsFromData, valueFromInputField, filterName){
+                console.log('itemsFromData', itemsFromData);
+                console.log('valueFromInputField', valueFromInputField);
+                console.log('filterName', filterName);
+                if(valueFromInputField){
+                    return itemsFromData;
                 }
-                return items.filter(function (item) {
-                    return item.first_name.includes(value);
-                });
+
+                return itemsFromData.filter(item => {
+                    return item.first_name.includes(valueFromInputField)
+                })
             }
         }
     };
