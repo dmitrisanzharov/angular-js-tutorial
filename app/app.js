@@ -6,6 +6,8 @@ import allComponents from "./components/componentsIndex.js";
 import allDirectives from "./directives/directivesIndex.js";
 import allFilters from "./filters/filtersIndex.js";
 
+const dataDummy = [{first_name: 'Dimi', id: 1, last_name: 'CEO'}, {first_name: 'Bob', id: 2, last_name: 'CTO'}, {first_name: 'John', id: 3, last_name: 'CFO'}];
+
 const myAngularAppConst = angular.module("MyAngularAppMainModule", ["ngRoute", "ngMaterial", "ngMessages", "dataGrid", "pagination"]);
 
 allPagesFn(myAngularAppConst); // router basically
@@ -15,32 +17,16 @@ allComponents(myAngularAppConst);
 allDirectives(myAngularAppConst);
 allFilters(myAngularAppConst);
 
-myAngularAppConst.controller("MyMainController", [
-	"$scope",
-	"$timeout",
-	function ($scope, $timeout) {
-		$scope.myArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
+myAngularAppConst.controller('MyControllerOne', ['$scope', '$timeout',function ($scope, $timeout) {
+	$scope.myTitleOne = 'My Title One';
+	$scope.myArrOne = [1,2,3,4,5,6,7,8,9,10];
 
-		const dataDummy = [
-			{ first_name: "Dimi", id: 1, last_name: "CEO" },
-			{ first_name: "Bob", id: 2, last_name: "CTO" },
-			{ first_name: "John", id: 3, last_name: "CFO" },
-		];
+	$scope.gridOptions = {
+		data: dataDummy
+	}
 
-		$scope.gridOptions = {
-			data: dataDummy,
-            sort: {
-                predicate: 'id',
-                direction: 'desc'
-            }
-		};
-
-		console.log("test1", $scope.gridOptions);
-
-        console.log("test2", $scope.gridActions);
-
-		// $timeout(function () {
-		// 	console.log("test2", $scope.gridActions);
-		// }, 0);
-	},
-]);
+	$timeout(function () {
+		console.log('gridOptions', $scope.gridOptions)
+	}, 0)
+	
+}])
