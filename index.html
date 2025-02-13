@@ -29,26 +29,7 @@
 		<script src="app/app.js" type="module"></script>
 
 	</head>
-	<body ng-controller="MyControllerOne">
-		<h1>Hello {{myTitleOne}}</h1>
-		<p>{{(myArrOne | filter: 1).length}}</p>
-		<hr />
-		<div grid-data grid-options="gridOptions" grid-actions="gridActions">
-			<input type="text" ng-change="gridActions.filter()" ng-model="anyName" filter-by="anyName" filter-type="text" />
-			<table>
+	<body>
 
-				<tr>
-					<th sortable="code" class="sortable">id</th>
-					<th>name</th>
-					<th>last</th>
-				</tr>
-				<tr grid-item>
-					<td>{{item.id}}</td>
-					<td>{{item.first_name}}</td>
-					<td>{{item.last_name}}</td>
-				</tr>
-				
-			</table>
-		</div>
 	</body>
 </html>
