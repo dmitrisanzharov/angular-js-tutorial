@@ -21,3 +21,35 @@ allComponents(myAngularAppConst);
 allDirectives(myAngularAppConst);
 allFilters(myAngularAppConst);
 
+
+myAngularAppConst.controller('MyAngularAppController', ['$scope', '$timeout', function($scope, $timeout) {
+	$scope.letsStart = 'lets start title';
+	$scope.myArr = dataDummy;
+
+	$scope.gridOptions = {
+		data: dataDummy,
+		customFilters: {
+			findId: function(itemsFromData, valueFromInputField, filterName){
+				console.log('itemsFromData', itemsFromData);
+				console.log('valueFromInputField', valueFromInputField);
+				console.log('filterName', filterName);
+				if(!valueFromInputField){
+					return itemsFromData;
+				}
+
+				return itemsFromData.filter(item => {
+					return item.id == valueFromInputField;
+				})
+			}
+		} 
+	}
+
+
+	console.log('gridOptions', $scope.gridOptions);
+
+	$timeout(()=> {
+		console.log('gridActions', $scope.gridActions);
+	})
+}]);
+
+
