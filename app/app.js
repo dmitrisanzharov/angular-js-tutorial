@@ -31,6 +31,17 @@ myAngularAppConst.controller('MyAngularAppController', ['$scope', '$timeout', fu
 		sort: {
 			predicate: 'id',
 			direction: 'desc'
+		},
+		customFilters: {
+			nameOfMyFilter: function(itemsFromDataArr, valueFromInputField, filterNameFromGridObject){
+				console.log(itemsFromDataArr, valueFromInputField, filterNameFromGridObject);
+				if(!valueFromInputField){
+					return itemsFromDataArr;
+				}
+				return itemsFromDataArr.filter(function(item){
+					return item.first_name.toLowerCase().includes(valueFromInputField.toLowerCase());
+				})
+			}
 		}
 	}
 

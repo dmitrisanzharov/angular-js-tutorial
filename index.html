@@ -30,6 +30,14 @@
 	</head>
 	<body ng-controller="MyAngularAppController" grid-data grid-options="gridOptions" grid-actions="gridActions">
 		<h1>{{header}}</h1>
+		<input 
+			type="text"
+			placeholder="enter search term"
+			ng-change="gridActions.filter()"
+			ng-model="nameOfMyFilter"
+			filter-by="nameOfMyFilter"
+			filter-type="text"
+		/>
 		<table>
 			<thead>
 				<tr>
