@@ -28,32 +28,23 @@
 		<!-- APP JS -->
 		<script src="app/app.js" type="module"></script>
 	</head>
-	<body ng-controller="MyAngularAppController">
-		<div grid-data grid-options="gridOptions" grid-actions="gridActions" style="border: 1px solid red; padding: 10px; margin: 10px">
-			<input 
-				type="number"
-				placeholder="search by id"
-				ng-change="gridActions.filter()"
-				ng-model="findId"
-				filter-by="findId"
-				filter-type="text"
-			/>
-			<table>
-				<thead>
-					<tr>
-						<th sortable="code" class="sortable">name <span>{{gridOptions.grid.sortOptions.direction}}</span></th>
-						<th>id</th>
-						<th>last</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr grid-item>
-						<td>{{item.first_name}}</td>
-						<td>{{item.id}}</td>
-						<td>{{item.last_name}}</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+	<body ng-controller="MyAngularAppController" grid-data grid-options="gridOptions" grid-actions="gridActions">
+		<h1>{{header}}</h1>
+		<table>
+			<thead>
+				<tr>
+					<th sortable="code" class="sortable"><span>{{gridOptions.grid.sortOptions.direction}}</span> | id</th>
+					<th>name</th>
+					<th>last</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr grid-item>
+					<td>{{item.id}}</td>
+					<td>{{item.first_name}}</td>
+					<td>{{item.last_name}}</td>
+				</tr>
+			</tbody>
+		</table>
 	</body>
 </html>
