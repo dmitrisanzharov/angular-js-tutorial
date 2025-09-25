@@ -4,15 +4,7 @@ myMainAppWrapperConst.controller('MyMainController', [
     '$scope',
     function ($scope) {
         $scope.title3 = 'title from parent';
-
-        $scope.$watch(
-            'myInput.name',
-            function (newValue, oldValue, scope) {
-                console.log('============================');
-                console.log('scope', scope);
-                console.log('ra', newValue);
-            },
-            true
-        );
+        $scope.items = [{name: 'name1', value: 1}, {name: 'name2', value: 2}, {name: 'name3', value: 3}];
     }
 ]);
+

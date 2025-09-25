@@ -13,10 +13,8 @@
         <script src="app/app.js" type="module"></script>
     </head>
     <body ng-controller="MyMainController">
-
-		<input ng-model="myInput.name" type="text" />
-		{{myInput}}
-
-		<div ng-init="varOne = 'varOneString'">{{varOne}}</div>
+      <ul>
+        <li ng-repeat="item in items" ng-show="$even">{{item.name}} .. {{$index}}</li>
+      </ul>
     </body>
 </html>
