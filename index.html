@@ -14,9 +14,9 @@
     </head>
     <body ng-controller="MyMainController">
 
-        <div ng-controller="MyMainController2">
-            <h3>{{title3}}</h3>
-        </div>
-		
+		<input ng-model="myInput.name" type="text" />
+		{{myInput}}
+
+		<div ng-init="varOne = 'varOneString'">{{varOne}}</div>
     </body>
 </html>

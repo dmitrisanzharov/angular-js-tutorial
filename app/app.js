@@ -1,10 +1,18 @@
 const myMainAppWrapperConst = angular.module('myMainAppWrapper', []);
 
-myMainAppWrapperConst.controller('MyMainController', ['$scope', function ($scope) {
-    $scope.title3 = 'title from parent'
-}]);
+myMainAppWrapperConst.controller('MyMainController', [
+    '$scope',
+    function ($scope) {
+        $scope.title3 = 'title from parent';
 
-myMainAppWrapperConst.controller('MyMainController2', ['$scope', function ($scope) {
-
-    console.log('scope in child', $scope)
-}])
+        $scope.$watch(
+            'myInput.name',
+            function (newValue, oldValue, scope) {
+                console.log('============================');
+                console.log('scope', scope);
+                console.log('ra', newValue);
+            },
+            true
+        );
+    }
+]);
