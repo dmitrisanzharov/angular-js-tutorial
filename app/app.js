@@ -5,6 +5,7 @@ myMainAppWrapperConst.controller('MyMainController', [
     function ($scope) {
         $scope.title3 = 'title from parent';
         $scope.items = [{name: 'name1', value: 1}, {name: 'name2', value: 2}, {name: 'name3', value: 3}];
+        $scope.myObj = { foo: 'fooStr', bar: 'barStr', xyx: 'xyxStr', anyKey: 'omg' };
     }
 ]);
 
