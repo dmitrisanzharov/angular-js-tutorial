@@ -13,8 +13,10 @@
         <script src="app/app.js" type="module"></script>
     </head>
     <body ng-controller="MyMainController">
-      <ul>
-        <li ng-repeat="item in items">{{item.name}}</li>
-      </ul>
+        <ul>
+            <li ng-repeat="item in items">{{item.name}}</li>
+        </ul>
+        <hr />
+        <div ng-include="'htmlFiles/foo.html'"></div>
     </body>
 </html>
