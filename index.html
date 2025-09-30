@@ -14,9 +14,23 @@
     </head>
     <body ng-controller="MyMainController">
         <ul>
-            <li ng-repeat="item in items">{{item.name}}</li>
+            <li ng-repeat="item in items"><a ng-href="https://www.google.com" target="_blank">test</a></li>
         </ul>
         <hr />
-        <div ng-include="'htmlFiles/foo.html'" ng-hide="!true"></div>
+        <!-- <button ng-click="showFoo = !showFoo">Toggle Foo</button>
+
+        <form ng-submit="mySubmit()">
+            <button type="submit" ng-disabled="showFoo">submit</button>
+        </form>
+
+        <h1 ng-hide="showFoo">show and hide</h1>
+        <div ng-include="'htmlFiles/foo.html'" ng-hide="showFoo"></div>
+
+        <img
+            ng-src="https://ih1.redbubble.net/image.1442416307.4191/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+            alt="ninja.jpg"
+        /> -->
+
+        <input type="text" ng-model="myInput1" ng-change="myChange()" />
     </body>
 </html>
