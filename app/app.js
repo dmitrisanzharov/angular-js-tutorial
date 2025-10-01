@@ -1,4 +1,4 @@
-const myMainAppWrapperConst = angular.module('myMainAppWrapper', []);
+const myMainAppWrapperConst = angular.module('myMainAppWrapper', ['mySecondModule']);
 
 myMainAppWrapperConst.controller('MyMainController', [
     '$scope',
@@ -16,4 +16,17 @@ myMainAppWrapperConst.controller('MyMainController', [
         }
     }
 ]);
+
+
+angular.module('mySecondModule', []).component('myFirstComponent', {
+    templateUrl: 'app/myFirstComponentHTML.tpl.html',
+    controller: function MyFirstComponentFn () {
+        this.omgNew = 'omg from component';
+        console.log('scope?', this);
+    },
+    bindings: {
+        theName: '='
+    },
+    controllerAs: '$alt'
+});
 
