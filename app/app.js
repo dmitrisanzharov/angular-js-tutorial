@@ -1,4 +1,8 @@
-const myMainAppWrapperConst = angular.module('myMainAppWrapper', ['mySecondModule']);
+export const myMainAppWrapperConst = angular.module('myMainAppWrapper', ['module2']).controller('DummyController', function ($scope) {
+    $scope.dummy1 = 'dummy1';
+}).controller('DummyController2', function ($scope) {
+    $scope.dummy2 = 'dummy2';
+});
 
 myMainAppWrapperConst.controller('MyMainController', [
     '$scope',
@@ -24,17 +28,4 @@ myMainAppWrapperConst.controller('MyMainController', [
 ]);
 
 
-angular.module('mySecondModule', []).component('myFirstComponent', {
-    templateUrl: 'app/myFirstComponentHTML.tpl.html',
-    controller: function MyFirstComponentFn () {
-        this.omgNew = 'omg from component';
-        console.log('scope?', this);
-    },
-    bindings: {
-        theName: '=',
-        countFromMain: '=',
-        fn: '&'
-    },
-    controllerAs: '$alt',
-});
 

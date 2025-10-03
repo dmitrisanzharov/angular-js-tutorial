@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myMainAppWrapper">
+<html lang="en" ng-app="myMainAppWrapper" >
     <head>
         <title>My NG App</title>
         <!-- css stuff -->
@@ -11,8 +11,20 @@
 
         <!-- APP JS -->
         <script src="app/app.js" type="module"></script>
+
+        <!-- components -->
+        <script src="app/importTraining.js" type="module"></script>
+
+        
     </head>
     <body ng-controller="MyMainController">
+        <h1 ng-controller="DummyController" ng-controller="DummyController2">{{dummy1}}</h1>
+        <h1 ng-controller="DummyController2">{{dummy2}}</h1>
+
+        <h1 style="color: red" ng-controller="Module2Controller">{{module2Var}}</h1>
+
+
+        <hr />
         <ul>
             <li ng-repeat="item in items"><a ng-href="https://www.google.com" target="_blank">test</a></li>
         </ul>
