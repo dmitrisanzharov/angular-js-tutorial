@@ -1,5 +1,5 @@
 import { myMainAppWrapperConst } from './app.js';
-console.log("myMainAppWrapperConst: ", myMainAppWrapperConst);
+// console.log("myMainAppWrapperConst: ", myMainAppWrapperConst);
 
 // myMainAppWrapperConst.component('myFirstComponent', {
 //     templateUrl: 'app/myFirstComponentHTML.tpl.html',

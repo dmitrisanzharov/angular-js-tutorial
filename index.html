@@ -20,6 +20,12 @@
     </head>
     <body ng-controller="MyMainController">
 
+        <button ng-click="countMain = countMain + 1">Increment countMain</button>
+        <custom-directive></custom-directive>
+
+
+        <!-- <hr />
+
         <h1 ng-controller="BarController">{{barVar}}</h1>
 
         <h1>{{title3}}</h1>
@@ -38,7 +44,7 @@
         <ul>
             <li ng-repeat="item in items"><a ng-href="https://www.google.com" target="_blank">test</a></li>
         </ul>
-        <hr />
+        <hr /> -->
         <!-- <button ng-click="showFoo = !showFoo">Toggle Foo</button>
 
         <form ng-submit="mySubmit()">
@@ -53,13 +59,13 @@
             alt="ninja.jpg"
         /> -->
 
-        <input type="text" ng-model="myInput1" ng-change="myChange()" />
+        <!-- <input type="text" ng-model="myInput1" ng-change="myChange()" />
         <hr />
         <div>count in parent: {{countMain}}</div>
         <my-first-component
             the-name="'holySmokesItWorked'"
             count-from-main="countMain"
             fn="changeCount()"
-        ></my-first-component>
+        ></my-first-component> -->
     </body>
 </html>
