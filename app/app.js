@@ -64,7 +64,7 @@ myMainAppWrapperConst.controller('MyMainController', [
 myMainAppWrapperConst.directive('customDirective', function(){
     return {
         template: '<div>custom directive: {{$parent.countMain}}</div>',
-        scope: {},
+        scope: false,
         controller: function($scope) {
             console.log('child', $scope);
             $scope.dirVar = 'dirVariable';
