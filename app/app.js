@@ -2,7 +2,19 @@ export const myMainAppWrapperConst = angular.module('myMainAppWrapper', ['module
     $scope.dummy1 = 'dummy1';
 }).controller('DummyController2', function ($scope) {
     $scope.dummy2 = 'dummy2';
-});
+}).component('myFirstComponent', {
+    templateUrl: 'app/myFirstComponentHTML.tpl.html',
+    controller: function MyFirstComponentFn () {
+        this.omgNew = 'omg from component';
+        console.log('scope?', this);
+    },
+    bindings: {
+        theName: '=',
+        countFromMain: '=',
+        fn: '&'
+    },
+    controllerAs: '$alt',
+});;
 
 myMainAppWrapperConst.controller('MyMainController', [
     '$scope',

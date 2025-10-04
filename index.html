@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myMainAppWrapper" >
+<html lang="en" ng-app="myMainAppWrapper">
     <head>
         <title>My NG App</title>
         <!-- css stuff -->
@@ -15,14 +15,24 @@
         <!-- components -->
         <script src="app/importTraining.js" type="module"></script>
 
-        
+        <!-- external file controllers -->
+        <script src="app/bar.js" type="module"></script>
     </head>
     <body ng-controller="MyMainController">
+
+        <h1 ng-controller="BarController">{{barVar}}</h1>
+
+        <h1>{{title3}}</h1>
+
+        <br />
+        <br />
+
+        <hr />
+
         <h1 ng-controller="DummyController" ng-controller="DummyController2">{{dummy1}}</h1>
         <h1 ng-controller="DummyController2">{{dummy2}}</h1>
 
         <h1 style="color: red" ng-controller="Module2Controller">{{module2Var}}</h1>
-
 
         <hr />
         <ul>
@@ -46,6 +56,10 @@
         <input type="text" ng-model="myInput1" ng-change="myChange()" />
         <hr />
         <div>count in parent: {{countMain}}</div>
-        <my-first-component the-name="'holySmokesItWorked'" count-from-main="countMain" fn="changeCount()"></my-first-component>
+        <my-first-component
+            the-name="'holySmokesItWorked'"
+            count-from-main="countMain"
+            fn="changeCount()"
+        ></my-first-component>
     </body>
 </html>
