@@ -64,3 +64,4 @@ myMainAppWrapperConst.directive('customDirective', function(){
     }
 });
 
+angular.module('myNewModule', []);
