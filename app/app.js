@@ -24,21 +24,8 @@ myMainAppWrapperConst.controller('MyMainController', [
     '$scope',
     function ($scope) {
 
-
     $scope.parentStr = 'parentStr';
-    console.log('parent scope', $scope);
-
-
-
-
-
-
-
-
-
-
-
-        
+     
        
         // $scope.items = [{name: 'name1', value: 1, url: 'https://ih1.redbubble.net/image.1442416307.4191/flat,750x,075,f-pad,750x1000,f8f8f8.jpg'}, {name: 'name2', value: 2}, {name: 'name3', value: 3}];
         // $scope.myObj = { foo: 'fooStr', bar: 'barStr', xyx: 'xyxStr', anyKey: 'omg' };
@@ -63,14 +50,16 @@ myMainAppWrapperConst.controller('MyMainController', [
 
 myMainAppWrapperConst.directive('customDirective', function(){
     return {
-        template: '<div>custom directive: {{$parent.countMain}}</div>',
-        scope: false,
+        template: '<div>custom directive: {{$parent.parentStr}}</div><ng-transclude />',
+        scope: {
+            myPropOne: '=',
+        },
         controller: function($scope) {
             console.log('child', $scope);
             $scope.dirVar = 'dirVariable';
-        }
+        },
+        transclude: true,
+        restrict: 'E'
     }
 });
-
-
 
