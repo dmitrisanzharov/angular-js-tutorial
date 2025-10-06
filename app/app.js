@@ -64,4 +64,17 @@ myMainAppWrapperConst.directive('customDirective', function(){
     }
 });
 
-angular.module('myNewModule', []);
+myMainAppWrapperConst.config(function(){
+    console.log('myMainAppWrapperConst config');
+})
+
+myMainAppWrapperConst.run(function(){
+    console.log('run config');
+})
+
+myMainAppWrapperConst.controller('MyDummyController', function ($scope) {
+    $scope.dummyVar = 'dummyVar';
+});
+
+myNinjaAppConst.controller('NinjaControllerAsName', /* @ngInject */ function($scope, otherDependencies){ // $scope as a dependency injection
+});
