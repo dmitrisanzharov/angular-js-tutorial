@@ -22,7 +22,9 @@ export const myMainAppWrapperConst = angular
 myMainAppWrapperConst.controller('MyMainController', [
     '$scope',
     '$rootScope',
-    function ($scope, $rootScope) {
+    '$filter',
+    function ($scope, $rootScope, $filter) {
+ 
         $scope.parentStr = 'parentStr';
         $scope.colorRed = 'red';
 
@@ -37,6 +39,9 @@ myMainAppWrapperConst.controller('MyMainController', [
             { name: 'name2', value: 2 },
             { name: 'name3', value: 3 }
         ];
+
+        let final  = $filter('mahFilter')('a', 'b', 'c');
+        console.log("final: ", final);
 
         $scope.myArr2 = ["a", "b", "c", "e", "f", "d"]; 
         // $scope.myObj = { foo: 'fooStr', bar: 'barStr', xyx: 'xyxStr', anyKey: 'omg' };
@@ -90,17 +95,36 @@ myMainAppWrapperConst.controller('MyDummyController', function ($scope) {
 });
 
 myMainAppWrapperConst.filter('timesTwo', function () {
-    return function (arg){
-        // console.log('arg', arg);
-        return arg * 2;
-    }
+    return function (arg1, arg2, arg3){
+        console.log('args: ', arg1, arg2, arg3);
+        return arg1 * 2;
+    };
 });
 
 myMainAppWrapperConst.filter('onlyEven', function () {
-    return function (items) {
+    return function (...items) {
         console.log("items: ", items);
         return items.filter(function(item) {
             return item.value % 2 === 0;
         });
     }
 });
+
+
+myMainAppWrapperConst.filter('mahFilter', function () {
+    return function (...items) {
+        console.log("items: ", items);
+        return 'hello'
+    }
+});
+
+myMainAppWrapperConst.filter('arrayMultiple', function () {
+    return function (arr, multiple) {
+        if(!Array.isArray(arr)) {
+            throw new Error('First argument must be an array');
+        }
+
+        return arr.map((item) => item * multiple);
+    }
+});
+
