@@ -42,8 +42,8 @@ myMainAppWrapperConst.controller('MyMainController', [
         // $scope.myObj = { foo: 'fooStr', bar: 'barStr', xyx: 'xyxStr', anyKey: 'omg' };
         $scope.countMain = 0;
 
-        console.log('MyMainController', $scope);
-        console.log('MyMainController root', $rootScope);
+        // console.log('MyMainController', $scope);
+        // console.log('MyMainController root', $rootScope);
 
         $rootScope.fooBar = 'fooBarRoot';
 
@@ -52,11 +52,11 @@ myMainAppWrapperConst.controller('MyMainController', [
         };
 
         // $scope.mySubmit = function () {
-        //     console.log('submit');
+            // console.log('submit');
         // }
 
         // $scope.myChange = function () {
-        //     console.log('change', $scope.myInput1);
+            // console.log('change', $scope.myInput1);
         // }
     }
 ]);
@@ -68,7 +68,7 @@ myMainAppWrapperConst.directive('customDirective', function () {
             myPropOne: '='
         },
         controller: function ($scope, $rootScope) {
-            console.log('child', $scope);
+            // console.log('child', $scope);
             $scope.dirVar = 'dirVariable';
             delete $rootScope.fooBar;
         },
@@ -78,13 +78,20 @@ myMainAppWrapperConst.directive('customDirective', function () {
 });
 
 myMainAppWrapperConst.config(function () {
-    console.log('myMainAppWrapperConst config');
+    // console.log('myMainAppWrapperConst config');
 });
 
 myMainAppWrapperConst.run(function () {
-    console.log('run config');
+    // console.log('run config');
 });
 
 myMainAppWrapperConst.controller('MyDummyController', function ($scope) {
     $scope.dummyVar = 'dummyVar';
 });
+
+myMainAppWrapperConst.filter('timesTwo', function () {
+    return function (arg){
+        // console.log('arg', arg);
+        return arg * 2;
+    }
+})

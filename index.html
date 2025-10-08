@@ -19,17 +19,15 @@
         <script src="app/bar.js" type="module"></script>
     </head>
     <body ng-controller="MyMainController">
-
         <hr />
         <input type="text" ng-model="myInput1" />
 
         <ul>
-            <li ng-repeat="item in items">{{ item.value | currency : 'Dims ': 4 }}</li>
+            <li ng-repeat="item in items">{{ item.value | timesTwo }}</li>
         </ul>
 
         <!-- <button ng-click="countMain = countMain + 1" ng-style="{color: colorRed}">Increment countMain</button>
         <custom-directive my-prop-one="100"><h1>custom directive kids</h1></custom-directive> -->
-
 
         <!-- <hr />
 
