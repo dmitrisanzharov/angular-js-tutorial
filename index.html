@@ -23,7 +23,7 @@
         <input type="text" ng-model="myInput1" />
 
         <ul>
-            <li ng-repeat="item in items">{{ item.value | timesTwo }}</li>
+            <li ng-repeat="item in items | onlyEven">{{ item.value | timesTwo }}</li>
         </ul>
 
         <!-- <button ng-click="countMain = countMain + 1" ng-style="{color: colorRed}">Increment countMain</button>

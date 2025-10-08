@@ -94,4 +94,13 @@ myMainAppWrapperConst.filter('timesTwo', function () {
         // console.log('arg', arg);
         return arg * 2;
     }
-})
+});
+
+myMainAppWrapperConst.filter('onlyEven', function () {
+    return function (items) {
+        console.log("items: ", items);
+        return items.filter(function(item) {
+            return item.value % 2 === 0;
+        });
+    }
+});
