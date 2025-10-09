@@ -24,11 +24,10 @@ myMainAppWrapperConst.controller('MyMainController', [
     '$rootScope',
     '$filter',
     function ($scope, $rootScope, $filter) {
-
-        function fooFn(){}
+        function fooFn() {}
         fooFn.fooVar = 'fooVarValue';
         // console.log('fooFn', Object.keys(fooFn));
- 
+
         $scope.parentStr = 'parentStr';
         $scope.colorRed = 'red';
 
@@ -44,10 +43,10 @@ myMainAppWrapperConst.controller('MyMainController', [
             { name: 'name3', value: 3 }
         ];
 
-        let final  = $filter('mahFilter')('a', 'b', 'c');
+        let final = $filter('mahFilter')('a', 'b', 'c');
         // console.log("final: ", final);
 
-        $scope.myArr2 = ["a", "b", "c", "e", "f", "d"]; 
+        $scope.myArr2 = ['a', 'b', 'c', 'e', 'f', 'd'];
         // $scope.myObj = { foo: 'fooStr', bar: 'barStr', xyx: 'xyxStr', anyKey: 'omg' };
         $scope.countMain = 0;
 
@@ -61,11 +60,11 @@ myMainAppWrapperConst.controller('MyMainController', [
         };
 
         // $scope.mySubmit = function () {
-            // console.log('submit');
+        // console.log('submit');
         // }
 
         // $scope.myChange = function () {
-            // console.log('change', $scope.myInput1);
+        // console.log('change', $scope.myInput1);
         // }
     }
 ]);
@@ -91,7 +90,11 @@ myMainAppWrapperConst.config(function ($routeProvider) {
         .when('/home', {
             templateUrl: 'app/pages/home/home.html',
             controller: 'HomeController'
-    })
+        })
+        .when('/about', {
+            templateUrl: 'app/pages/about/about.html',
+            controller: 'HomeController'
+        })
 });
 
 myMainAppWrapperConst.run(function () {
@@ -103,7 +106,7 @@ myMainAppWrapperConst.controller('MyDummyController', function ($scope) {
 });
 
 myMainAppWrapperConst.filter('timesTwo', function () {
-    return function (arg1, arg2, arg3){
+    return function (arg1, arg2, arg3) {
         // console.log('args: ', arg1, arg2, arg3);
         return arg1 * 2;
     };
@@ -112,27 +115,25 @@ myMainAppWrapperConst.filter('timesTwo', function () {
 myMainAppWrapperConst.filter('onlyEven', function () {
     return function (...items) {
         // console.log("items: ", items);
-        return items.filter(function(item) {
+        return items.filter(function (item) {
             return item.value % 2 === 0;
         });
-    }
+    };
 });
-
 
 myMainAppWrapperConst.filter('mahFilter', function () {
     return function (...items) {
         // console.log("items: ", items);
-        return 'hello'
-    }
+        return 'hello';
+    };
 });
 
 myMainAppWrapperConst.filter('arrayMultiple', function () {
     return function (arr, multiple) {
-        if(!Array.isArray(arr)) {
+        if (!Array.isArray(arr)) {
             throw new Error('First argument must be an array');
         }
 
         return arr.map((item) => item * multiple);
-    }
+    };
 });
-
