@@ -17,8 +17,18 @@
 
         <!-- external file controllers -->
         <script src="app/bar.js" type="module"></script>
+        <script src="app/pages/home/home-controller.js" type="module"></script>
     </head>
     <body ng-controller="MyMainController">
+        <ul>
+            <li><a href="#/home">Home</a></li>
+        </ul>
+        <hr />
+        <div style="margin: 10px; border: 3px solid violet">
+            <div ng-view></div>
+        </div>
+
+        <hr />
         <!-- <hr />
         <input type="text" ng-model="myInput1" /> -->
 
@@ -26,8 +36,7 @@
             <li ng-repeat="item in items">{{ item.value | timesTwo:5:6 }}</li>
         </ul> -->
 
-        <h1>omg with filter: {{ [1,2,3] | arrayMultiple: 3 }}</h1>
-
+        <!-- <h1>omg with filter: {{ [1,2,3] | arrayMultiple: 3 }}</h1> -->
 
         <!-- <button ng-click="countMain = countMain + 1" ng-style="{color: colorRed}">Increment countMain</button>
         <custom-directive my-prop-one="100"><h1>custom directive kids</h1></custom-directive> -->

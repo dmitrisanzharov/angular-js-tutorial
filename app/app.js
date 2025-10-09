@@ -1,5 +1,5 @@
 export const myMainAppWrapperConst = angular
-    .module('myMainAppWrapper', ['module2'])
+    .module('myMainAppWrapper', ['module2', 'ngRoute'])
     .controller('DummyController', function ($scope) {
         $scope.dummy1 = 'dummy1';
     })
@@ -27,7 +27,7 @@ myMainAppWrapperConst.controller('MyMainController', [
 
         function fooFn(){}
         fooFn.fooVar = 'fooVarValue';
-        console.log('fooFn', Object.keys(fooFn));
+        // console.log('fooFn', Object.keys(fooFn));
  
         $scope.parentStr = 'parentStr';
         $scope.colorRed = 'red';
@@ -45,7 +45,7 @@ myMainAppWrapperConst.controller('MyMainController', [
         ];
 
         let final  = $filter('mahFilter')('a', 'b', 'c');
-        console.log("final: ", final);
+        // console.log("final: ", final);
 
         $scope.myArr2 = ["a", "b", "c", "e", "f", "d"]; 
         // $scope.myObj = { foo: 'fooStr', bar: 'barStr', xyx: 'xyxStr', anyKey: 'omg' };
@@ -86,8 +86,12 @@ myMainAppWrapperConst.directive('customDirective', function () {
     };
 });
 
-myMainAppWrapperConst.config(function () {
-    // console.log('myMainAppWrapperConst config');
+myMainAppWrapperConst.config(function ($routeProvider) {
+    $routeProvider
+        .when('/home', {
+            templateUrl: 'app/pages/home/home.html',
+            controller: 'HomeController'
+    })
 });
 
 myMainAppWrapperConst.run(function () {
@@ -100,14 +104,14 @@ myMainAppWrapperConst.controller('MyDummyController', function ($scope) {
 
 myMainAppWrapperConst.filter('timesTwo', function () {
     return function (arg1, arg2, arg3){
-        console.log('args: ', arg1, arg2, arg3);
+        // console.log('args: ', arg1, arg2, arg3);
         return arg1 * 2;
     };
 });
 
 myMainAppWrapperConst.filter('onlyEven', function () {
     return function (...items) {
-        console.log("items: ", items);
+        // console.log("items: ", items);
         return items.filter(function(item) {
             return item.value % 2 === 0;
         });
@@ -117,7 +121,7 @@ myMainAppWrapperConst.filter('onlyEven', function () {
 
 myMainAppWrapperConst.filter('mahFilter', function () {
     return function (...items) {
-        console.log("items: ", items);
+        // console.log("items: ", items);
         return 'hello'
     }
 });
