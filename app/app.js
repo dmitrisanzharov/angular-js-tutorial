@@ -24,6 +24,10 @@ myMainAppWrapperConst.controller('MyMainController', [
     '$rootScope',
     '$filter',
     function ($scope, $rootScope, $filter) {
+
+        function fooFn(){}
+        fooFn.fooVar = 'fooVarValue';
+        console.log('fooFn', Object.keys(fooFn));
  
         $scope.parentStr = 'parentStr';
         $scope.colorRed = 'red';
