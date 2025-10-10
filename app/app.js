@@ -85,18 +85,6 @@ myMainAppWrapperConst.directive('customDirective', function () {
     };
 });
 
-myMainAppWrapperConst.config(function ($routeProvider) {
-    $routeProvider
-        .when('/home', {
-            templateUrl: 'app/pages/home/home.html',
-            controller: 'HomeController'
-        })
-        .when('/about', {
-            templateUrl: 'app/pages/about/about.html',
-            controller: 'HomeController'
-        })
-});
-
 myMainAppWrapperConst.run(function () {
     // console.log('run config');
 });
@@ -136,4 +124,16 @@ myMainAppWrapperConst.filter('arrayMultiple', function () {
 
         return arr.map((item) => item * multiple);
     };
+});
+
+myMainAppWrapperConst.config(function ($routeProvider) {
+    $routeProvider
+        .when('/home', {
+            templateUrl: 'app/pages/home/home.html',
+            controller: 'HomeController'
+        })
+        .when('/about', {
+            templateUrl: 'app/pages/about/about.html',
+            controller: 'AboutController'
+        })
 });
