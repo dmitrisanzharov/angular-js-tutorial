@@ -1,3 +1,6 @@
+import pagesIndexFn, { pagesArray } from './pages/pagesIndex.js';
+
+
 export const myMainAppWrapperConst = angular
     .module('myMainAppWrapper', ['module2', 'ngRoute'])
     .controller('DummyController', function ($scope) {
@@ -28,6 +31,8 @@ myMainAppWrapperConst.controller('MyMainController', [
         fooFn.fooVar = 'fooVarValue';
         // console.log('fooFn', Object.keys(fooFn));
 
+        $scope.blah = 'blah';
+
         $scope.parentStr = 'parentStr';
         $scope.colorRed = 'red';
 
@@ -42,6 +47,8 @@ myMainAppWrapperConst.controller('MyMainController', [
             { name: 'name2', value: 2 },
             { name: 'name3', value: 3 }
         ];
+
+        $scope.pageItems = pagesArray;
 
         let final = $filter('mahFilter')('a', 'b', 'c');
         // console.log("final: ", final);
@@ -126,25 +133,4 @@ myMainAppWrapperConst.filter('arrayMultiple', function () {
     };
 });
 
-myMainAppWrapperConst.config(function ($routeProvider) {
-    $routeProvider
-        .when('/home', {
-            // template: '<h1> should be here {{homeVar}}</h1>',
-            templateUrl: 'app/pages/home/home.html',
-            controller: 'HomeController'
-        })
-        .when('/about', {
-            templateUrl: 'app/pages/about/about.html',
-            controller: 'AboutController'
-        })
-        .when('/contact', {
-            template: '<h1 ng-controller=DummyController>Contact Page {{dummy1}}</h1>'
-        })
-        .when('/mahman', {
-            template: '<h1>MahMan title is: {{mahManTitle1}}</h1>',
-            controller: function ($scope) {
-                $scope.mahManTitle1 = 'omg mahman';
-            }
-        })
-        .otherwise({ redirectTo: '/home' });
-});
+pagesIndexFn(myMainAppWrapperConst);
