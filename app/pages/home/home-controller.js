@@ -1,4 +1,4 @@
-angular.module('myMainAppWrapper').controller('AboutController', function ($scope) {
-    console.log('AboutController');
-    $scope.homeVar = 'Welcome To About Page';
+angular.module('myMainAppWrapper').controller('HomeController', function ($scope) {
+    console.log('HomeController');
+    $scope.homeVar = 'Welcome To Home Page';
 });

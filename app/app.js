@@ -129,6 +129,7 @@ myMainAppWrapperConst.filter('arrayMultiple', function () {
 myMainAppWrapperConst.config(function ($routeProvider) {
     $routeProvider
         .when('/home', {
+            // template: '<h1> should be here {{homeVar}}</h1>',
             templateUrl: 'app/pages/home/home.html',
             controller: 'HomeController'
         })
@@ -136,4 +137,14 @@ myMainAppWrapperConst.config(function ($routeProvider) {
             templateUrl: 'app/pages/about/about.html',
             controller: 'AboutController'
         })
+        .when('/contact', {
+            template: '<h1 ng-controller=DummyController>Contact Page {{dummy1}}</h1>'
+        })
+        .when('/mahman', {
+            template: '<h1>MahMan title is: {{mahManTitle1}}</h1>',
+            controller: function ($scope) {
+                $scope.mahManTitle1 = 'omg mahman';
+            }
+        })
+        .otherwise({ redirectTo: '/home' });
 });
