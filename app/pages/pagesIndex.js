@@ -5,7 +5,7 @@ import homeRoutes from './home/home.route.js';
 
 export const pagesArray = [
    { name: 'home', hrefForLink: '#/home' },
-   { name: 'about', hrefForLink: '#/about' },
+   { name: 'about', hrefForLink: '#/about/1/ireland' },
 ];
 
 

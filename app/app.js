@@ -27,9 +27,17 @@ myMainAppWrapperConst.controller('MyMainController', [
     '$rootScope',
     '$filter',
     function ($scope, $rootScope, $filter) {
-        function fooFn() {}
-        fooFn.fooVar = 'fooVarValue';
-        // console.log('fooFn', Object.keys(fooFn));
+
+
+        $scope.submitNgForm = function () {
+             console.log('============================');
+            console.log('scope', $scope);
+            console.log('submitNgForm', $scope.myNgForm);
+        }
+
+
+
+
 
         $scope.blah = 'blah';
 
