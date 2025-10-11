@@ -1,6 +1,6 @@
 export default /*@ngInject*/ function homeRoutes($routeProvider) {
-    $routeProvider.when('/home', {
-        templateUrl: 'app/pages/home/home.html',
-        controller: 'HomeController'
+    $routeProvider.when('/about', {
+        templateUrl: 'app/pages/about/about.html',
+        controller: 'AboutController'
     });
 }
