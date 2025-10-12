@@ -28,7 +28,6 @@ myMainAppWrapperConst.controller('MyMainController', [
     '$filter',
     function ($scope, $rootScope, $filter) {
 
-
         $scope.submitNgForm = function () {
              console.log('============================');
             console.log('scope', $scope);
