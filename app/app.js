@@ -26,7 +26,20 @@ myMainAppWrapperConst.controller('MyMainController', [
     '$scope',
     '$rootScope',
     '$filter',
-    function ($scope, $rootScope, $filter) {
+    "myService1",
+    'sayBlah',
+    function ($scope, $rootScope, $filter, myService1, sayBlah) {
+
+        
+
+        $scope.sayBlahVar = sayBlah.blahVar;
+        $scope.sayBlahFn = sayBlah.blahFn;
+
+
+
+        $scope.service1Hello = myService1.hello;
+
+        $scope.helloFn = myService1.hello2;
 
         $scope.submitNgForm = function () {
              console.log('============================');
@@ -141,3 +154,11 @@ myMainAppWrapperConst.filter('arrayMultiple', function () {
 });
 
 pagesIndexFn(myMainAppWrapperConst);
+
+myMainAppWrapperConst.service('myService1', function () {
+    this.hello = 'hello from service1';
+
+    this.hello2 = function () {
+        console.log('hello2 function in service ran');
+    };
+});

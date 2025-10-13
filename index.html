@@ -19,6 +19,7 @@
         <script src="app/bar.js" type="module"></script>
         <script src="app/pages/home/home-controller.js" type="module"></script>
         <script src="app/pages/about/about-controller.js" type="module"></script>
+        <script src="app/services/servicesIndex.js" type="module"></script>
     </head>
 
     <style>
@@ -29,7 +30,13 @@
     </style>
 
     <body ng-controller="MyMainController">
-        <form name="myNgForm" ng-submit="submitNgForm()">
+
+        <h1>{{sayBlahVar}}</h1>
+        <button ng-click="sayBlahFn(1)">call hello2 from service</button>
+
+
+
+        <!-- <form name="myNgForm" ng-submit="submitNgForm()">
             <div>
                 <label for="name">Name</label>
                 <input
@@ -42,9 +49,9 @@
             </div>
             <div ng-show="myNgForm.nameOfInput.$dirty" style="color: red;">omg dirty</div>
             <button type="submit" ng-disabled="myNgForm.$invalid">submit</button>
-        </form>
+        </form> -->
 
-        <!-- <ul>
+        <ul>
             <li ng-repeat="item in pageItems"><a ng-href="{{item.hrefForLink}}">{{item.name}}</a></li>
         </ul>
         <hr />
@@ -52,7 +59,7 @@
             <div ng-view></div>
         </div>
 
-        <hr /> -->
+        <hr />
         <!-- <hr />
         <input type="text" ng-model="myInput1" /> -->
 
