@@ -5,4 +5,4 @@ export default function sayBlahServiceFn($location) {
         console.log('blahFn from sayBlah service ran', arg);
         $location.search({});
     };
-}/*  */
+}
