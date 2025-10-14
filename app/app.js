@@ -1,6 +1,5 @@
 import pagesIndexFn, { pagesArray } from './pages/pagesIndex.js';
 
-
 export const myMainAppWrapperConst = angular
     .module('myMainAppWrapper', ['module2', 'ngRoute'])
     .controller('DummyController', function ($scope) {
@@ -26,30 +25,63 @@ myMainAppWrapperConst.controller('MyMainController', [
     '$scope',
     '$rootScope',
     '$filter',
-    "myService1",
+    'myService1',
     'sayBlah',
     function ($scope, $rootScope, $filter, myService1, sayBlah) {
+        $scope.countFromMain = 0;
 
-        
+        $scope.incrementCount = function () {
+            $scope.countFromMain = $scope.countFromMain + 1;
+            // console.log('re-rendered', $scope);
+        };
+
+        $scope.countFromMain2 = 0;
+
+        $scope.incrementCount2 = function () {
+            $scope.countFromMain2 = $scope.countFromMain2 + 1;
+            console.log('re-rendered', $scope);
+        };
+
+        // const apiUrl = 'https://jsonplaceholder.typicode.com/users';
+
+        // fetch(apiUrl)
+        //     .then((el) => {
+        //         $scope.countFromMain = $scope.countFromMain + 1;
+        //         $scope.$applyAsync();
+        //         return el.json();
+        //     })
+        //     .then((data) => {
+        //         console.log('data', data);
+        //     });
+
+        // $scope.$watch(
+        //     'countFromMain',
+        //     function (newValue, oldValue, scope) {
+        //         console.log('============================');
+        //         console.log('scope', scope);
+        //         console.log('ra', newValue);
+        //     },
+        //     true // deep search / compare
+        // );
+
+        // $scope.$watchGroup(['countFromMain', 'countFromMain2'], function (newValue, oldValue, scope) {
+        //     console.log('newValue', newValue);
+        //     console.log('oldValue', oldValue);
+        //     console.log('scope', scope);
+        // });
 
         $scope.sayBlahVar = sayBlah.blahVar;
         $scope.sayBlahFn = sayBlah.blahFn;
-
-
 
         $scope.service1Hello = myService1.hello;
 
         $scope.helloFn = myService1.hello2;
 
         $scope.submitNgForm = function () {
-             console.log('============================');
+            console.log('============================');
             console.log('scope', $scope);
             console.log('submitNgForm', $scope.myNgForm);
-        }
-
-
-
-
+        };
 
         $scope.blah = 'blah';
 

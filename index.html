@@ -30,11 +30,14 @@
     </style>
 
     <body ng-controller="MyMainController">
+        <h1>{{countFromMain}}</h1>
+        <button ng-click="incrementCount()">Increment count from main</button>
 
-        <h1>{{sayBlahVar}}</h1>
-        <button ng-click="sayBlahFn(1)">call hello2 from service</button>
+        <h1>{{countFromMain2}}</h1>
+        <button ng-click="incrementCount2()">Increment count from main</button>
 
-
+        <!-- <h1>{{sayBlahVar}}</h1>
+        <button ng-click="sayBlahFn(1)">call hello2 from service</button> -->
 
         <!-- <form name="myNgForm" ng-submit="submitNgForm()">
             <div>
@@ -51,13 +54,13 @@
             <button type="submit" ng-disabled="myNgForm.$invalid">submit</button>
         </form> -->
 
-        <ul>
+        <!-- <ul>
             <li ng-repeat="item in pageItems"><a ng-href="{{item.hrefForLink}}">{{item.name}}</a></li>
         </ul>
         <hr />
         <div style="margin: 10px; border: 3px solid violet">
             <div ng-view></div>
-        </div>
+        </div> -->
 
         <hr />
         <!-- <hr />
