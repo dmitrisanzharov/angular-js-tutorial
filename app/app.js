@@ -1,4 +1,5 @@
 import pagesIndexFn, { pagesArray } from './pages/pagesIndex.js';
+import { consoleMe } from './helpers/consoleMe.js';
 
 export const myMainAppWrapperConst = angular
     .module('myMainAppWrapper', ['module2', 'ngRoute'])
@@ -29,6 +30,8 @@ myMainAppWrapperConst.controller('MyMainController', [
     'sayBlah',
     function ($scope, $rootScope, $filter, myService1, sayBlah) {
         $scope.countFromMain = 0;
+
+        $scope.triggerConsoleMe = consoleMe;
 
         $scope.incrementCount = function () {
             $scope.countFromMain = $scope.countFromMain + 1;
@@ -82,6 +85,8 @@ myMainAppWrapperConst.controller('MyMainController', [
             console.log('scope', $scope);
             console.log('submitNgForm', $scope.myNgForm);
         };
+
+        delete $scope.submitNgForm
 
         $scope.blah = 'blah';
 
