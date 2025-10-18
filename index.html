@@ -22,31 +22,25 @@
         <script src="app/lib/material/angular-material.min.js"></script>
 
         <!-- APP JS -->
-        <script src="app/app.js" type="module"></script>
+        <script src="app/app.js" type="module" defer></script>
     </head>
-    <body>
-        <h1>{{appTitle}}</h1>
-        <ul>
-            <li ng-repeat="item in pagesArray"><a ng-href="{{item.url}}">{{item.name}}</a></li>
-        </ul>
-		<div ng-view></div>
-		<hr />
-		<h3>Material is working</h3>
-		<section layout="row" layout-sm="row" layout-align="start start" layout-wrap>
-			<md-button class="md-raised">Button</md-button>
-			<md-button class="md-raised md-primary">Primary</md-button>
-			<md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
-			<md-button class="md-raised md-warn">Warn</md-button>
-		</section>
-		<hr />
-		<h3>Components are working</h3>
-		<!-- care in below line, when passing a STRING, needs to be in: '', otherwise will NOT work -->
-		<foo-component title-prop="'THIS COMES FROM PROPS'"></foo-component>
-		<hr />
-		<h3>Directives are working</h3>
-		<bar-directive bar-prop-one="12"></bar-directive>
-		<hr />
-		<h3>Filters are working</h3>
-		<p>Kl to miles filter: {{15 | klToml}}</p>
+    <body layout="column">
+     
+            <md-toolbar layout-align="center center">
+                <h1>Page Title</h1>
+            </md-toolbar>
+
+            <div layout="row" style="border: 2px solid red;" flex ng-init="omg=3;">
+                <md-sidenav md-is-locked-open="true" style="background-color: green"><h1>Sidenav</h1></md-sidenav>
+                <md-content style="background-color: lightgray" flex >
+                    <h1 md-whiteframe="{{omg}}">Content Area</h1>
+                    
+                </md-content>
+            </div>
+
+            <md-bottom-sheet style="background-color: blueviolet">
+                <h1>Bottom Sheet</h1>
+            </md-bottom-sheet>
+  
     </body>
 </html>
