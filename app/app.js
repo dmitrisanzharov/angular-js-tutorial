@@ -15,3 +15,6 @@ allComponents(myAngularAppConst);
 allDirectives(myAngularAppConst);
 allFilters(myAngularAppConst);
 
+myAngularAppConst.config(function($mdIconProvider) {
+    $mdIconProvider.icon('foo', 'app/icons/rubble_head_canine_patrol_paw_patrol_icon_263846.svg')
+});
