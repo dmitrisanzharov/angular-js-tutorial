@@ -24,14 +24,19 @@
         <!-- APP JS -->
         <script src="app/app.js" type="module" defer></script>
     </head>
-    <body>
-
-        <div layout="row" style="gap: 10px; border: 2px solid red" layout-align="space-between center">
-            <div>one</div>  
-            <div>two</div>
-            <div>three</div>
+    <style>
+        .item {
+            border: 2px solid blue;
+            height: 100px;
+            /* width: 200px; */
+        }
+    </style>
+    <body layout="column">
+        <div layout="row" style="gap: 10px; border: 2px solid red;">
+            <div class="item" flex>one</div>
+            <div class="item" flex>two</div>
+            <div class="item" flex>three</div>
         </div>
-
 
         <!-- <md-list layout="row" style="border: 2px solid blue;">
             <md-list-item>one</md-list-item>
@@ -47,10 +52,10 @@
             <h2>Subheader</h2>
        </md-subheader> -->
 
-  <!-- <md-icon md-svg-src="foo" style="width: 60px; height: 60px;"></md-icon>
+        <!-- <md-icon md-svg-src="foo" style="width: 60px; height: 60px;"></md-icon>
        <h1>test</h1> -->
 
-        <!-- <md-toolbar layout-align="center center">
+        <!-- <md-toolbar>
                 <h1>Page Title</h1>
             </md-toolbar>
 
