@@ -12,6 +12,8 @@ myAngularAppConst.controller("MyAngularAppMainController", [
 			{ name: "three", id: 3, other: "omg3" },
 		];
 
+        // $scope.selectedItemObject = $scope.myArr[0];
+
 		$scope.seeScope = function () {
 			console.log("scope in Fn", $scope);
 		};
