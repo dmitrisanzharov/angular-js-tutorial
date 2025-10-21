@@ -32,11 +32,13 @@
         }
     </style>
     <body layout="column">
-        <div layout="row" style="gap: 10px; border: 2px solid red;">
+        <!-- <div layout="row" style="gap: 10px; border: 2px solid red;">
             <div class="item" flex>one</div>
             <div class="item" flex>two</div>
             <div class="item" flex>three</div>
         </div>
+
+        <h1 ng-init="omg='yo'" aria-label='{{omg}}'>hello</h1> -->
 
         <!-- <md-list layout="row" style="border: 2px solid blue;">
             <md-list-item>one</md-list-item>
@@ -55,20 +57,19 @@
         <!-- <md-icon md-svg-src="foo" style="width: 60px; height: 60px;"></md-icon>
        <h1>test</h1> -->
 
-        <!-- <md-toolbar>
-                <h1>Page Title</h1>
-            </md-toolbar>
+        <md-toolbar>
+            <h1>Page Title</h1>
+        </md-toolbar>
 
-            <div layout="row" style="border: 2px solid red;" flex ng-init="omg=3;">
-                <md-sidenav md-is-locked-open="true" style="background-color: green"><h1>Sidenav</h1></md-sidenav>
-                <md-content style="background-color: lightgray" flex >
-                    <h1 md-whiteframe="{{omg}}">Content Area</h1>
-                    
-                </md-content>
-            </div>
+        <div layout="row" style="border: 2px solid red" flex ng-init="omg=3;">
+            <md-sidenav md-is-locked-open="true" style="background-color: green"><h1>Sidenav</h1></md-sidenav>
+            <md-content style="background-color: lightgray" flex>
+                <h1 md-whiteframe="{{omg}}">Content Area</h1>
+            </md-content>
+        </div>
 
-            <md-bottom-sheet style="background-color: blueviolet">
-                <h1>Bottom Sheet</h1>
-            </md-bottom-sheet> -->
+        <md-bottom-sheet style="background-color: blueviolet">
+            <h1>Bottom Sheet</h1>
+        </md-bottom-sheet>
     </body>
 </html>
