@@ -6,7 +6,13 @@ import allComponents from './components/componentsIndex.js';
 import allDirectives from './directives/directivesIndex.js';
 import allFilters from './filters/filtersIndex.js';
 
-const myAngularAppConst = angular.module('MyAngularAppMainModule', ['ngRoute', 'ngMaterial', 'ngMessages', 'dataGrid', 'pagination']);
+const myAngularAppConst = angular.module('MyAngularAppMainModule', [
+    'ngRoute',
+    'ngMaterial',
+    'ngMessages',
+    'dataGrid',
+    'pagination'
+]);
 
 allPagesFn(myAngularAppConst); // router basically
 allControllersStandAlone(myAngularAppConst);
@@ -15,3 +21,24 @@ allComponents(myAngularAppConst);
 allDirectives(myAngularAppConst);
 allFilters(myAngularAppConst);
 
+angular.module('MyAngularAppMainModule').controller('TestController', function ($scope, $timeout) {
+    const dataDummy = [
+        { first_name: 'Dimi', id: 1, last_name: 'CEO' },
+        { first_name: 'Bob', id: 2, last_name: 'CTO' },
+        { first_name: 'John', id: 3, last_name: 'CFO' }
+    ];
+
+	$scope.showScopeTest = function(){
+		console.log('scope in test', $scope);
+	}
+
+    $scope.gridOptions = {
+        data: dataDummy
+    };
+
+    console.log('grid1', $scope.gridOptions);
+
+    $timeout(() => {
+        console.log('gridActions', $scope.gridActions);
+    }, 0);
+});

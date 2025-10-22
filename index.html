@@ -28,32 +28,14 @@
         <!-- APP JS -->
         <script src="app/app.js" type="module"></script>
     </head>
-    <body>
-        <button ng-click="showScope()">see scope</button>
+    <body ng-controller="TestController">
+        <button ng-click="showScopeTest()">see scope</button>
         <hr />
-        <div grid-data grid-options="gridOptions" grid-actions="gridActions">
-            <h1>Header</h1>
-            <input 
-                type="text"
-                ng-model="myNewFilter"
-                filter-by="myNewFilter"
-                ng-change="gridActions.filter()"
-            />
-            <hr />
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th sortable="code" class="sortable">id</th>
-                        <th sortable="code" class="sortable">Name</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr grid-item>
-                        <td ng-bind="item.id"></td>
-                        <td ng-bind="item.first_name"></td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <div grid-data grid-options="gridOptions" grid-actions="gridActions" style="height:400px;">
+            <ul grid-item>
+                <li ng-bind="item.first_name"></li>
+            </ul>
         </div>
     </body>
 </html>

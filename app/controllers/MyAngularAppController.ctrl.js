@@ -6,28 +6,28 @@ export default /*@ngInject*/ function MyAngularAppController($scope, addTwoNumbe
         console.log($scope);
     }
 
-    $scope.gridOptions = {
-        data: dataOne,
-        customFilters: {
-            myNewFilter: function(itemsFromData, valueFromInputField, filterName){
-                console.log('itemsFromData', itemsFromData);
-                console.log('valueFromInputField', valueFromInputField);
-                console.log('filterName', filterName);
-                if(valueFromInputField){
-                    return itemsFromData;
-                }
+    // $scope.gridOptions = {
+    //     data: dataOne,
+    //     customFilters: {
+    //         myNewFilter: function(itemsFromData, valueFromInputField, filterName){
+    //             console.log('itemsFromData', itemsFromData);
+    //             console.log('valueFromInputField', valueFromInputField);
+    //             console.log('filterName', filterName);
+    //             if(valueFromInputField){
+    //                 return itemsFromData;
+    //             }
 
-                return itemsFromData.filter(item => {
-                    return item.first_name.includes(valueFromInputField)
-                })
-            }
-        }
-    };
+    //             return itemsFromData.filter(item => {
+    //                 return item.first_name.includes(valueFromInputField)
+    //             })
+    //         }
+    //     }
+    // };
 
-    console.log('gridOptions', $scope.gridOptions);
+    // console.log('gridOptions', $scope.gridOptions);
 
-    $timeout(()=> {
-        console.log('gridActions', $scope.gridActions); 
-    }, 0)
+    // $timeout(()=> {
+    //     console.log('gridActions', $scope.gridActions); 
+    // }, 0)
 
 }
