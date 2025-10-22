@@ -27,20 +27,27 @@
     <body>
         <button ng-click="seeScope()">see scope</button>
         <hr />
-        <div layout-padding>
-            <md-autocomplete
-                md-items="item in myArr"
-                md-min-length="0"
-                md-item-text="(item.id).toString()"
-                md-selected-item="selectedItemObject"
 
-                md-search-text="autoCompleteInput.foo"
-            >
-                <md-item-template>
-                    <span>{{item.name}}</span>
-                </md-item-template>
-            </md-autocomplete>
+        <div layout-padding>
+            <md-input-container>
+                <label for="myAuto">Autocomplete demo</label>
+                <md-autocomplete
+                    id="myAuto"
+                    md-items="item in myArr | filter:autoCompleteInput"
+                    md-min-length="0"
+                    md-item-text="(item.id).toString()"
+                    md-selected-item="selectedItemObject"
+                    md-search-text="autoCompleteInput"
+                >
+                    <md-item-template>
+                        <span>{{item.name}}</span>
+                    </md-item-template>
+                    <md-not-found>nothing found</md-not-found>
+                   
+                </md-autocomplete>
+            </md-input-container>
             <h1>{{selectedItemObject}}</h1>
+             <!-- <h2 style="margin-top: 200px">{{(myArr | filter:autoCompleteInput).length}}</h2> -->
         </div>
     </body>
 </html>
