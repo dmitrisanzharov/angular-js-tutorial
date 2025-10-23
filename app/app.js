@@ -33,12 +33,28 @@ angular.module('MyAngularAppMainModule').controller('TestController', function (
 	}
 
     $scope.gridOptions = {
-        data: dataDummy
+        data: dataDummy,
+        sort: {
+            predicate: 'first_name',
+            direction: 'desc'
+        },
+        customFilters: {
+            findName: function(itemsFromData, valueFromInputField, filterNameFromGridOptionsDataObject){
+                console.log('itemsFromData', itemsFromData, valueFromInputField, filterNameFromGridOptionsDataObject);
+                if(!valueFromInputField){
+                    return itemsFromData;
+                } else {
+                    return itemsFromData.filter(item => {
+                        return item.first_name.includes(valueFromInputField)
+                    })
+                }
+            }
+        }
     };
 
     console.log('grid1', $scope.gridOptions);
 
     $timeout(() => {
-        console.log('gridActions', $scope.gridActions);
+        console.log('gridActions', $scope.gridOptions.grid);
     }, 0);
 });

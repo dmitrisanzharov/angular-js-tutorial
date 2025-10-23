@@ -32,10 +32,25 @@
         <button ng-click="showScopeTest()">see scope</button>
         <hr />
 
-        <div grid-data grid-options="gridOptions" grid-actions="gridActions" style="height:400px;">
-            <ul grid-item>
-                <li ng-bind="item.first_name"></li>
-            </ul>
+        <div grid-data grid-options="gridOptions" grid-actions="gridActions" style="height: 400px">
+            <h1>Header for Grid</h1>
+            <input type="text" placeholder="this is SEARCH" ng-change="gridActions.filter()" ng-model="findName" filter-by="findName" filter-type="text" />
+            <table>
+                <thead>
+                    <tr>
+                        <th style="border: 1px solid red; padding: 10px" sortable="code" class="sortable">ID</th>
+                        <th style="border: 1px solid red; padding: 10px" sortable="code" class="sortable">Name</th>
+                        <th style="border: 1px solid red; padding: 10px" sortable="code" class="sortable">Second</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr grid-item>
+                        <td>{{item.id}}</td>
+                        <td>{{item.first_name}}</td>
+                        <td>{{item.last_name}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </body>
 </html>
