@@ -28,9 +28,9 @@ angular.module('MyAngularAppMainModule').controller('TestController', function (
         { first_name: 'John', id: 3, last_name: 'CFO' }
     ];
 
-	$scope.showScopeTest = function(){
-		console.log('scope in test', $scope);
-	}
+    $scope.showScopeTest = function () {
+        console.log('scope in test', $scope);
+    };
 
     $scope.gridOptions = {
         data: dataDummy,
@@ -39,14 +39,24 @@ angular.module('MyAngularAppMainModule').controller('TestController', function (
             direction: 'desc'
         },
         customFilters: {
-            findName: function(itemsFromData, valueFromInputField, filterNameFromGridOptionsDataObject){
+            findName: function (itemsFromData, valueFromInputField, filterNameFromGridOptionsDataObject) {
                 console.log('itemsFromData', itemsFromData, valueFromInputField, filterNameFromGridOptionsDataObject);
-                if(!valueFromInputField){
+                if (!valueFromInputField) {
                     return itemsFromData;
                 } else {
-                    return itemsFromData.filter(item => {
-                        return item.first_name.includes(valueFromInputField)
-                    })
+                    return itemsFromData.filter((item) => {
+                        return item.first_name.includes(valueFromInputField);
+                    });
+                }
+            },
+            filterLast: function (itemsFromData, valueFromInputField, filterNameFromGridOptionsDataObject) {
+                // console.log('filterLast', itemsFromData, valueFromInputField, filterNameFromGridOptionsDataObject);
+                if (!valueFromInputField) {
+                    return itemsFromData;
+                } else {
+                    return itemsFromData.filter((item) => {
+                        return item.last_name.includes(valueFromInputField);
+                    });
                 }
             }
         }

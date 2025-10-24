@@ -34,7 +34,11 @@
 
         <div grid-data grid-options="gridOptions" grid-actions="gridActions" style="height: 400px">
             <h1>Header for Grid</h1>
-            <input type="text" placeholder="this is SEARCH" ng-change="gridActions.filter()" ng-model="findName" filter-by="findName" filter-type="text" />
+            <input type="text" placeholder="this is SEARCH" ng-change="gridActions.filter()" ng-model="findName" filter-by="findName" />
+
+            <hr />
+            <input type="text" placeholder="this is SEARCH second" ng-change="gridActions.filter()" ng-model="filterLast" filter-by="filterLast" filter-type="text" />
+            <hr />
             <table>
                 <thead>
                     <tr>
