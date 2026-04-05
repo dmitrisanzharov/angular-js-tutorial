@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" ng-app="MyAngularAppMainModule" ng-controller="MyAngularAppController" ng-cloak>
     <head>
         <title>My NG App</title>
@@ -25,28 +25,53 @@
         <script src="app/app.js" type="module"></script>
     </head>
     <body>
-        <h1>{{appTitle}}</h1>
-        <ul>
-            <li ng-repeat="item in pagesArray"><a ng-href="{{item.url}}">{{item.name}}</a></li>
-        </ul>
-		<div ng-view></div>
-		<hr />
-		<h3>Material is working</h3>
-		<section layout="row" layout-sm="row" layout-align="start start" layout-wrap>
-			<md-button class="md-raised">Button</md-button>
-			<md-button class="md-raised md-primary">Primary</md-button>
-			<md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
-			<md-button class="md-raised md-warn">Warn</md-button>
-		</section>
-		<hr />
-		<h3>Components are working</h3>
-		<!-- care in below line, when passing a STRING, needs to be in: '', otherwise will NOT work -->
-		<foo-component title-prop="'THIS COMES FROM PROPS'"></foo-component>
-		<hr />
-		<h3>Directives are working</h3>
-		<bar-directive bar-prop-one="12"></bar-directive>
-		<hr />
-		<h3>Filters are working</h3>
-		<p>Kl to miles filter: {{15 | klToml}}</p>
+
+		<div layout="column" style="border: 3px solid green; padding: 15px">
+			<h1 style="border: 1px solid red;">one</h1>
+			<h1 style="border: 1px solid blue;">two</h1>
+		</div>
+
+
+
+
+
+
+		<!-- DISPLAY NONE -->
+        <div layout="column" layout-fill style="display: none;">
+            <md-toolbar layout-padding layout-align="center center">
+                <h1>Angular Material Starter</h1>
+            </md-toolbar>
+
+            <div layout="row" layout-fill>
+                <md-sidenav md-is-locked-open="true" style="background-color: red" flex>Sidenav</md-sidenav>
+
+                <md-content style="background-color: lightgray" flex layout-padding>
+                    <!-- <h1>Content Area</h1>
+                    <div md-whiteframe="{{myPaper}}">test</div>
+
+                    <md-list layout="column">
+                        <md-list-item>one</md-list-item>
+                        <md-list-item>two</md-list-item>
+                    </md-list>
+
+                    <md-divider></md-divider>
+
+                    <md-subheader> Contact: <span>123 123 123</span> </md-subheader>
+
+                    <md-button md-no-ink class="md-raised md-primary">show bottom stuff</md-button>
+
+                    <div>
+                        <md-icon
+                            md-svg-src="doggy"
+                            style="width: 200px; height: 200px"
+                        ></md-icon>
+                    </div> -->
+                </md-content>
+            </div>
+
+            <md-bottom-sheet style="background-color: lightyellow">
+                <h1>footer</h1>
+            </md-bottom-sheet>
+        </div>
     </body>
 </html>
