@@ -20,24 +20,24 @@
 
         <!-- Angular Material CDN -->
         <script src="app/lib/material/angular-material.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-flex-layout/1.1.1/angular-flex-layout.min.js"></script>
 
         <!-- APP JS -->
         <script src="app/app.js" type="module"></script>
     </head>
-    <body>
+    <body layout="column" style="border: 1px solid gold">
 
-		<div layout="row" style="border: 3px solid green; padding: 15px; gap: 30px">
-			<h1 style="border: 1px solid red;">one</h1>
-			<h1 style="border: 1px solid blue;">two</h1>
-		</div>
+        <div style="border: 5px solid green; padding: 15px; display: flex;">
+            <div style="border: 1px solid red; margin-right: 30px; flex: 1; height: 200px; width: 200px">one</div>
+            <div style="border: 1px solid blue; margin-right: 30px; flex: 2; height: 200px; width: 200px">two</div>
+            <div style="border: 1px solid violet; flex: 1; height: 200px; width: 200px">three</div>
+        </div>
 
+        <!-- <h1 hide-gt-sm>its large</h1> -->
+         <h1 ng-if="isSmall">small</h1>
 
-
-
-
-
-		<!-- DISPLAY NONE -->
-        <div layout="column" layout-fill style="display: none;">
+        <!-- DISPLAY NONE -->
+        <div layout="column" layout-fill style="display: none">
             <md-toolbar layout-padding layout-align="center center">
                 <h1>Angular Material Starter</h1>
             </md-toolbar>

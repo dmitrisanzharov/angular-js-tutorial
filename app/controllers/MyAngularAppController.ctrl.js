@@ -1,6 +1,6 @@
 import { pagesArrayForLinks } from '../pages/indexPagesMain.js';
 
-export default /*@ngInject*/ function MyAngularAppController ($scope, addTwoNumbersService, $filter){
+export default /*@ngInject*/ function MyAngularAppController ($scope, addTwoNumbersService, $filter, $mdMedia){
     $scope.appTitle = 'My Angular App Navbar';
     $scope.pagesArray = pagesArrayForLinks;
 
@@ -11,5 +11,7 @@ export default /*@ngInject*/ function MyAngularAppController ($scope, addTwoNumb
     $scope.myArr = [1,2,3];
 
     let myFilterInsideController = $filter('klToml')(5);
+
+    $scope.isSmall = $mdMedia('sm');
 
 }
