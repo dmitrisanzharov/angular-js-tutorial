@@ -25,55 +25,8 @@
         <!-- APP JS -->
         <script src="app/app.js" type="module"></script>
     </head>
-    <body layout="column" style="border: 1px solid gold">
+    <body>
 
-        <div style="border: 5px solid green; padding: 15px; display: flex;">
-            <div style="border: 1px solid red; margin-right: 30px; flex: 1; height: 200px; width: 200px">one</div>
-            <div style="border: 1px solid blue; margin-right: 30px; flex: 2; height: 200px; width: 200px">two</div>
-            <div style="border: 1px solid violet; flex: 1; height: 200px; width: 200px">three</div>
-        </div>
 
-        <!-- <h1 hide-gt-sm>its large</h1> -->
-         <h1 ng-if="isSmall">small</h1>
-
-            <md-button md-no-ink class="md-raised md-primary">show bottom stuff</md-button>
-
-        <!-- DISPLAY NONE -->
-        <div layout="column" layout-fill style="display: none">
-            <md-toolbar layout-padding layout-align="center center">
-                <h1>Angular Material Starter</h1>
-            </md-toolbar>
-
-            <div layout="row" layout-fill>
-                <md-sidenav md-is-locked-open="true" style="background-color: red" flex>Sidenav</md-sidenav>
-
-                <md-content style="background-color: lightgray" flex layout-padding>
-                    <!-- <h1>Content Area</h1>
-                    <div md-whiteframe="{{myPaper}}">test</div>
-
-                    <md-list layout="column">
-                        <md-list-item>one</md-list-item>
-                        <md-list-item>two</md-list-item>
-                    </md-list>
-
-                    <md-divider></md-divider>
-
-                    <md-subheader> Contact: <span>123 123 123</span> </md-subheader>
-
-                    <md-button md-no-ink class="md-raised md-primary">show bottom stuff</md-button>
-
-                    <div>
-                        <md-icon
-                            md-svg-src="doggy"
-                            style="width: 200px; height: 200px"
-                        ></md-icon>
-                    </div> -->
-                </md-content>
-            </div>
-
-            <md-bottom-sheet style="background-color: lightyellow">
-                <h1>footer</h1>
-            </md-bottom-sheet>
-        </div>
     </body>
 </html>
