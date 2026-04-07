@@ -30,23 +30,25 @@
 	</head>
 	<body ng-controller="MyMainController">
 		<h1>Test</h1>
-		<div grid-data grid-options="gridOptions" grid-actions="gridActions">
-			<table>
-				<thead>
-					<tr>
-						<th sortable="code" class="sortable">id</th>
-						<th sortable="code" class="sortable">Name</th>
-						<th>Last Name</th>
-					</tr>
-				</thead>
+
+        <div grid-data grid-options="gridOptions" grid-actions="gridActions">
+            <table>
+                <thead>
+                    <tr>
+                        <th sortable="code">First Name <span>{{gridOptions.grid.sortOptions.direction}}; </span></th>
+                        <th sortable="code">Last Name <span>{{gridOptions.grid.sortOptions.direction}}; </span></th>
+                        <th sortable="code">ID <span>{{gridOptions.grid.sortOptions.direction}}; </span></th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr grid-item>
-                        <td ng-bind="item.id"></td>
-                        <td ng-bind="item.first_name"></td>
-                        <td ng-bind="item.last_name"></td>
+                        <td>{{ item.first_name }}</td>
+                        <td>{{ item.last_name }}</td>
+                        <td>{{ item.id }}</td>
                     </tr>
                 </tbody>
-			</table>
-		</div>
+            </table>
+        </div>
+
 	</body>
 </html>
