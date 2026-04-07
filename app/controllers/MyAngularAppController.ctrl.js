@@ -4,6 +4,8 @@ export default /*@ngInject*/ function MyAngularAppController ($scope, addTwoNumb
 
     $scope.myArr = [{name: 'one', id: 1, other: 'omg'}, {name: 'two', id: 2, other: 'omg2'}, {name: 'three', id: 3, other: 'omg3'}];
 
+    // $scope.theSelectedOne = $scope.myArr[0];
+
     $scope.showScope = function(){
         console.log('scope', $scope);
     }

@@ -28,17 +28,25 @@
     <body>
         <div style="padding: 10px">
             <button ng-click="showScope()" style="margin-bottom: 20px">Show Scope</button>
-            <md-autocomplete 
-                md-items="item in myArr" 
-                md-min-length="0" 
-                md-item-text="item.id.toString()"
-                md-selected-item="theSelectedOne"
-            >
-                <md-item-template> {{item}} </md-item-template>
-            </md-autocomplete>
+            <md-input-container>
+                <label for="myAutoComplete">Search for an item</label>
+                <md-autocomplete
+                id="myAutoComplete"
+                    md-items="item in myArr | filter: nameOfSearchInput"
+                    md-min-length="0"
+                    md-item-text="item.id.toString()"
+                    md-selected-item="theSelectedOne"
+                    md-search-text="nameOfSearchInput"
+                >
+                    <md-item-template> {{item}} </md-item-template>
+                    <md-not-found> No matches found. </md-not-found>
+                </md-autocomplete>
+            </md-input-container>
 
             <hr />
             <div ng-if="theSelectedOne.name">{{theSelectedOne}}</div>
+
+            <div>{{(myArr | filter: nameOfSearchInput).length}}</div>
         </div>
     </body>
 </html>
