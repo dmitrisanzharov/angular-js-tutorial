@@ -41,9 +41,10 @@ myAngularAppConst.controller('MyMainController', [
 			}
         };
 
-        console.log('gridOptions', $scope.gridOptions);
+        
 
         $timeout(function () {
+			console.log('gridOptions', $scope.gridOptions);
             console.log('gridActions', $scope.gridActions);
         }, 0);
     }
