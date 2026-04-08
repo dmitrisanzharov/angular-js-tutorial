@@ -35,17 +35,38 @@ myAngularAppConst.controller('MyMainController', [
 
         $scope.gridOptions = {
             data: dataDummy,
-			sort: {
-				predicate: 'first_name',
-				direction: 'asc'
-			}
-        };
+            sort: {
+                predicate: 'first_name',
+                direction: 'asc'
+            },
+            customFilters: {
+                myFilterOne: function (itemsFromData, valueFromInputField, filterNameFromGridOptions) {
+                    // console.log('myFilterOne ran');
+                    // console.log('itemsFromData', itemsFromData);
+                    // console.log('valueFromInputField', valueFromInputField);
+                    // console.log('filterNameFromGridOptions', filterNameFromGridOptions);
 
-        
+                    if (!valueFromInputField) {
+                        return itemsFromData;
+                    }
+
+                    return itemsFromData.filter(function (item) {
+                        const searchValue = valueFromInputField.toLowerCase();
+                        return Object.values(item).some(
+                            (val) => val && val.toString().toLowerCase().includes(searchValue)
+                        );
+                    });
+                } // <- no comma needed here if this is the last property in customFilters
+            } // <- closes customFilters
+        }; // <- closes gridOptions
 
         $timeout(function () {
-			console.log('gridOptions', $scope.gridOptions);
+            console.log('gridOptions', $scope.gridOptions);
             console.log('gridActions', $scope.gridActions);
         }, 0);
+
+        $scope.showScope = function () {
+            console.log('scope', $scope);
+        }
     }
 ]);

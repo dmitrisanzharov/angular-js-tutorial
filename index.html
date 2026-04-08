@@ -30,7 +30,15 @@
 	</head>
 	<body ng-controller="MyMainController">
 		<h1>Test</h1>
-
+		<input 
+			type="text" 
+			placeholder="search by text"
+			ng-change="gridActions.filter()"
+			ng-model="myFilterOne"
+			filter-by="myFilterOne"
+			filter-type="text"
+		/>
+		<button ng-click="showScope()">Show Scope</button>
         <div grid-data grid-options="gridOptions" grid-actions="gridActions">
             <table>
                 <thead>
