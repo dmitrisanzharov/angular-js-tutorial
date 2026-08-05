@@ -1,17 +1,19 @@
-// imports
-import allPagesFn from './pages/indexPagesMain.js';
-import allControllersStandAlone from './controllers/controllersIndex.js';
-import allServices from './services/servicesIndex.js';
-import allComponents from './components/componentsIndex.js';
-import allDirectives from './directives/directivesIndex.js';
-import allFilters from './filters/filtersIndex.js';
+console.log('app started');
 
-const myAngularAppConst = angular.module('MyAngularAppMainModule', ['ngRoute', 'ngMaterial', 'ngMessages']);
+const appModuleConst = angular.module('myMainModuleString', []);
 
-allPagesFn(myAngularAppConst); // router basically
-allControllersStandAlone(myAngularAppConst);
-allServices(myAngularAppConst);
-allComponents(myAngularAppConst);
-allDirectives(myAngularAppConst);
-allFilters(myAngularAppConst);
+console.log('appModuleConst', appModuleConst);
 
+appModuleConst.controller('MyMainController', ['$scope', function($scope){
+    $scope.sayHi = 'hello from controller';
+
+    $scope.count = 0;
+
+
+    $scope.add = function(){
+        $scope.count = $scope.count + 1
+        console.log('scope in count', $scope);
+    }
+
+    console.log('scope', $scope);
+}])
