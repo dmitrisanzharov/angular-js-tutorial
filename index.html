@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <title>My NG App</title>
@@ -24,11 +24,16 @@
         <!-- APP JS -->
         <script src="app/app.js" type="module"></script>
     </head>
-    <body ng-app="myMainModuleString" ng-controller="MyMainController">
-        <h1 ng-init="omg='a'">{{sayHi}} {{omg}}</h1>
-        <button ng-click="add()">{{count}}</button>
-        <h1 ng-bind-html="myFnReturn()"></h1>
-        <div>{{ ( myArr | filter: '').length }}</div>
-        <input type="checkbox" ng-model="myCheckboxValues" ng-click="changeCheckBox()"/>
+    <body ng-app="myMainModuleString" ng-controller="MyMainController" ng-cloak>
+        <input type="text" ng-model="myInput.myVar" ng-init="myVarNgInit='omg'" />
+
+        <p>{{myInput}}</p>
+        <p>{{myVarNgInit}}</p>
+
+        <button ng-click="showScope()">show scope</button>
+
+        <div ng-init="counter = 0">
+            <button ng-click="counter = counter + 1">{{ counter }}</button>
+        </div>
     </body>
 </html>
