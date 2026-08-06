@@ -27,6 +27,8 @@
     <body ng-app="myMainModuleString" ng-controller="MyMainController">
         <h1 ng-init="omg='a'">{{sayHi}} {{omg}}</h1>
         <button ng-click="add()">{{count}}</button>
-        <h1 ng-bind="myFnReturn()"></h1>
+        <h1 ng-bind-html="myFnReturn()"></h1>
+        <div>{{ ( myArr | filter: '').length }}</div>
+        <input type="checkbox" ng-model="myCheckboxValues" ng-click="changeCheckBox()"/>
     </body>
 </html>
