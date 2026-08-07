@@ -25,15 +25,21 @@
         <script src="app/app.js" type="module"></script>
     </head>
     <body ng-app="myMainModuleString" ng-controller="MyMainController" ng-cloak>
-        <input type="text" ng-model="myInput.myVar" ng-init="myVarNgInit='omg'" />
 
-        <p>{{myInput}}</p>
-        <p>{{myVarNgInit}}</p>
+        <component-one prop-one="'omg it worked'"><h1>kids</h1></component-one>
 
-        <button ng-click="showScope()">show scope</button>
 
-        <div ng-init="counter = 0">
-            <button ng-click="counter = counter + 1">{{ counter }}</button>
-        </div>
+        <hr />
+        
+        <form ng-submit="submitFn()">
+            <button type="submit" ng-disabled="isDisabled">submit</button>
+        </form>
+
+        <input type="checkbox" ng-model="isCheckbox" ng-change="myFn()" />
+
+        <a ng-href="{{googleLink}}" target="_blank">google</a>
+
+
+
     </body>
 </html>
