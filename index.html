@@ -23,21 +23,29 @@
 
         <!-- APP JS -->
         <script src="app/app.js" type="module"></script>
+        <script src="/temp.js" type="module"></script>
+
+        <!-- components -->
+         <script src="app/compTemp/bar.comp.js" type="module"></script>
+
+
     </head>
     <body ng-app="myMainModuleString" ng-controller="MyMainController" ng-cloak>
 
-        <component-one prop-one="'omg it worked'"><h1>kids</h1></component-one>
+        <directive-one my-prop-one="2"></directive-one>
 
+        <!-- <h1>{{3 + 2}}</h1> -->
+
+        <!-- <h1>parent count: {{count}}</h1>
+
+        <component-one count-prop="count" inc-count-fn="incCountFn"></component-one>
+
+        <component-bar></component-bar>
 
         <hr />
-        
-        <form ng-submit="submitFn()">
-            <button type="submit" ng-disabled="isDisabled">submit</button>
-        </form>
+        <div ng-controller="ModuleTwoController">{{moduleTwoVar}}</div> -->
 
-        <input type="checkbox" ng-model="isCheckbox" ng-change="myFn()" />
 
-        <a ng-href="{{googleLink}}" target="_blank">google</a>
 
 
 
