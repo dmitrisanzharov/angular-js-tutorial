@@ -26,13 +26,44 @@
         <script src="/temp.js" type="module"></script>
 
         <!-- components -->
-         <script src="app/compTemp/bar.comp.js" type="module"></script>
-
-
+        <script src="app/compTemp/bar.comp.js" type="module"></script>
     </head>
     <body ng-app="myMainModuleString" ng-controller="MyMainController" ng-cloak>
+        <h1>main template</h1>
 
-        <directive-one my-prop-one="2"></directive-one>
+        <ul>
+            <li><a href="#/home">home, is page 2</a></li>
+            <li><a href="#/page1">page 1</a></li>
+             <li><a href="#/new">new page</a></li>
+        </ul>
+
+        <hr />
+
+        <ng-view></ng-view>
+
+        <!-- <div ng-repeat="item in myArr2 | arrayHasLetterInIt: 'x' : 'y'">{{item}}</div> -->
+
+        <!-- <div>{{2 | multiplyBySecond: 5 }}</div> -->
+
+        <!-- <div>{{items | orderBy: '-value'}}</div>
+
+         <div>{{myArr2 | orderBy: '-'}}</div> -->
+
+        <!-- <input type="text" ng-model="myInput" />
+
+         <div>{{myObj2 | filter: myInput}}</div> -->
+
+        <!-- <div>{{10 | currency: $ : 3 }}</div> -->
+        <!-- 
+        <ul>
+            <li ng-repeat="item in items">{{item | filter: 'name1'}}</li>
+        </ul> -->
+
+        <!-- <directive-one my-prop-one="2"></directive-one>
+
+         <component-one count-prop="count" inc-count-fn="incCountFn"></component-one>
+
+         <p>omg, its gone: {{$root.omg}}</p> -->
 
         <!-- <h1>{{3 + 2}}</h1> -->
 
@@ -44,10 +75,5 @@
 
         <hr />
         <div ng-controller="ModuleTwoController">{{moduleTwoVar}}</div> -->
-
-
-
-
-
     </body>
 </html>
