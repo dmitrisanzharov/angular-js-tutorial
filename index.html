@@ -32,9 +32,8 @@
         <h1>main template</h1>
 
         <ul>
-            <li><a href="#/home">home, is page 2</a></li>
-            <li><a href="#/page1">page 1</a></li>
-             <li><a href="#/new">new page</a></li>
+            <li ng-repeat="item in allPagesArr"><a ng-href="{{item.url}}">{{item.name}}</a></li>
+
         </ul>
 
         <hr />

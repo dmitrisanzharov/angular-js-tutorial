@@ -1,23 +1,9 @@
+import { routerStackingFn } from './router/index.js';
+
 export const appModuleConst = angular.module('myMainModuleString', ['moduleTwo', 'ngRoute']);
 
-appModuleConst.config(function ($routeProvider) {
-    $routeProvider
-        .when('/home', {
-            templateUrl: 'app/pages/page2/page2.html'
-        })
-        .when('/page1', {
-            templateUrl: 'app/pages/page1/page1.html'
-        })
-        .when('/new', {
-            template: '<h1>this is new page - {{blah}}</h1>',
-            controller: function NewRouteController($scope){
-                $scope.blah = 'blah'
-            }
-        })
-        .otherwise({
-            redirectTo: '/home'
-        });
-});
+// router
+routerStackingFn(appModuleConst);
 
 // appModuleConst.filter('arrayHasLetterInIt', function () {
 //     return function (...args) {
@@ -62,6 +48,12 @@ appModuleConst.controller(
         ];
 
         $scope.myArr2 = ['a', 'b', 'c', 'e', 'f', 'd'];
+
+        $scope.allPagesArr = [
+            { url: '#/home/1/yuri', name: 'home' },
+            { url: '#/about', name: 'about' },
+            { url: '#/new', name: 'does not exist, goes to home' }
+        ];
 
         $scope.myObj2 = [
             { name: 'a', value1: 1 },
