@@ -1,46 +1,68 @@
 import { routerStackingFn } from './router/index.js';
+import allServices from './services/servicesIndex.js';
+import myMainServicesFn from './services/index2.js';
 
 export const appModuleConst = angular.module('myMainModuleString', ['moduleTwo', 'ngRoute']);
 
-// router
-routerStackingFn(appModuleConst);
-
-// appModuleConst.filter('arrayHasLetterInIt', function () {
-//     return function (...args) {
-//         console.log('args', args);
-
-//         let firstItemOnTheLeft = args[0];
-//         let argsAreItemsOnTheRightAfterSemiColumn = args[1];
-
-//         return firstItemOnTheLeft.filter((item) => {
-//             console.log('iteration of item', item);
-//             return item.includes(argsAreItemsOnTheRightAfterSemiColumn);
-//         });
-//     };
-// });
-
-// appModuleConst.filter('multiplyBySecond', function () {
-//     return function (...args) {
-//         let arg1 = args[0];
-//         let arg2 = args[1];
-
-//         return arg1 * arg2;
-//     };
-// });
-
-// console.log('appModuleConst', appModuleConst);
-
-// appModuleConst.config(function(){
-//     console.log('config ran');
-// })
-
-// appModuleConst.run(function(){
-//     console.log('run ran');
-// })
-
 appModuleConst.controller(
     'MyMainController',
-    /*@ngInject*/ function ($scope, $sce, $filter) {
+    /*@ngInject*/ function ($scope, $sce, $filter, $http, myServiceName, mahManService, sayHello, $location) {
+
+        $scope.count = 0;
+
+        $scope.changeCountFn = function(){
+            $scope.count = $scope.count + 1; 
+        }
+
+        $scope.myArrWatch = ['empty'];
+
+        $scope.pushToArr = function(){
+            $scope.myArrWatch.push(Math.random().toFixed(2))
+        }
+
+        console.log('rerendered')
+
+        // $scope.$watch('count', function(newVal, oldVal, scope){
+        //     console.log('============================');
+        //     console.log('newVal', newVal);
+        //     console.log('oldVal', oldVal);
+        //     console.log('scope', scope);
+        // })
+
+        $scope.$watchCollection('myArrWatch', function(newVal, oldVal, scope){
+            console.log('============================');
+            console.log('newVal', newVal);
+            console.log('oldVal', oldVal);
+            console.log('scope', scope);
+        })
+
+
+        // ----------------------------------------------------------------------
+
+
+        // console.log('sayHello', sayHello.omgSayHiFn());
+
+        // console.log('location', $location);
+
+        $scope.myServiceVar1 = myServiceName.serviceVar1;
+
+        $scope.myServiceFn1 = myServiceName.serviceFn1;
+
+        $scope.submitFormFn = function () {
+            console.log('form submitted, here is scope', $scope);
+            let test = $location.path();
+            // console.log('test: ', test);
+
+            $location.path('/about');
+
+            $location.search({ omg: 'foo' });
+            $location.search({});
+        };
+
+        $http.get('https://jsonplaceholder.typicode.com/users').then((response) => {
+            // console.log('resp', response);
+        });
+
         $scope.items = [
             { name: 'name1', value: 1 },
             { name: 'name2', value: 2 },
@@ -50,7 +72,7 @@ appModuleConst.controller(
         $scope.myArr2 = ['a', 'b', 'c', 'e', 'f', 'd'];
 
         $scope.allPagesArr = [
-            { url: '#/home/1/yuri', name: 'home' },
+            { url: '#/home/my-number/yuri', name: 'home' },
             { url: '#/about', name: 'about' },
             { url: '#/new', name: 'does not exist, goes to home' }
         ];
@@ -91,6 +113,55 @@ appModuleConst.controller(
         // console.log('scope', $scope);
     }
 );
+
+// router
+routerStackingFn(appModuleConst);
+
+// services via function
+allServices(appModuleConst);
+myMainServicesFn(appModuleConst);
+
+// appModuleConst.filter('arrayHasLetterInIt', function () {
+//     return function (...args) {
+//         console.log('args', args);
+
+//         let firstItemOnTheLeft = args[0];
+//         let argsAreItemsOnTheRightAfterSemiColumn = args[1];
+
+//         return firstItemOnTheLeft.filter((item) => {
+//             console.log('iteration of item', item);
+//             return item.includes(argsAreItemsOnTheRightAfterSemiColumn);
+//         });
+//     };
+// });
+
+// appModuleConst.filter('multiplyBySecond', function () {
+//     return function (...args) {
+//         let arg1 = args[0];
+//         let arg2 = args[1];
+
+//         return arg1 * arg2;
+//     };
+// });
+
+// console.log('appModuleConst', appModuleConst);
+
+// appModuleConst.config(function(){
+//     console.log('config ran');
+// })
+
+// appModuleConst.run(function(){
+//     console.log('run ran');
+// })
+
+// services
+appModuleConst.service('myServiceName', function () {
+    this.serviceFn1 = function () {
+        console.log('hello');
+    };
+
+    this.serviceVar1 = 'omg it worked';
+});
 
 appModuleConst.controller(
     'Controller2',

@@ -29,16 +29,47 @@
         <script src="app/compTemp/bar.comp.js" type="module"></script>
     </head>
     <body ng-app="myMainModuleString" ng-controller="MyMainController" ng-cloak>
-        <h1>main template</h1>
+        
+        <h1>{{count}}</h1>
+        <button ng-click="changeCountFn()">add to count</button>
+
+        <h1>{{myArrWatch}}</h1>
+        <button ng-click="pushToArr()">push into arr</button>
+
+        <!-- ---------------------------------------------------- -->
+
+        <!-- <h1>{{myServiceVar1}}</h1>
+
+        <button ng-click="myServiceFn1()">click</button> -->
+
+        <hr />
+
+        <form name="myForm" ng-submit="submitFormFn()">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" ng-model="nameVarInForm.omg" placeholder="enter name" required />
+            </div>
+
+            <div>
+                <label for="second">second</label>
+                <input type="text" name="second" ng-model="secondNameVarInForm" placeholder="second" />
+            </div>
+
+            <div ng-show="myForm.second.$dirty">second has text in it</div>
+
+            <button type="submit" ng-disabled="!myForm.$valid">submit</button>
+        </form>
+
+        <!-- <h1>main template</h1>
 
         <ul>
             <li ng-repeat="item in allPagesArr"><a ng-href="{{item.url}}">{{item.name}}</a></li>
 
         </ul>
 
-        <hr />
+        <hr /> -->
 
-        <ng-view></ng-view>
+        <!-- <ng-view></ng-view> -->
 
         <!-- <div ng-repeat="item in myArr2 | arrayHasLetterInIt: 'x' : 'y'">{{item}}</div> -->
 
