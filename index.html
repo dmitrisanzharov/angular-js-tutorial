@@ -36,6 +36,10 @@
         <h1>{{myArrWatch}}</h1>
         <button ng-click="pushToArr()">push into arr</button>
 
+        <p>{{randomVar}}</p>
+
+        <div ng-controller="Controller2" ng-if="randomVar === 1 ? true : false">controller 2</div>
+
         <!-- ---------------------------------------------------- -->
 
         <!-- <h1>{{myServiceVar1}}</h1>

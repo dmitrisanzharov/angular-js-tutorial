@@ -1,6 +1,7 @@
 import { routerStackingFn } from './router/index.js';
 import allServices from './services/servicesIndex.js';
 import myMainServicesFn from './services/index2.js';
+import { omgLog } from '../helper.js';
 
 export const appModuleConst = angular.module('myMainModuleString', ['moduleTwo', 'ngRoute']);
 
@@ -8,19 +9,29 @@ appModuleConst.controller(
     'MyMainController',
     /*@ngInject*/ function ($scope, $sce, $filter, $http, myServiceName, mahManService, sayHello, $location) {
 
+        omgLog();
+
+        let myObj = { name: 'Dmitri'}
+        let a = angular.toJson(myObj);
+        console.log('a', a);
+
         $scope.count = 0;
 
-        $scope.changeCountFn = function(){
-            $scope.count = $scope.count + 1; 
-        }
+        delete $scope.count;
+
+        $scope.changeCountFn = function () {
+            $scope.count = $scope.count + 1;
+        };
 
         $scope.myArrWatch = ['empty'];
 
-        $scope.pushToArr = function(){
-            $scope.myArrWatch.push(Math.random().toFixed(2))
-        }
+        $scope.pushToArr = function () {
+            $scope.myArrWatch.push(Math.random().toFixed(2));
+        };
 
-        console.log('rerendered')
+        $scope.randomVar = 1;
+
+        // console.log('rerendered');
 
         // $scope.$watch('count', function(newVal, oldVal, scope){
         //     console.log('============================');
@@ -29,16 +40,28 @@ appModuleConst.controller(
         //     console.log('scope', scope);
         // })
 
-        $scope.$watchCollection('myArrWatch', function(newVal, oldVal, scope){
-            console.log('============================');
-            console.log('newVal', newVal);
-            console.log('oldVal', oldVal);
-            console.log('scope', scope);
-        })
+        // $scope.$watchCollection('myArrWatch', function(newVal, oldVal, scope){
+        //     console.log('============================');
+        //     console.log('newVal', newVal);
+        //     console.log('oldVal', oldVal);
+        //     console.log('scope', scope);
+        // })
 
+        $scope.$watchGroup(['count', 'randomVar'], function (newVal, oldVal, scope) {
+            // console.log('============================');
+            // console.log('newVal', newVal);
+            // console.log('oldVal', oldVal);
+            // console.log('scope', scope);
+
+            // let test = newVal[0] >= 3;
+            // console.log('test: ', test);
+
+            if (newVal[0] >= 3) {
+                $scope.randomVar = 2;
+            }
+        });
 
         // ----------------------------------------------------------------------
-
 
         // console.log('sayHello', sayHello.omgSayHiFn());
 
@@ -166,9 +189,12 @@ appModuleConst.service('myServiceName', function () {
 appModuleConst.controller(
     'Controller2',
     /*@ngInject*/ function ($scope) {
-        $scope.controller2Var = 'omg2';
-        console.log('$scope controller 2', $scope);
-        console.log('in child', $scope.sayHi);
+
+        console.log('controller 2 rendered');
+
+        $scope.$on('$destroy', function () {
+            console.log('destroyed');
+        });
     }
 );
 
